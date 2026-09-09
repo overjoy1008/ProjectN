@@ -176,11 +176,12 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-background text-foreground">
-      <header className="site-header">
+      <header className="site-header site-header-with-nav">
         <div className="brand-lockup">
           <h1 className="wordmark">Project <i>/N/</i></h1>
           <p>평가원 수학 아카이브</p>
         </div>
+        <nav className="site-nav" aria-label="주요 메뉴"><a href="/" aria-current="page">문제 아카이브</a><a href="/curriculum">교육 범위</a></nav>
       </header>
 
       <div className="workspace">
