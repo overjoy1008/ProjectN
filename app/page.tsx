@@ -31,6 +31,18 @@ function getDaysUntilCsat() {
   return Math.ceil((target - today) / 86_400_000);
 }
 
+function getQuestionScore(year: number, question: number) {
+  if (year >= 2022) {
+    if (question === 1 || question === 2 || question === 23) return 2;
+    if ((question >= 3 && question <= 8) || (question >= 16 && question <= 19) || (question >= 24 && question <= 27)) return 3;
+    return 4;
+  }
+
+  if (question >= 1 && question <= 3) return 2;
+  if ((question >= 4 && question <= 13) || (question >= 22 && question <= 25)) return 3;
+  return 4;
+}
+
 export default function Home() {
   const [year, setYear] = useState(2027);
   const [session, setSession] = useState<Session>('9모');
@@ -41,6 +53,9 @@ export default function Home() {
   const [daysUntilCsat, setDaysUntilCsat] = useState<number | null>(null);
   const touchStartX = useRef<number | null>(null);
   const questionViewerRef = useRef<HTMLDivElement | null>(null);
+  const holdDelayRef = useRef<number | null>(null);
+  const holdIntervalRef = useRef<number | null>(null);
+  const didHoldRef = useRef(false);
 
   useEffect(() => {
     const updateCountdown = () => setDaysUntilCsat(getDaysUntilCsat());
@@ -56,6 +71,16 @@ export default function Home() {
   const paperName = `${exam} ${subject}.pdf`;
   const pdfUrl = assetUrl(exam, paperName);
   const questionNumber = question ? Number(question) : null;
+  const questionScore = questionNumber ? getQuestionScore(year, questionNumber) : null;
+  const compactQuestionCanvas = Boolean(
+    questionNumber && (
+      (questionNumber >= 1 && questionNumber <= 6)
+      || (questionNumber >= 8 && questionNumber <= 9)
+      || (year >= 2022 && questionNumber >= 16 && questionNumber <= 19)
+      || (year < 2022 && questionNumber >= 22 && questionNumber <= 25)
+    ),
+  );
+  const questionCanvasHeight = compactQuestionCanvas ? questionCanvas.height / 2 : questionCanvas.height;
   const questionSection = modern && questionNumber && questionNumber <= 22 ? '공통' : subject;
   const questionFile = questionNumber ? `${exam} ${questionSection} ${String(questionNumber).padStart(2, '0')}번.png` : '';
   const questionUrl = questionNumber ? assetUrl(exam, 'Questions', questionSection, questionFile) : '';
@@ -96,6 +121,8 @@ export default function Home() {
     };
   }, [questionNumber, questionZoom]);
 
+  useEffect(() => () => stopHoldingQuestion(), []);
+
   function changeYear(value: number) {
     setYear(value);
     if (value === 2027 && session === '수능') setSession('9모');
@@ -108,6 +135,31 @@ export default function Home() {
       if (!currentNumber) return current;
       return String(Math.min(30, Math.max(1, currentNumber + direction)));
     });
+  }
+
+  function stopHoldingQuestion() {
+    if (holdDelayRef.current !== null) window.clearTimeout(holdDelayRef.current);
+    if (holdIntervalRef.current !== null) window.clearInterval(holdIntervalRef.current);
+    holdDelayRef.current = null;
+    holdIntervalRef.current = null;
+  }
+
+  function startHoldingQuestion(direction: -1 | 1) {
+    stopHoldingQuestion();
+    didHoldRef.current = false;
+    holdDelayRef.current = window.setTimeout(() => {
+      didHoldRef.current = true;
+      moveQuestion(direction);
+      holdIntervalRef.current = window.setInterval(() => moveQuestion(direction), 180);
+    }, 380);
+  }
+
+  function clickQuestionArrow(direction: -1 | 1) {
+    if (didHoldRef.current) {
+      didHoldRef.current = false;
+      return;
+    }
+    moveQuestion(direction);
   }
 
   function changeQuestionZoom(direction: -1 | 1) {
@@ -153,10 +205,28 @@ export default function Home() {
           <div className="document-bar">
             <div className="document-heading">
               <div className="document-mark" aria-hidden="true">{questionNumber ? String(questionNumber).padStart(2, '0') : 'PDF'}</div>
-              <div><h2>{questionNumber ? `${title} · ${questionNumber}번` : title}</h2></div>
+              <div className="document-copy">
+                <h2>{questionNumber ? `${title} · ${questionNumber}번` : title}</h2>
+              </div>
             </div>
             <a className="download-button" href={questionNumber ? questionUrl : pdfUrl} download={questionNumber ? questionFile : paperName}><Download aria-hidden="true" /> {questionNumber ? '문항 다운로드' : 'PDF 다운로드'}</a>
           </div>
+
+          {questionScore && (
+            <div className="question-meta-bar">
+              <div className="score-meter" data-score={questionScore} aria-label={`${questionScore}점 문항`}>
+                <strong>{questionScore}점</strong>
+                <span className="score-cells" aria-hidden="true">
+                  {[1, 2, 3, 4].map((cell) => <i key={cell} className={cell <= questionScore ? 'score-cell-active' : ''} />)}
+                </span>
+              </div>
+              <div className="question-zoom-controls" aria-label="문항 크기 조절">
+                <button type="button" onClick={() => changeQuestionZoom(-1)} disabled={questionZoom <= 0.5} aria-label="문항 축소"><Minus aria-hidden="true" /></button>
+                <output aria-live="polite">{Math.round(questionZoom * 100)}%</output>
+                <button type="button" onClick={() => changeQuestionZoom(1)} disabled={questionZoom >= 1} aria-label="문항 확대"><Plus aria-hidden="true" /></button>
+              </div>
+            </div>
+          )}
 
           {questionNumber ? (
             <div
@@ -166,17 +236,12 @@ export default function Home() {
               onTouchEnd={finishSwipe}
               onTouchCancel={() => { touchStartX.current = null; }}
             >
-              <div className="question-zoom-controls" aria-label="문항 크기 조절">
-                <button type="button" onClick={() => changeQuestionZoom(-1)} disabled={questionZoom <= 0.5} aria-label="문항 축소"><Minus aria-hidden="true" /></button>
-                <output aria-live="polite">{Math.round(questionZoom * 100)}%</output>
-                <button type="button" onClick={() => changeQuestionZoom(1)} disabled={questionZoom >= 1} aria-label="문항 확대"><Plus aria-hidden="true" /></button>
-              </div>
-              <button className="question-nav question-nav-previous" style={questionNavTop === null ? undefined : { top: questionNavTop }} type="button" onClick={() => moveQuestion(-1)} disabled={questionNumber === 1} aria-label="이전 문항"><ChevronLeft aria-hidden="true" /></button>
+              <button className="question-nav question-nav-previous" style={questionNavTop === null ? undefined : { top: questionNavTop }} type="button" onClick={() => clickQuestionArrow(-1)} onPointerDown={(event) => { event.currentTarget.setPointerCapture(event.pointerId); startHoldingQuestion(-1); }} onPointerUp={stopHoldingQuestion} onPointerCancel={stopHoldingQuestion} onPointerLeave={stopHoldingQuestion} onContextMenu={(event) => event.preventDefault()} disabled={questionNumber === 1} aria-label="이전 문항"><ChevronLeft aria-hidden="true" /></button>
               <div
                 className="question-sheet"
                 style={{
                   width: `${questionCanvas.width * questionZoom}px`,
-                  height: `${questionCanvas.height * questionZoom}px`,
+                  height: `${questionCanvasHeight * questionZoom}px`,
                 }}
               >
                 <div
@@ -186,7 +251,7 @@ export default function Home() {
                   <img key={questionUrl} src={questionUrl} alt={`${title} ${questionNumber}번 문제`} />
                 </div>
               </div>
-              <button className="question-nav question-nav-next" style={questionNavTop === null ? undefined : { top: questionNavTop }} type="button" onClick={() => moveQuestion(1)} disabled={questionNumber === 30} aria-label="다음 문항"><ChevronRight aria-hidden="true" /></button>
+              <button className="question-nav question-nav-next" style={questionNavTop === null ? undefined : { top: questionNavTop }} type="button" onClick={() => clickQuestionArrow(1)} onPointerDown={(event) => { event.currentTarget.setPointerCapture(event.pointerId); startHoldingQuestion(1); }} onPointerUp={stopHoldingQuestion} onPointerCancel={stopHoldingQuestion} onPointerLeave={stopHoldingQuestion} onContextMenu={(event) => event.preventDefault()} disabled={questionNumber === 30} aria-label="다음 문항"><ChevronRight aria-hidden="true" /></button>
             </div>
           ) : (
             <div className="pdf-viewer-wrap"><object key={pdfUrl} data={`${pdfUrl}#view=Fit&toolbar=1`} type="application/pdf" className="pdf-viewer"><div className="preview-placeholder"><FileText aria-hidden="true" /><strong>브라우저에서 PDF 미리보기를 지원하지 않습니다.</strong><a href={pdfUrl} download={paperName}>시험지 내려받기</a></div></object></div>
