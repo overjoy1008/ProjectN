@@ -33,6 +33,7 @@ export default function Home() {
   const questionFile = questionNumber ? `${exam} ${questionSection} ${String(questionNumber).padStart(2, '0')}번.png` : '';
   const questionUrl = questionNumber ? assetUrl(exam, 'Questions', questionSection, questionFile) : '';
   const title = `${year}학년도 ${sessionLabel[session]} · ${subjectLabel[subject]}`;
+  const archiveCode = `N-${year}-${session === '수능' ? 'CSAT' : session.replace('모', 'M')}-${subject.toUpperCase()}`;
 
   function changeYear(value: number) {
     setYear(value);
@@ -43,24 +44,37 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-background text-foreground">
       <header className="site-header">
-        <h1 className="wordmark">Project <i>/N/</i></h1>
-        <p>평가원 수학 아카이브</p>
+        <div className="brand-lockup">
+          <h1 className="wordmark">Project <i>/N/</i></h1>
+          <p>평가원 수학 아카이브</p>
+        </div>
       </header>
 
       <div className="workspace">
-        <section className="selector-strip" aria-label="시험지 선택">
-          <label><span>연도</span><NativeSelect value={year} onChange={(event) => changeYear(Number(event.target.value))} aria-label="연도 선택">{years.map((item) => <NativeSelectOption key={item} value={item}>{item}학년도</NativeSelectOption>)}</NativeSelect></label>
-          <label><span>월 / 시험</span><NativeSelect value={session} onChange={(event) => setSession(event.target.value as Session)} aria-label="월 또는 시험 선택">{availableSessions.map((item) => <NativeSelectOption key={item} value={item}>{sessionLabel[item]}</NativeSelectOption>)}</NativeSelect></label>
-          <label><span>선택과목</span><NativeSelect value={subject} onChange={(event) => setSubject(event.target.value as Subject)} aria-label="선택과목 선택">{subjects.map((item) => <NativeSelectOption key={item} value={item}>{subjectLabel[item]}</NativeSelectOption>)}</NativeSelect></label>
-          <label><span>번호</span><NativeSelect value={question} onChange={(event) => setQuestion(event.target.value)} aria-label="문항 번호 선택"><NativeSelectOption value="">전체 시험지</NativeSelectOption>{Array.from({ length: 30 }, (_, index) => index + 1).map((item) => <NativeSelectOption key={item} value={item}>{item}번</NativeSelectOption>)}</NativeSelect></label>
-        </section>
+        <div className="archive-ticket">
+          <div className="ticket-masthead" aria-hidden="true">
+            <div><strong>ADMIT ONE</strong><span>수학 문항 열람권</span></div>
+            <div className="ticket-route"><span>YEAR</span><b>→</b><span>SESSION</span><b>→</b><span>SUBJECT</span><b>→</b><span>QUESTION</span></div>
+            <div className="ticket-serial">No. {archiveCode}</div>
+          </div>
 
-        <div className="selection-summary" aria-live="polite"><span>{modern ? '공통 1–22 · 선택 23–30' : `${subjectLabel[subject]} 1–30`}</span><span>{questionNumber ? `${questionNumber}번 문항` : '전체 시험지'}</span></div>
+          <section className="selector-strip" aria-label="시험지 선택">
+            <label><span>연도</span><NativeSelect value={year} onChange={(event) => changeYear(Number(event.target.value))} aria-label="연도 선택">{years.map((item) => <NativeSelectOption key={item} value={item}>{item}학년도</NativeSelectOption>)}</NativeSelect></label>
+            <label><span>월 / 시험</span><NativeSelect value={session} onChange={(event) => setSession(event.target.value as Session)} aria-label="월 또는 시험 선택">{availableSessions.map((item) => <NativeSelectOption key={item} value={item}>{sessionLabel[item]}</NativeSelectOption>)}</NativeSelect></label>
+            <label><span>선택과목</span><NativeSelect value={subject} onChange={(event) => setSubject(event.target.value as Subject)} aria-label="선택과목 선택">{subjects.map((item) => <NativeSelectOption key={item} value={item}>{subjectLabel[item]}</NativeSelectOption>)}</NativeSelect></label>
+            <label><span>번호</span><NativeSelect value={question} onChange={(event) => setQuestion(event.target.value)} aria-label="문항 번호 선택"><NativeSelectOption value="">전체 시험지</NativeSelectOption>{Array.from({ length: 30 }, (_, index) => index + 1).map((item) => <NativeSelectOption key={item} value={item}>{item}번</NativeSelectOption>)}</NativeSelect></label>
+          </section>
+
+          <div className="selection-summary" aria-live="polite"><span>{modern ? '공통 1–22 · 선택 23–30' : `${subjectLabel[subject]} 1–30`}</span><span>{questionNumber ? `${questionNumber}번 문항` : '전체 시험지'}</span></div>
+        </div>
 
         <section className="document-shell">
           <div className="document-bar">
-            <div><span className="eyebrow">{questionNumber ? 'QUESTION VIEW' : 'PDF VIEWER'}</span><h2>{questionNumber ? `${title} · ${questionNumber}번` : title}</h2></div>
-            <a className="download-button" href={pdfUrl} download={paperName}><Download aria-hidden="true" /> PDF 다운로드</a>
+            <div className="document-heading">
+              <div className="document-mark" aria-hidden="true">{questionNumber ? String(questionNumber).padStart(2, '0') : 'PDF'}</div>
+              <div><span className="eyebrow">{questionNumber ? 'QUESTION VIEW' : 'PDF VIEWER'} / {archiveCode}</span><h2>{questionNumber ? `${title} · ${questionNumber}번` : title}</h2></div>
+            </div>
+            <a className="download-button" href={questionNumber ? questionUrl : pdfUrl} download={questionNumber ? questionFile : paperName}><Download aria-hidden="true" /> {questionNumber ? '문항 이미지 다운로드' : 'PDF 다운로드'}</a>
           </div>
 
           {questionNumber ? (

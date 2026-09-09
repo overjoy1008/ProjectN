@@ -2,6 +2,17 @@
 
 ProjectN은 평가원 수학 문항을 단순한 단원명이나 정답이 아니라, **출제 의도와 풀이 과정의 구조**로 분석하여 유사 문항을 추천하는 시스템을 목표로 한다.
 
+## 웹 아카이브
+
+저장소 루트가 웹 애플리케이션의 실행 위치다. 연도 → 시행 시기 → 선택과목 → 문항 번호 순으로 시험지를 탐색할 수 있으며, 전체 시험지에서는 PDF를, 개별 문항에서는 해당 PNG 이미지를 내려받을 수 있다.
+
+```bash
+pnpm install
+pnpm dev
+```
+
+시험지와 문항 이미지는 모두 `public/archive/`에 저장한다. 웹에서 사용하는 `/archive/...` 주소는 이 폴더와 직접 연결되므로 별도의 심볼릭 링크가 필요하지 않다.
+
 각 문항에서 다음 정보를 구조화한다.
 
 - 대단원 → 중단원 → 소단원 분류
@@ -119,7 +130,7 @@ update_boundary_rules_and_recrop_if_needed()
 재생성 스크립트는 프로젝트 루트의 `scripts/crop_questions.py`다. 텍스트 좌표가 없는 스캔형 PDF는 같은 체제 시험의 페이지별 번호 배치를 초기값으로 사용한 뒤, 문항 번호가 놓이는 좁은 세로 영역의 실제 잉크 행에 anchor를 맞춘다. 출력은 임시 폴더에서 문항 수 검증을 통과한 뒤 `Questions/`로 교체된다.
 
 ```bash
-python3 scripts/crop_questions.py "평가원 수학"
+python3 scripts/crop_questions.py "public/archive"
 ```
 
 전수 처리 결과는 `.crop-reports/questions.tsv`, 자동 검수 후보는 `.crop-reports/flags.tsv`에 기록한다. 짧은 한 줄 문항은 높이 기준상 후보로 남을 수 있으므로 이미지 자체를 함께 확인한다.

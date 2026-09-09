@@ -17,7 +17,7 @@ import pypdfium2 as pdfium
 from PIL import Image, ImageOps
 
 
-ROOT = Path(sys.argv[1] if len(sys.argv) > 1 else "평가원 수학")
+ROOT = Path(sys.argv[1] if len(sys.argv) > 1 else "public/archive")
 DPI = 220
 SCALE = DPI / 72
 INK_THRESHOLD = 245
