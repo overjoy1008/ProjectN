@@ -5,6 +5,7 @@ import { ChevronLeft, ChevronRight, Download, FileText, Minus, Plus } from 'luci
 import { NativeSelect, NativeSelectOption } from '@/components/ui/native-select';
 import problemJourneyData from './problem-journeys.json';
 import calculusJourneyData from './calculus-journeys.json';
+import legacyJourneyData from './legacy-journeys.json';
 
 type Session = '6모' | '9모' | '수능';
 type Subject = '확통' | '미적' | '기하' | '가형' | '나형';
@@ -12,7 +13,7 @@ type ProblemJourney = {
   id: string;
   year: number;
   session: Session;
-  section: '공통' | '확통' | '미적';
+  section: '공통' | '확통' | '미적' | '가형' | '나형';
   number: number;
   score: number;
   difficulty: { level: string; rank: number };
@@ -29,6 +30,7 @@ type ProblemHistoryState = {
   session: Session;
   subject: Subject;
   question: string;
+  questionZoom?: number;
 };
 
 const years = Array.from({ length: 11 }, (_, index) => 2027 - index);
@@ -38,6 +40,7 @@ const questionCanvas = { width: 1020, height: 2822 };
 const sessionLabel: Record<Session, string> = { '6모': '6월 모의평가', '9모': '9월 모의평가', 수능: '대학수학능력시험' };
 const subjectLabel: Record<Subject, string> = { 확통: '확률과 통계', 미적: '미적분', 기하: '기하', 가형: '가형', 나형: '나형' };
 const problemJourneys = [
+  ...legacyJourneyData.problems,
   ...problemJourneyData.problems,
   ...calculusJourneyData.problems,
 ] as ProblemJourney[];
@@ -100,6 +103,9 @@ function getProblemHistoryUrl(state: ProblemHistoryState) {
     subject: state.subject,
     question: state.question,
   });
+  if (typeof state.questionZoom === 'number') {
+    params.set('zoom', String(state.questionZoom));
+  }
   return `/?${params.toString()}`;
 }
 
@@ -109,7 +115,12 @@ function isProblemHistoryState(value: unknown): value is ProblemHistoryState {
   return typeof state.year === 'number'
     && sessions.includes(state.session as Session)
     && Object.keys(subjectLabel).includes(state.subject as Subject)
-    && typeof state.question === 'string';
+    && typeof state.question === 'string'
+    && (state.questionZoom === undefined
+      || (typeof state.questionZoom === 'number'
+        && Number.isFinite(state.questionZoom)
+        && state.questionZoom >= 0.5
+        && state.questionZoom <= 1));
 }
 
 function getDaysUntilCsat() {
@@ -165,17 +176,20 @@ export default function Home() {
       setSession(state.session);
       setSubject(state.subject);
       setQuestion(state.question);
+      if (typeof state.questionZoom === 'number') setQuestionZoom(state.questionZoom);
       window.requestAnimationFrame(() => {
         document.querySelector('.document-shell')?.scrollIntoView({ behavior: 'auto', block: 'start' });
       });
     };
 
     const params = new URLSearchParams(window.location.search);
+    const zoomParam = params.get('zoom');
     const urlState = {
       year: Number(params.get('year')),
       session: params.get('session'),
       subject: params.get('subject'),
       question: params.get('question'),
+      questionZoom: zoomParam === null ? undefined : Number(zoomParam),
     };
     if (isProblemHistoryState(urlState)) restoreProblem(urlState);
 
@@ -216,8 +230,8 @@ export default function Home() {
   const title = `${year}학년도 ${sessionLabel[session]} · ${subjectLabel[subject]}`;
   const questionTitle = `${year}학년도 ${sessionLabel[session]} · ${modern && questionNumber && questionNumber <= 22 ? '공통' : subjectLabel[subject]}`;
   const effectiveQuestionScale = questionFitScale * questionZoom;
-  const journeySection = questionNumber && questionNumber <= 22 ? '공통' : subject;
-  const currentJourney = questionNumber && (questionNumber <= 22 || subject === '확통' || subject === '미적')
+  const journeySection = modern && questionNumber && questionNumber <= 22 ? '공통' : subject;
+  const currentJourney = questionNumber && (!modern || questionNumber <= 22 || subject === '확통' || subject === '미적')
     ? problemJourneys.find((problem) => problem.year === year && problem.session === session && problem.section === journeySection && problem.number === questionNumber)
     : undefined;
   const questionCategories = currentJourney?.categories ?? [];
@@ -295,10 +309,17 @@ export default function Home() {
   }, [questionNumber]);
 
   function changeYear(value: number) {
+    const wasModern = year >= 2022;
+    const willBeModern = value >= 2022;
     setYear(value);
     if (value === 2027 && session === '수능') setSession('9모');
     if (value < 2026 && question === 'solution') setQuestion('');
-    setSubject(value >= 2022 ? '미적' : '가형');
+    if (wasModern === willBeModern) return;
+    if (willBeModern) {
+      setSubject(subject === '나형' ? '확통' : '미적');
+    } else {
+      setSubject(subject === '확통' ? '나형' : '가형');
+    }
   }
 
   function moveQuestion(direction: -1 | 1) {
@@ -339,13 +360,14 @@ export default function Home() {
   }
 
   function openSimilarProblem(problem: ProblemJourney) {
-    const currentState: ProblemHistoryState = { year, session, subject, question };
-    const nextSubject = problem.section === '확통' || problem.section === '미적' ? problem.section : subject;
+    const currentState: ProblemHistoryState = { year, session, subject, question, questionZoom };
+    const nextSubject = problem.section === '공통' ? subject : problem.section;
     const nextState: ProblemHistoryState = {
       year: problem.year,
       session: problem.session,
       subject: nextSubject,
       question: String(problem.number),
+      questionZoom,
     };
     window.history.replaceState(
       { ...window.history.state, projectNProblem: currentState },

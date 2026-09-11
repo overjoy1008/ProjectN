@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CATEGORY_FILE = ROOT / "app" / "question-categories.ts"
 
 EXAM_ORDER = [f"{year}|{session}" for year in range(2022, 2028) for session in ("6모", "9모", "수능") if not (year == 2027 and session == "수능")]
+LEGACY_EXAM_ORDER = [f"{year}|{session}" for year in range(2017, 2022) for session in ("6모", "9모", "수능")]
 
 
 def find_exam_file(exam_key, kind, subject="확통"):
@@ -26,6 +27,14 @@ PAPER_FILES = {exam_key: find_exam_file(exam_key, "paper") for exam_key in EXAM_
 SOLUTION_FILES = {exam_key: find_exam_file(exam_key, "solution") for exam_key in EXAM_ORDER}
 CALCULUS_PAPER_FILES = {exam_key: find_exam_file(exam_key, "paper", "미적") for exam_key in EXAM_ORDER}
 CALCULUS_SOLUTION_FILES = {exam_key: find_exam_file(exam_key, "solution", "미적") for exam_key in EXAM_ORDER}
+LEGACY_PAPER_FILES = {
+    subject: {exam_key: find_exam_file(exam_key, "paper", subject) for exam_key in LEGACY_EXAM_ORDER}
+    for subject in ("가형", "나형")
+}
+LEGACY_SOLUTION_FILES = {
+    subject: {exam_key: find_exam_file(exam_key, "solution", subject) for exam_key in LEGACY_EXAM_ORDER}
+    for subject in ("가형", "나형")
+}
 
 CATEGORY_ACTIONS = {
     "거듭제곱근": "거듭제곱근의 정의와 실수 조건을 적용한다.",
@@ -128,6 +137,9 @@ CATEGORY_ACTIONS = {
     "입체도형의 부피": "단면의 넓이를 높이 방향으로 적분해 입체의 부피를 구한다.",
     "곡선의 길이": "곡선을 나타내는 함수와 구간을 확인해 길이 공식을 정적분한다.",
     "미적분의 속도·거리": "속도의 부호가 바뀌는 시점을 나누어 이동거리나 위치 변화를 적분한다.",
+    "이차곡선": "포물선·타원·쌍곡선의 정의와 초점·준선 관계를 식으로 옮긴다.",
+    "평면벡터": "벡터의 성분과 내적을 이용해 길이·각·위치 관계를 계산한다.",
+    "공간도형과 공간좌표": "공간좌표와 정사영·구의 관계를 이용해 길이와 위치를 구한다.",
 }
 
 
@@ -234,6 +246,7 @@ def parse_intents(files, selection_subject):
     result = {}
     for exam_key, path in files.items():
         text = "\n".join((page.extract_text() or "") for page in PdfReader(str(path)).pages)
+        text = text.translate(str.maketrans("０１２３４５６７８９", "0123456789"))
         intents = {}
         marker = re.search(rf"(?:■\s*)?\[선택:\s*{re.escape(selection_subject)}\]", text)
         if marker:
@@ -244,10 +257,15 @@ def parse_intents(files, selection_subject):
         else:
             sections = ((text, 1, 30),)
         for section_text, first, last in sections:
-            for match in re.finditer(r"(\d{1,2})\.\s*출제\s*의도\s*:\s*(.*?)(?=(?:정답\s*)?풀이\s*:)", section_text, re.S):
-                number = int(match.group(1))
-                if first <= number <= last and number not in intents:
-                    intents[number] = clean_intent(match.group(2))
+            patterns = (
+                r"(\d{1,2})\.\s*출제\s*의도\s*:\s*(.*?)(?=(?:정답\s*)?풀이\s*:)",
+                r"출제\s*의도\s*\.?\s*(\d{1,2})\s*\.\s*(.*?)(?=정답\s*풀이\s*:)",
+            )
+            for pattern in patterns:
+                for match in re.finditer(pattern, section_text, re.S):
+                    number = int(match.group(1))
+                    if first <= number <= last and number not in intents:
+                        intents[number] = clean_intent(re.sub(r"\s*:\s*$", "", match.group(2)))
         result[exam_key] = intents
     return result
 
@@ -256,6 +274,14 @@ def score_for(number):
     if number in (1, 2, 23):
         return 2
     if 3 <= number <= 8 or 16 <= number <= 19 or 24 <= number <= 27:
+        return 3
+    return 4
+
+
+def legacy_score_for(number):
+    if 1 <= number <= 3:
+        return 2
+    if 4 <= number <= 13 or 22 <= number <= 25:
         return 3
     return 4
 
@@ -450,6 +476,198 @@ def infer_calculus_categories(intent, problem_text):
     return categories or ["수열의 극한"]
 
 
+def infer_legacy_categories(intent, problem_text):
+    """Map 2009/2015-curriculum wording onto the existing 2022~2027 taxonomy."""
+    source = f"{intent} {clean_problem_text(problem_text)}"
+    compact = re.sub(r"\s+", "", source)
+    intent_compact = re.sub(r"\s+", "", intent)
+    categories = []
+
+    # 2015 개정 공통·수학 I·수학 II 분류
+    if "거듭제곱근" in source or "제곱근" in intent:
+        add_category(categories, "거듭제곱근")
+    if "로그" in source or "지수" in source:
+        if any(word in compact for word in ("방정식", "부등식", "해의개수")):
+            add_category(categories, "지수·로그 방정식·부등식")
+        if any(word in compact for word in ("그래프", "점근선", "교점", "위치관계")):
+            add_category(categories, "지수·로그함수 그래프")
+        if any(word in intent_compact for word in ("지수법칙", "지수의성질", "로그의값", "로그값", "로그를계산", "로그계산", "로그의성질", "지수가유리수")):
+            add_category(categories, "지수·로그 계산")
+    if "삼각함수" in source or any(word in source for word in ("사인함수", "코사인함수", "탄젠트함수")):
+        if "덧셈정리" in source:
+            add_category(categories, "삼각함수의 덧셈정리")
+        if any(word in compact for word in ("방정식", "부등식")):
+            add_category(categories, "삼각 방정식·부등식")
+        if any(word in source for word in ("그래프", "주기", "최댓값", "최솟값")):
+            add_category(categories, "삼각함수 그래프")
+        if any(word in intent_compact for word in ("삼각함수의값", "삼각함수의함숫값", "삼각함수를이용", "삼각함수사이")):
+            add_category(categories, "삼각함수 계산")
+    if "삼각방정식" in compact or "삼각부등식" in compact:
+        add_category(categories, "삼각 방정식·부등식")
+    if "사인법칙" in source or "코사인법칙" in source:
+        add_category(categories, "사인·코사인 법칙")
+    if "등차수열" in source or "등비수열" in source:
+        add_category(categories, "등차·등비수열")
+        if "합" in intent:
+            add_category(categories, "등차·등비수열의 합")
+    if any(word in intent_compact for word in ("수열의합", "여러가지수열", "합의기호", "시그마")):
+        add_category(categories, "수열의 합 Σ")
+    if "합과 일반항" in source or "부분합" in source and "일반항" in source:
+        add_category(categories, "수열의 합과 일반항")
+    if any(word in intent_compact for word in ("귀납적으로", "귀납적정의", "수학적귀납법", "점화식", "점화관계")):
+        add_category(categories, "수학적 귀납법")
+
+    if "극한" in intent_compact and "수열" not in intent_compact and "급수" not in intent_compact or "좌극한" in compact or "우극한" in compact:
+        if any(word in source for word in ("지수함수", "로그함수", "ln", "log", "e")):
+            add_category(categories, "지수·로그함수의 극한")
+        elif "삼각함수" in source or any(word in source for word in ("sin", "cos", "tan")):
+            add_category(categories, "삼각함수의 극한")
+        elif "여러가지함수" in intent_compact:
+            add_category(categories, "여러 가지 함수의 극한")
+        else:
+            add_category(categories, "극한값")
+    if "수열" in intent_compact and any(word in intent_compact for word in ("극한", "수렴", "발산")):
+        add_category(categories, "수열의 극한")
+    if "급수" in source:
+        add_category(categories, "등비급수" if "등비급수" in source else "급수")
+    if "연속" in intent_compact or "미분가능" in intent_compact:
+        add_category(categories, "함수의 연속 조건")
+
+    transcendental = any(word in source for word in ("지수함수", "로그함수", "삼각함수", "ln", "log", "sin", "cos", "tan", "e^"))
+    if "미분계수" in intent_compact or "도함수" in intent_compact or "미분가능" in intent_compact:
+        if any(word in source for word in ("지수함수", "로그함수", "ln", "log", "e^")):
+            add_category(categories, "지수·로그함수의 미분")
+        elif "삼각함수" in source or any(word in source for word in ("sin", "cos", "tan")):
+            add_category(categories, "삼각함수의 미분")
+        elif "여러 가지 함수" in intent:
+            add_category(categories, "여러 가지 함수의 미분")
+        else:
+            add_category(categories, "미분계수")
+    if "곱의 미분" in source:
+        add_category(categories, "곱의 미분")
+    if "몫의 미분" in source:
+        add_category(categories, "몫의 미분")
+    if "합성함수의 미분" in source:
+        add_category(categories, "합성함수의 미분")
+    if "매개변수" in intent:
+        add_category(categories, "매개변수 미분")
+    if "음함수" in intent or "역함수의 미분" in intent:
+        add_category(categories, "음함수와 역함수의 미분")
+    if "이계도함수" in compact or "이차도함수" in compact or "변곡점" in intent_compact:
+        add_category(categories, "이계도함수")
+    if "접선" in intent:
+        add_category(categories, "접선의 방정식")
+    if any(word in intent_compact for word in ("극값", "극대", "극소", "극댓값", "극솟값", "증가", "감소", "그래프의개형", "최댓값", "최솟값", "변곡점")):
+        add_category(categories, "미분법과 함수의 개형" if transcendental else "도함수와 함수의 개형")
+    if "실근" in intent_compact or "방정식의근의개수" in intent_compact:
+        add_category(categories, "미분법과 방정식·부등식" if transcendental else "함수의 교점과 방정식의 실근")
+    if "속도" in intent_compact or "속력" in intent_compact or "가속도" in intent_compact or ("수직선" in intent_compact and "거리" in intent_compact):
+        if transcendental:
+            add_category(categories, "미적분의 속도·거리")
+        else:
+            if "가속도" in intent:
+                add_category(categories, "속도와 가속도")
+            add_category(categories, "위치와 거리")
+
+    if "부정적분" in intent_compact:
+        add_category(categories, "여러 가지 함수의 부정적분" if transcendental else "부정적분")
+    if "치환적분" in source:
+        add_category(categories, "치환적분")
+    if "부분적분" in source:
+        add_category(categories, "부분적분")
+    if "정적분" in intent_compact or "적분값" in intent_compact:
+        if "넓이" in intent_compact:
+            add_category(categories, "미적분의 넓이" if transcendental else "정적분과 넓이")
+        elif "정의된함수" in intent_compact or "적분으로정의" in intent_compact:
+            add_category(categories, "정적분으로 정의된 함수")
+        else:
+            add_category(categories, "미적분의 정적분" if transcendental else "정적분")
+    elif "넓이" in intent_compact and any(word in compact for word in ("곡선", "함수", "적분", "무한히반복")):
+        add_category(categories, "미적분의 넓이" if transcendental else "정적분과 넓이")
+    if "부피" in intent_compact:
+        add_category(categories, "입체도형의 부피")
+    if "곡선의길이" in intent_compact:
+        add_category(categories, "곡선의 길이")
+
+    # 2015 개정 확률과 통계 분류
+    if "원순열" in source:
+        add_category(categories, "원순열")
+    if "중복순열" in source or "함수의 개수" in intent:
+        add_category(categories, "중복순열")
+    if "같은 것이 포함" in source:
+        add_category(categories, "같있순")
+    if "중복조합" in source or "분할" in intent:
+        add_category(categories, "중복조합")
+    if "이항정리" in source or "이항계수" in source:
+        add_category(categories, "이항정리")
+    if any(word in intent_compact for word in ("순열의수", "조합의수", "경우의수")) and not any(category in categories for category in ("원순열", "중복순열", "같있순", "중복조합")):
+        add_category(categories, "경우의 수")
+    if "조건부확률" in source or "조건부 확률" in source:
+        add_category(categories, "조건부확률")
+    if "여사건" in source:
+        add_category(categories, "여사건의 확률")
+    if "독립시행" in source or "독립 시행" in source or "서로 독립" in source:
+        add_category(categories, "독립과 종속")
+    if "확률의 곱셈정리" in source:
+        add_category(categories, "조건부확률")
+    if "확률" in intent_compact and not any(category in categories for category in ("조건부확률", "여사건의 확률", "독립과 종속")):
+        add_category(categories, "확률의 덧셈정리")
+    if "독립" in intent_compact:
+        add_category(categories, "독립과 종속")
+    if any(word in source for word in ("이산확률변수", "확률변수의 평균", "확률변수의 분산", "확률분포")):
+        add_category(categories, "이산확률변수")
+    if "이항분포" in source:
+        add_category(categories, "이항분포")
+    if "연속확률변수" in source or "확률밀도함수" in source:
+        add_category(categories, "연속확률변수")
+    if "정규분포" in source or "표준정규분포" in source:
+        add_category(categories, "정규분포")
+    if "표본평균" in source:
+        add_category(categories, "표본평균")
+    if "모평균" in source or "신뢰구간" in source:
+        add_category(categories, "모평균의 추정")
+
+    # 당시 기하와 벡터 문항도 현재(2015 개정) 기하의 기존 대단원에 대응한다.
+    if any(word in compact for word in ("포물선", "타원", "쌍곡선", "평면곡선", "이차곡선")):
+        add_category(categories, "이차곡선")
+    if "벡터" in source and not any(word in source for word in ("공간벡터", "공간 벡터")):
+        add_category(categories, "평면벡터")
+    if any(word in compact for word in ("공간도형", "좌표공간", "공간좌표", "공간벡터", "정사영", "구의방정식", "두평면")):
+        add_category(categories, "공간도형과 공간좌표")
+    if "삼수선" in compact:
+        add_category(categories, "공간도형과 공간좌표")
+
+    # 현재 분류의 간접 출제 항목
+    indirect_rules = (
+        ("판별식", "판별식"), ("근과 계수", "근과 계수의 관계"),
+        ("인수분해", "인수분해"), ("완전제곱", "완전제곱식"),
+        ("절댓값", "절댓값 함수"), ("명제", "집합과 명제"),
+        ("필요조건", "집합과 명제"), ("충분조건", "집합과 명제"),
+        ("대우", "집합과 명제"), ("진리집합", "집합과 명제"),
+        ("유리함수", "유리함수"), ("분수함수", "유리함수"),
+        ("무리함수", "무리함수"), ("역함수", "합성함수와 역함수"),
+        ("합성함수", "합성함수와 역함수"),
+        ("평행이동", "평행이동과 대칭이동"), ("대칭이동", "평행이동과 대칭이동"),
+    )
+    for keyword, category in indirect_rules:
+        if keyword in intent_compact:
+            add_category(categories, category)
+
+    if any(word in intent_compact for word in ("집합의원소", "집합의연산", "합집합", "교집합", "부분집합", "집합이서로")):
+        add_category(categories, "집합과 명제")
+
+    if "함수의대응관계" in intent_compact:
+        add_category(categories, "함수의 종류")
+    if "점근선" in intent_compact and "로그" not in compact:
+        add_category(categories, "유리함수")
+    if "미분" in intent_compact and not any("미분" in category or category in ("미분계수", "도함수와 함수의 개형", "접선의 방정식", "함수의 연속 조건") for category in categories):
+        add_category(categories, "도함수와 함수의 개형")
+    if "무한히반복" in compact and "넓이" in compact:
+        add_category(categories, "등비급수")
+
+    return categories or ["경우의 수"]
+
+
 CALCULUS_OVERRIDES = {
     "2022|6모": {
         27: ["미분법과 방정식·부등식"],
@@ -520,6 +738,120 @@ CALCULUS_OVERRIDES = {
         28: ["매개변수 미분", "음함수와 역함수의 미분"],
         29: ["등비급수"],
         30: ["음함수와 역함수의 미분", "치환적분", "미적분의 정적분"],
+    },
+}
+
+
+# 2018학년도 수능 해설 PDF는 한글 ToUnicode 표가 깨져 텍스트 추출이 불가능하다.
+# 렌더링된 문제·해설 전 페이지를 확인해 현재 분류 체계로 직접 대응했다.
+LEGACY_CATEGORY_OVERRIDES = {
+    ("2019|6모", "가형"): {1: ["경우의 수"]},
+    ("2019|수능", "가형"): {
+        30: ["합성함수의 미분", "삼각함수의 미분", "미분법과 함수의 개형"],
+    },
+    ("2017|9모", "나형"): {9: ["수열의 합 Σ"]},
+    ("2017|수능", "나형"): {
+        21: ["함수의 종류", "경우의 수", "원의 반지름", "수열의 합 Σ"],
+    },
+    ("2018|6모", "나형"): {
+        21: ["유리함수", "절댓값 함수", "경우의 수"],
+        24: ["집합과 명제", "경우의 수"],
+    },
+    ("2019|6모", "나형"): {
+        17: ["곱의 미분", "인수 정리와 함수 추론"],
+        21: ["이차부등식", "도함수와 함수의 개형"],
+        28: ["함수의 연속 조건", "0/0 꼴", "인수 정리와 함수 추론"],
+        30: ["수열의 합 Σ", "인수 정리와 함수 추론", "도함수와 함수의 개형"],
+    },
+    ("2019|9모", "나형"): {
+        30: ["합성함수와 역함수", "함수의 교점과 방정식의 실근", "도함수와 함수의 개형"],
+    },
+    ("2019|수능", "나형"): {
+        16: ["등비급수", "삼각형 넓이", "원의 반지름"],
+        19: ["중복순열", "함수의 종류", "합성함수와 역함수"],
+        15: ["지수·로그 방정식·부등식"],
+    },
+    ("2020|6모", "가형"): {
+        9: ["미분계수", "합성함수의 미분", "지수·로그함수의 미분"],
+    },
+    ("2020|6모", "나형"): {
+        4: ["합성함수와 역함수"],
+        21: ["합성함수와 역함수", "절댓값 함수", "함수의 종류"],
+    },
+    ("2020|수능", "나형"): {
+        30: ["함수의 교점과 방정식의 실근", "도함수와 함수의 개형"],
+    },
+    ("2020|9모", "나형"): {28: ["지수·로그 계산"]},
+    ("2021|6모", "가형"): {
+        5: ["급수", "수열의 극한"],
+        21: ["수열의 합 Σ", "지수·로그 계산"],
+        27: ["조건부확률", "경우의 수"],
+    },
+    ("2021|9모", "가형"): {4: ["급수", "부분분수"]},
+    ("2021|수능", "나형"): {1: ["지수·로그 계산"]},
+    ("2018|수능", "가형"): {
+        1: ["평면벡터"],
+        2: ["지수·로그함수의 극한"],
+        3: ["공간도형과 공간좌표"],
+        4: ["확률의 덧셈정리", "독립과 종속"],
+        5: ["지수·로그함수 그래프", "평행이동과 대칭이동"],
+        6: ["이항정리"],
+        7: ["삼각 방정식·부등식"],
+        8: ["이차곡선"],
+        9: ["미분계수", "몫의 미분"],
+        10: ["표본평균", "정규분포"],
+        11: ["음함수와 역함수의 미분"],
+        12: ["미적분의 넓이", "미적분의 정적분"],
+        13: ["조건부확률"],
+        14: ["삼각함수의 덧셈정리"],
+        15: ["치환적분", "합성함수와 역함수"],
+        16: ["매개변수 미분", "미적분의 속도·거리"],
+        17: ["삼각함수의 극한", "삼각형 넓이"],
+        18: ["같있순"],
+        19: ["이산확률변수", "독립과 종속"],
+        20: ["공간도형과 공간좌표"],
+        21: ["합성함수의 미분", "미분법과 함수의 개형", "접선의 방정식"],
+        22: ["경우의 수"],
+        23: ["합성함수의 미분", "지수·로그함수의 미분"],
+        24: ["음함수와 역함수의 미분"],
+        25: ["평면벡터"],
+        26: ["정규분포"],
+        27: ["이차곡선"],
+        28: ["중복조합", "확률의 덧셈정리"],
+        29: ["공간도형과 공간좌표"],
+        30: ["정적분으로 정의된 함수", "삼각함수 그래프", "부분적분", "미적분의 정적분"],
+    },
+    ("2018|수능", "나형"): {
+        1: ["지수·로그 계산"],
+        2: ["집합과 명제"],
+        3: ["수열의 극한"],
+        4: ["합성함수와 역함수"],
+        5: ["극한값"],
+        6: ["집합과 명제"],
+        7: ["조건부확률"],
+        8: ["중복조합"],
+        9: ["정적분"],
+        10: ["독립과 종속", "확률의 덧셈정리"],
+        11: ["유리함수", "평행이동과 대칭이동", "경우의 수"],
+        12: ["이항정리"],
+        13: ["수학적 귀납법"],
+        14: ["등차·등비수열", "수열의 합 Σ"],
+        15: ["표본평균", "정규분포"],
+        16: ["지수·로그 계산"],
+        17: ["이산확률변수", "Y = aX+b 변환"],
+        18: ["0/0 꼴", "인수 정리와 함수 추론"],
+        19: ["등비급수", "삼각형 넓이"],
+        20: ["도함수와 함수의 개형"],
+        21: ["합성함수와 역함수", "함수의 교점과 방정식의 실근"],
+        22: ["경우의 수"],
+        23: ["미분계수"],
+        24: ["집합과 명제"],
+        25: ["0/0 꼴"],
+        26: ["정적분과 넓이"],
+        27: ["수열의 합 Σ"],
+        28: ["독립과 종속"],
+        29: ["미분계수", "접선의 방정식", "도함수와 함수의 개형"],
+        30: ["정적분", "등비급수", "함수의 교점과 방정식의 실근"],
     },
 }
 
@@ -647,11 +979,11 @@ def make_goal(intent):
     return goal
 
 
-def make_record(exam_key, number, categories, intents, questions, selection="확통"):
+def make_record(exam_key, number, categories, intents, questions, selection="확통", legacy=False):
     year_text, session = exam_key.split("|")
     year = int(year_text)
-    section = "공통" if number <= 22 else selection
-    score = score_for(number)
+    section = selection if legacy else ("공통" if number <= 22 else selection)
+    score = legacy_score_for(number) if legacy else score_for(number)
     intent = intents.get(exam_key, {}).get(number) or fallback_intent(categories)
     primary = categories[0]
     problem_text = questions.get(exam_key, {}).get(number, "")
@@ -676,13 +1008,26 @@ def make_record(exam_key, number, categories, intents, questions, selection="확
         "conditions": conditions,
         "goal": make_goal(intent),
         "journey": steps,
-        "sourceBasis": "평가원 해설의 출제의도·풀이" if exam_key in SOLUTION_FILES else "문제지·평가원 정답표·문항 분류",
+        "sourceBasis": "평가원 해설의 출제의도·풀이" if legacy or exam_key in SOLUTION_FILES else "문제지·평가원 정답표·문항 분류",
     }
 
 
 mode = sys.argv[1] if len(sys.argv) > 1 else "base"
 output_records = []
-if mode == "calculus":
+if mode == "legacy":
+    for subject in ("가형", "나형"):
+        legacy_intents = parse_intents(LEGACY_SOLUTION_FILES[subject], subject)
+        legacy_questions = parse_questions(LEGACY_PAPER_FILES[subject])
+        for exam_key in LEGACY_EXAM_ORDER:
+            for number in range(1, 31):
+                intent = legacy_intents.get(exam_key, {}).get(number, "")
+                problem_text = legacy_questions.get(exam_key, {}).get(number, "")
+                categories = (LEGACY_CATEGORY_OVERRIDES.get((exam_key, subject), {}).get(number)
+                    or infer_legacy_categories(intent, problem_text))
+                output_records.append(make_record(
+                    exam_key, number, categories, legacy_intents, legacy_questions, subject, legacy=True
+                ))
+elif mode == "calculus":
     calculus_intents = parse_intents(CALCULUS_SOLUTION_FILES, "미적분")
     calculus_questions = parse_questions(CALCULUS_PAPER_FILES)
     for exam_key in EXAM_ORDER:
@@ -704,7 +1049,12 @@ else:
                 or infer_categories(intent, problem_text, number))
             output_records.append(make_record(exam_key, number, categories, intents, questions))
 
-generated_from = "2022~2027 평가원·수능 미적분 문제지 및 해설" if mode == "calculus" else "2022~2027 평가원·수능 공통·확률과 통계 문제지 및 해설"
+if mode == "legacy":
+    generated_from = "2017~2021 평가원·수능 가형·나형 문제지 및 해설 (2022~2027 분류 체계로 대응)"
+elif mode == "calculus":
+    generated_from = "2022~2027 평가원·수능 미적분 문제지 및 해설"
+else:
+    generated_from = "2022~2027 평가원·수능 공통·확률과 통계 문제지 및 해설"
 print(json.dumps({"schemaVersion": 3, "problemTextFormat": "LaTeX", "generatedFrom": generated_from}, ensure_ascii=False, separators=(",", ":"))[:-1] + ',"problems":[')
 for index, record in enumerate(output_records):
     suffix = "," if index < len(output_records) - 1 else ""
