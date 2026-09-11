@@ -4,6 +4,7 @@ import { type TouchEvent, useEffect, useMemo, useRef, useState } from 'react';
 import { ChevronLeft, ChevronRight, Download, FileText, Minus, Plus } from 'lucide-react';
 import { NativeSelect, NativeSelectOption } from '@/components/ui/native-select';
 import problemJourneyData from './problem-journeys.json';
+import calculusJourneyData from './calculus-journeys.json';
 
 type Session = '6모' | '9모' | '수능';
 type Subject = '확통' | '미적' | '기하' | '가형' | '나형';
@@ -11,7 +12,7 @@ type ProblemJourney = {
   id: string;
   year: number;
   session: Session;
-  section: '공통' | '확통';
+  section: '공통' | '확통' | '미적';
   number: number;
   score: number;
   difficulty: { level: string; rank: number };
@@ -23,6 +24,12 @@ type ProblemJourney = {
   journey: string[];
   sourceBasis: string;
 };
+type ProblemHistoryState = {
+  year: number;
+  session: Session;
+  subject: Subject;
+  question: string;
+};
 
 const years = Array.from({ length: 11 }, (_, index) => 2027 - index);
 const sessions: Session[] = ['6모', '9모', '수능'];
@@ -30,23 +37,79 @@ const csatDate = { year: 2026, month: 11, day: 19 };
 const questionCanvas = { width: 1020, height: 2822 };
 const sessionLabel: Record<Session, string> = { '6모': '6월 모의평가', '9모': '9월 모의평가', 수능: '대학수학능력시험' };
 const subjectLabel: Record<Subject, string> = { 확통: '확률과 통계', 미적: '미적분', 기하: '기하', 가형: '가형', 나형: '나형' };
-const problemJourneys = problemJourneyData.problems as ProblemJourney[];
+const problemJourneys = [
+  ...problemJourneyData.problems,
+  ...calculusJourneyData.problems,
+] as ProblemJourney[];
 const sessionOrder: Record<Session, number> = { '6모': 1, '9모': 2, 수능: 3 };
 
-function getSimilarityScore(current: ProblemJourney, candidate: ProblemJourney) {
-  const shared = candidate.categories.filter((category) => current.categories.includes(category));
-  if (shared.length === 0) return -1;
+const journeyStopWords = new Set([
+  '주어진', '조건', '문제', '해당하는', '핵심', '관계를', '먼저', '찾는다',
+  '이용하여', '이용한', '구할', '있는가', '구한다', '계산', '결과와', '범위',
+  '부호', '경우의', '원문에', '다시', '대입해', '요구값을', '확정한다',
+]);
 
-  let score = shared.length * 20;
-  if (candidate.categories[0] === current.categories[0]) score += 12;
-  if (candidate.section === current.section) score += 6;
-  if (candidate.score === current.score) score += 4;
-  score -= Math.abs(candidate.difficulty.rank - current.difficulty.rank) * 3;
-  return score;
+function getJourneyTokens(problem: ProblemJourney) {
+  const text = [problem.officialIntent, problem.goal, ...problem.journey]
+    .join(' ')
+    .toLocaleLowerCase('ko-KR')
+    .replace(/[^\p{L}\p{N}]+/gu, ' ');
+
+  return new Set(
+    text.split(/\s+/).filter((token) => token.length >= 2 && !journeyStopWords.has(token)),
+  );
+}
+
+function getJourneySimilarity(current: ProblemJourney, candidate: ProblemJourney) {
+  const currentTokens = getJourneyTokens(current);
+  const candidateTokens = getJourneyTokens(candidate);
+  if (currentTokens.size === 0 || candidateTokens.size === 0) return 0;
+
+  const sharedTokenCount = [...currentTokens].filter((token) => candidateTokens.has(token)).length;
+  return (2 * sharedTokenCount) / (currentTokens.size + candidateTokens.size);
+}
+
+function getSimilarityMetrics(current: ProblemJourney, candidate: ProblemJourney) {
+  const shared = candidate.categories.filter((category) => current.categories.includes(category));
+  if (shared.length === 0) return null;
+
+  const categoryUnion = new Set([...current.categories, ...candidate.categories]);
+  const categoryCoverage = shared.length / current.categories.length;
+  const categoryJaccard = shared.length / categoryUnion.size;
+  const primaryCategoryMatch = candidate.categories[0] === current.categories[0] ? 1 : 0;
+  const categorySimilarity = categoryCoverage * 0.55 + categoryJaccard * 0.35 + primaryCategoryMatch * 0.1;
+  const difficultyDistance = Math.abs(candidate.difficulty.rank - current.difficulty.rank);
+  const difficultySimilarity = Math.max(0, 1 - difficultyDistance / 3);
+
+  return {
+    shared,
+    sectionRank: candidate.section === current.section ? 1 : 0,
+    primaryRank: Math.round((categorySimilarity * 0.7 + difficultySimilarity * 0.3) * 1000),
+    journeyRank: Math.round(getJourneySimilarity(current, candidate) * 1000),
+  };
 }
 
 function assetUrl(...segments: string[]) {
   return `/archive/${segments.map(encodeURIComponent).join('/')}`;
+}
+
+function getProblemHistoryUrl(state: ProblemHistoryState) {
+  const params = new URLSearchParams({
+    year: String(state.year),
+    session: state.session,
+    subject: state.subject,
+    question: state.question,
+  });
+  return `/?${params.toString()}`;
+}
+
+function isProblemHistoryState(value: unknown): value is ProblemHistoryState {
+  if (!value || typeof value !== 'object') return false;
+  const state = value as Partial<ProblemHistoryState>;
+  return typeof state.year === 'number'
+    && sessions.includes(state.session as Session)
+    && Object.keys(subjectLabel).includes(state.subject as Subject)
+    && typeof state.question === 'string';
 }
 
 function getDaysUntilCsat() {
@@ -96,6 +159,35 @@ export default function Home() {
     return () => window.clearInterval(timer);
   }, []);
 
+  useEffect(() => {
+    const restoreProblem = (state: ProblemHistoryState) => {
+      setYear(state.year);
+      setSession(state.session);
+      setSubject(state.subject);
+      setQuestion(state.question);
+      window.requestAnimationFrame(() => {
+        document.querySelector('.document-shell')?.scrollIntoView({ behavior: 'auto', block: 'start' });
+      });
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const urlState = {
+      year: Number(params.get('year')),
+      session: params.get('session'),
+      subject: params.get('subject'),
+      question: params.get('question'),
+    };
+    if (isProblemHistoryState(urlState)) restoreProblem(urlState);
+
+    const handleHistoryNavigation = (event: PopStateEvent) => {
+      const state = (event.state as { projectNProblem?: unknown } | null)?.projectNProblem;
+      if (isProblemHistoryState(state)) restoreProblem(state);
+    };
+
+    window.addEventListener('popstate', handleHistoryNavigation);
+    return () => window.removeEventListener('popstate', handleHistoryNavigation);
+  }, []);
+
   const modern = year >= 2022;
   const subjects: Subject[] = modern ? ['확통', '미적', '기하'] : ['가형', '나형'];
   const exam = `${year} ${session}`;
@@ -124,25 +216,25 @@ export default function Home() {
   const title = `${year}학년도 ${sessionLabel[session]} · ${subjectLabel[subject]}`;
   const questionTitle = `${year}학년도 ${sessionLabel[session]} · ${modern && questionNumber && questionNumber <= 22 ? '공통' : subjectLabel[subject]}`;
   const effectiveQuestionScale = questionFitScale * questionZoom;
-  const currentJourney = questionNumber && (questionNumber <= 22 || subject === '확통')
-    ? problemJourneys.find((problem) => problem.year === year && problem.session === session && problem.number === questionNumber)
+  const journeySection = questionNumber && questionNumber <= 22 ? '공통' : subject;
+  const currentJourney = questionNumber && (questionNumber <= 22 || subject === '확통' || subject === '미적')
+    ? problemJourneys.find((problem) => problem.year === year && problem.session === session && problem.section === journeySection && problem.number === questionNumber)
     : undefined;
   const questionCategories = currentJourney?.categories ?? [];
   const similarProblems = useMemo(() => {
     if (!currentJourney) return [];
     return problemJourneys
       .filter((candidate) => candidate.id !== currentJourney.id)
-      .map((candidate) => ({
-        problem: candidate,
-        score: getSimilarityScore(currentJourney, candidate),
-        shared: candidate.categories.filter((category) => currentJourney.categories.includes(category)),
-      }))
-      .filter((candidate) => candidate.score >= 0)
-      .sort((a, b) => b.score - a.score
+      .flatMap((candidate) => {
+        const metrics = getSimilarityMetrics(currentJourney, candidate);
+        return metrics ? [{ problem: candidate, ...metrics }] : [];
+      })
+      .sort((a, b) => b.sectionRank - a.sectionRank
+        || b.primaryRank - a.primaryRank
+        || b.journeyRank - a.journeyRank
         || b.problem.year - a.problem.year
         || sessionOrder[b.problem.session] - sessionOrder[a.problem.session]
-        || a.problem.number - b.problem.number)
-      .slice(0, 6);
+        || a.problem.number - b.problem.number);
   }, [currentJourney]);
 
   useEffect(() => {
@@ -247,9 +339,27 @@ export default function Home() {
   }
 
   function openSimilarProblem(problem: ProblemJourney) {
+    const currentState: ProblemHistoryState = { year, session, subject, question };
+    const nextSubject = problem.section === '확통' || problem.section === '미적' ? problem.section : subject;
+    const nextState: ProblemHistoryState = {
+      year: problem.year,
+      session: problem.session,
+      subject: nextSubject,
+      question: String(problem.number),
+    };
+    window.history.replaceState(
+      { ...window.history.state, projectNProblem: currentState },
+      '',
+      getProblemHistoryUrl(currentState),
+    );
+    window.history.pushState(
+      { ...window.history.state, projectNProblem: nextState },
+      '',
+      getProblemHistoryUrl(nextState),
+    );
     setYear(problem.year);
     setSession(problem.session);
-    if (problem.section === '확통') setSubject('확통');
+    setSubject(nextSubject);
     setQuestion(String(problem.number));
     window.requestAnimationFrame(() => document.querySelector('.document-shell')?.scrollIntoView({ behavior: 'smooth', block: 'start' }));
   }
@@ -360,7 +470,7 @@ export default function Home() {
                 <span>RELATED</span>
                 <div>
                   <h3 id="similar-problems-title">유사 문항</h3>
-                  <p>풀이 유형과 난이도가 가까운 순서입니다.</p>
+                  <p>같은 영역을 우선하고, 난이도·카테고리와 해설 기반 풀이 과정 순으로 정렬합니다.</p>
                 </div>
               </div>
               <ol className="similar-problem-list">
@@ -369,7 +479,7 @@ export default function Home() {
                     <button type="button" onClick={() => openSimilarProblem(problem)}>
                       <span className="similar-problem-rank">{String(index + 1).padStart(2, '0')}</span>
                       <span className="similar-problem-copy">
-                        <strong>{problem.year}학년도 {sessionLabel[problem.session]} · {problem.section === '공통' ? '공통' : '확률과 통계'} · {problem.number}번</strong>
+                        <strong>{problem.year}학년도 {sessionLabel[problem.session]} · {problem.section === '공통' ? '공통' : subjectLabel[problem.section]} · {problem.number}번</strong>
                         <small>{problem.difficulty.level} · {problem.score}점</small>
                         <span className="similar-problem-tags">{shared.map((category) => <i key={category}>{category}</i>)}</span>
                       </span>

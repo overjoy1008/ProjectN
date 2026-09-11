@@ -1,5 +1,6 @@
 import json
 import re
+import sys
 from pathlib import Path
 
 from pypdf import PdfReader
@@ -11,18 +12,20 @@ CATEGORY_FILE = ROOT / "app" / "question-categories.ts"
 EXAM_ORDER = [f"{year}|{session}" for year in range(2022, 2028) for session in ("6모", "9모", "수능") if not (year == 2027 and session == "수능")]
 
 
-def find_exam_file(exam_key, kind):
+def find_exam_file(exam_key, kind, subject="확통"):
     year, session = exam_key.split("|")
     directory = ROOT / f"public/archive/{year} {session}"
     if kind == "paper":
-        return directory / f"{year} {session} 확통.pdf"
-    subject_solution = directory / f"{year} {session} 확통 해설.pdf"
+        return directory / f"{year} {session} {subject}.pdf"
+    subject_solution = directory / f"{year} {session} {subject} 해설.pdf"
     shared_solution = directory / f"{year} {session} 해설.pdf"
     return subject_solution if subject_solution.exists() else shared_solution
 
 
 PAPER_FILES = {exam_key: find_exam_file(exam_key, "paper") for exam_key in EXAM_ORDER}
 SOLUTION_FILES = {exam_key: find_exam_file(exam_key, "solution") for exam_key in EXAM_ORDER}
+CALCULUS_PAPER_FILES = {exam_key: find_exam_file(exam_key, "paper", "미적") for exam_key in EXAM_ORDER}
+CALCULUS_SOLUTION_FILES = {exam_key: find_exam_file(exam_key, "solution", "미적") for exam_key in EXAM_ORDER}
 
 CATEGORY_ACTIONS = {
     "거듭제곱근": "거듭제곱근의 정의와 실수 조건을 적용한다.",
@@ -100,6 +103,31 @@ CATEGORY_ACTIONS = {
     "유리화": "분모·분자의 켤레식을 곱해 근호가 있는 분모를 정리한다.",
     "합성함수와 역함수": "함숫값의 대응을 역으로 추적하고 합성 관계를 식으로 정리한다.",
     "경우의 수": "겹치지 않게 경우를 나누고 합의 법칙과 곱의 법칙으로 센다.",
+    "수열의 극한": "수열의 수렴 조건과 극한의 성질을 적용해 미지수 또는 극한값을 정한다.",
+    "여러 가지 함수의 극한": "지수·로그·삼각함수의 극한 성질을 이용해 극한값을 계산한다.",
+    "지수·로그함수의 극한": "지수함수 또는 로그함수의 기본 극한을 표준형으로 바꾸어 계산한다.",
+    "삼각함수의 극한": "삼각함수의 기본 극한과 도형·부등식 조건을 연결한다.",
+    "급수": "부분합의 극한으로 급수의 수렴 여부와 합을 구한다.",
+    "등비급수": "첫째항과 공비를 찾고 수렴 조건을 확인한 뒤 등비급수의 합을 계산한다.",
+    "지수·로그함수의 미분": "지수함수와 로그함수의 도함수 공식을 적용한다.",
+    "삼각함수의 미분": "삼각함수의 도함수와 주기·부호 관계를 함께 적용한다.",
+    "삼각함수의 덧셈정리": "덧셈정리로 여러 각의 삼각함수 값을 하나의 관계식으로 정리한다.",
+    "여러 가지 함수의 미분": "지수·로그·삼각함수와 합성된 식을 알맞은 미분법으로 미분한다.",
+    "몫의 미분": "분자와 분모를 구분해 몫의 미분법으로 도함수를 계산한다.",
+    "합성함수의 미분": "바깥함수와 안쪽함수를 구분해 연쇄법칙을 적용한다.",
+    "매개변수 미분": "매개변수에 대한 두 미분값의 비로 필요한 변화율을 구한다.",
+    "음함수와 역함수의 미분": "음함수 또는 역함수 관계를 미분해 필요한 미분계수를 구한다.",
+    "이계도함수": "도함수를 한 번 더 미분해 이계도함수와 오목·볼록 조건을 확인한다.",
+    "미분법과 함수의 개형": "도함수의 부호와 극값을 조사해 함수의 개형과 조건을 확정한다.",
+    "미분법과 방정식·부등식": "함수의 개형을 이용해 방정식의 실근 수나 부등식의 해를 판정한다.",
+    "치환적분": "적분식의 안쪽 표현을 새 변수로 치환하고 구간 또는 미분요소를 함께 바꾼다.",
+    "부분적분": "곱으로 된 적분을 미분하기 쉬운 항과 적분하기 쉬운 항으로 나누어 부분적분한다.",
+    "여러 가지 함수의 부정적분": "지수·로그·삼각함수의 적분 공식을 이용해 원시함수를 구한다.",
+    "미적분의 정적분": "여러 가지 함수의 원시함수를 구해 적분구간의 양 끝값을 대입한다.",
+    "미적분의 넓이": "교점과 부호가 바뀌는 지점을 기준으로 구간을 나누어 넓이를 적분한다.",
+    "입체도형의 부피": "단면의 넓이를 높이 방향으로 적분해 입체의 부피를 구한다.",
+    "곡선의 길이": "곡선을 나타내는 함수와 구간을 확인해 길이 공식을 정적분한다.",
+    "미적분의 속도·거리": "속도의 부호가 바뀌는 시점을 나누어 이동거리나 위치 변화를 적분한다.",
 }
 
 
@@ -178,9 +206,9 @@ def math_to_latex(text):
     return r"\(\displaystyle " + "".join(parts).strip() + r"\)"
 
 
-def parse_questions():
+def parse_questions(files):
     result = {}
-    for exam_key, path in PAPER_FILES.items():
+    for exam_key, path in files.items():
         text = "\n".join((page.extract_text() or "") for page in PdfReader(str(path)).pages)
         starts = []
         expected = 1
@@ -202,15 +230,17 @@ def parse_questions():
     return result
 
 
-def parse_intents():
+def parse_intents(files, selection_subject):
     result = {}
-    for exam_key, path in SOLUTION_FILES.items():
+    for exam_key, path in files.items():
         text = "\n".join((page.extract_text() or "") for page in PdfReader(str(path)).pages)
         intents = {}
-        probability_marker = "■ [선택: 확률과 통계]"
-        if probability_marker in text:
-            common_text, probability_text = text.split(probability_marker, 1)
-            sections = ((common_text, 1, 22), (probability_text, 23, 30))
+        marker = re.search(rf"(?:■\s*)?\[선택:\s*{re.escape(selection_subject)}\]", text)
+        if marker:
+            common_text = text[:marker.start()]
+            selection_text = text[marker.end():]
+            selection_text = re.split(r"■\s*\[선택:", selection_text, maxsplit=1)[0]
+            sections = ((common_text, 1, 22), (selection_text, 23, 30))
         else:
             sections = ((text, 1, 30),)
         for section_text, first, last in sections:
@@ -358,6 +388,142 @@ def infer_categories(intent, problem_text, number):
     return categories or (["극한값"] if number <= 22 else ["경우의 수"])
 
 
+def infer_calculus_categories(intent, problem_text):
+    source = intent if intent else problem_text
+    categories = []
+    if "지수함수" in source and "극한" in source or "로그함수" in source and "극한" in source:
+        add_category(categories, "지수·로그함수의 극한")
+    if "삼각함수" in source and "극한" in source:
+        add_category(categories, "삼각함수의 극한")
+    if "함수의 극한" in source and not any(category in categories for category in ("지수·로그함수의 극한", "삼각함수의 극한")):
+        add_category(categories, "여러 가지 함수의 극한")
+    if "등비급수" in source:
+        add_category(categories, "등비급수")
+    if "급수" in source and "등비급수" not in source:
+        add_category(categories, "급수")
+    if "수열의 극한" in source or "수열이 수렴" in source or "수열이 발산" in source:
+        add_category(categories, "수열의 극한")
+    if ("지수함수" in source or "로그함수" in source or "자연로그" in source) and ("미분" in source or "도함수" in source or "접선" in source):
+        add_category(categories, "지수·로그함수의 미분")
+    if "삼각함수" in source and ("미분" in source or "도함수" in source or "접선" in source):
+        add_category(categories, "삼각함수의 미분")
+    if "삼각함수의 덧셈정리" in source:
+        add_category(categories, "삼각함수의 덧셈정리")
+    if "여러 가지 함수의 미분" in source or "여러 가지 미분법" in source:
+        add_category(categories, "여러 가지 함수의 미분")
+    if "몫의 미분" in source:
+        add_category(categories, "몫의 미분")
+    if "합성함수" in source and ("미분" in source or "도함수" in source):
+        add_category(categories, "합성함수의 미분")
+    if "매개변수" in source:
+        add_category(categories, "매개변수 미분")
+    if "음함수" in source or "역함수" in source:
+        add_category(categories, "음함수와 역함수의 미분")
+    if "이계도함수" in source or "이차도함수" in source:
+        add_category(categories, "이계도함수")
+    if "접선" in source:
+        add_category(categories, "접선의 방정식")
+    if any(word in source for word in ("극대", "극소", "극댓값", "극솟값", "증가", "감소", "그래프의 개형", "최댓값", "최솟값")) and any(word in source for word in ("미분", "도함수", "함수")):
+        add_category(categories, "미분법과 함수의 개형")
+    if "실근" in source or (("방정식" in source or "부등식" in source) and any(word in source for word in ("미분", "도함수", "그래프"))):
+        add_category(categories, "미분법과 방정식·부등식")
+    if "치환적분" in source:
+        add_category(categories, "치환적분")
+    if "부분적분" in source:
+        add_category(categories, "부분적분")
+    if "부정적분" in source:
+        add_category(categories, "여러 가지 함수의 부정적분")
+    if "부피" in source:
+        add_category(categories, "입체도형의 부피")
+    if "속도" in source or "속력" in source or "움직인 거리" in source or "이동 거리" in source:
+        add_category(categories, "미적분의 속도·거리")
+    if "곡선의 길이" in source:
+        add_category(categories, "곡선의 길이")
+    if "넓이" in source and ("적분" in source or "곡선" in source):
+        add_category(categories, "미적분의 넓이")
+    elif "정적분" in source or "적분값" in source:
+        add_category(categories, "미적분의 정적분")
+    if not categories and any(word in source for word in ("미분", "도함수", "접선")):
+        add_category(categories, "미분법과 함수의 개형")
+    if not categories and "적분" in source:
+        add_category(categories, "미적분의 정적분")
+    return categories or ["수열의 극한"]
+
+
+CALCULUS_OVERRIDES = {
+    "2022|6모": {
+        27: ["미분법과 방정식·부등식"],
+        28: ["삼각함수의 극한"],
+        29: ["여러 가지 함수의 미분"],
+        30: ["여러 가지 함수의 미분"],
+    },
+    "2022|9모": {
+        24: ["삼각함수의 덧셈정리"],
+        30: ["삼각함수의 극한", "미분법과 함수의 개형", "치환적분", "미적분의 정적분"],
+    },
+    "2022|수능": {
+        23: ["수열의 극한"],
+        24: ["합성함수의 미분", "지수·로그함수의 미분"],
+        25: ["등비급수"],
+        26: ["미적분의 정적분"],
+        27: ["미적분의 속도·거리"],
+        28: ["합성함수의 미분", "삼각함수의 미분", "미분법과 함수의 개형"],
+        29: ["삼각함수의 극한"],
+        30: ["음함수와 역함수의 미분", "부분적분", "미적분의 정적분"],
+    },
+    "2023|6모": {29: ["삼각함수의 극한"]},
+    "2023|9모": {
+        23: ["지수·로그함수의 극한"],
+        28: ["삼각함수의 극한"],
+    },
+    "2023|수능": {
+        27: ["등비급수"],
+        28: ["삼각함수의 극한"],
+        30: ["미분법과 함수의 개형"],
+    },
+    "2024|6모": {
+        25: ["지수·로그함수의 극한"],
+        27: ["삼각함수의 극한"],
+        30: ["미분법과 함수의 개형"],
+    },
+    "2024|9모": {
+        23: ["지수·로그함수의 극한"],
+        27: ["곡선의 길이", "미적분의 정적분"],
+    },
+    "2024|수능": {
+        23: ["지수·로그함수의 극한"],
+        30: ["미분법과 함수의 개형"],
+    },
+    "2025|6모": {
+        26: ["지수·로그함수의 극한"],
+        30: ["삼각함수의 덧셈정리", "수열의 극한"],
+    },
+    "2025|9모": {
+        23: ["삼각함수의 극한"],
+        24: ["여러 가지 함수의 부정적분"],
+        30: ["여러 가지 함수의 부정적분", "미분법과 함수의 개형"],
+    },
+    "2025|수능": {
+        23: ["삼각함수의 극한"],
+        24: ["여러 가지 함수의 부정적분", "미적분의 정적분"],
+    },
+    "2027|6모": {
+        26: ["삼각함수의 미분", "삼각함수의 덧셈정리"],
+        27: ["미적분의 속도·거리"],
+    },
+    "2027|9모": {
+        23: ["지수·로그함수의 극한"],
+        24: ["부분적분", "미적분의 정적분"],
+        25: ["수열의 극한"],
+        26: ["접선의 방정식", "미적분의 넓이"],
+        27: ["합성함수의 미분", "음함수와 역함수의 미분"],
+        28: ["매개변수 미분", "음함수와 역함수의 미분"],
+        29: ["등비급수"],
+        30: ["음함수와 역함수의 미분", "치환적분", "미적분의 정적분"],
+    },
+}
+
+
 # 해설 문구만으로는 세부 풀이 유형이 드러나지 않거나, PDF 문자가 깨진 문항을
 # 문제와 해설을 함께 확인해 보정한다.
 CATEGORY_OVERRIDES = {
@@ -481,10 +647,10 @@ def make_goal(intent):
     return goal
 
 
-def make_record(exam_key, number, categories, intents, questions):
+def make_record(exam_key, number, categories, intents, questions, selection="확통"):
     year_text, session = exam_key.split("|")
     year = int(year_text)
-    section = "공통" if number <= 22 else "확통"
+    section = "공통" if number <= 22 else selection
     score = score_for(number)
     intent = intents.get(exam_key, {}).get(number) or fallback_intent(categories)
     primary = categories[0]
@@ -514,17 +680,33 @@ def make_record(exam_key, number, categories, intents, questions):
     }
 
 
-seed_categories = parse_categories()
-intents = parse_intents()
-questions = parse_questions()
-records = []
-for exam_key in EXAM_ORDER:
-    for number in range(1, 31):
-        intent = intents.get(exam_key, {}).get(number, "")
-        problem_text = questions.get(exam_key, {}).get(number, "")
-        categories = (seed_categories.get(exam_key, {}).get(number)
-            or CATEGORY_OVERRIDES.get(exam_key, {}).get(number)
-            or infer_categories(intent, problem_text, number))
-        records.append(make_record(exam_key, number, categories, intents, questions))
+mode = sys.argv[1] if len(sys.argv) > 1 else "base"
+output_records = []
+if mode == "calculus":
+    calculus_intents = parse_intents(CALCULUS_SOLUTION_FILES, "미적분")
+    calculus_questions = parse_questions(CALCULUS_PAPER_FILES)
+    for exam_key in EXAM_ORDER:
+        for number in range(23, 31):
+            intent = calculus_intents.get(exam_key, {}).get(number, "")
+            problem_text = calculus_questions.get(exam_key, {}).get(number, "")
+            categories = CALCULUS_OVERRIDES.get(exam_key, {}).get(number) or infer_calculus_categories(intent, problem_text)
+            output_records.append(make_record(exam_key, number, categories, calculus_intents, calculus_questions, "미적"))
+else:
+    seed_categories = parse_categories()
+    intents = parse_intents(SOLUTION_FILES, "확률과 통계")
+    questions = parse_questions(PAPER_FILES)
+    for exam_key in EXAM_ORDER:
+        for number in range(1, 31):
+            intent = intents.get(exam_key, {}).get(number, "")
+            problem_text = questions.get(exam_key, {}).get(number, "")
+            categories = (seed_categories.get(exam_key, {}).get(number)
+                or CATEGORY_OVERRIDES.get(exam_key, {}).get(number)
+                or infer_categories(intent, problem_text, number))
+            output_records.append(make_record(exam_key, number, categories, intents, questions))
 
-print(json.dumps({"schemaVersion": 2, "problemTextFormat": "LaTeX", "generatedFrom": "2022~2027 평가원·수능 문제지 및 해설", "problems": records}, ensure_ascii=False, separators=(",", ":")))
+generated_from = "2022~2027 평가원·수능 미적분 문제지 및 해설" if mode == "calculus" else "2022~2027 평가원·수능 공통·확률과 통계 문제지 및 해설"
+print(json.dumps({"schemaVersion": 3, "problemTextFormat": "LaTeX", "generatedFrom": generated_from}, ensure_ascii=False, separators=(",", ":"))[:-1] + ',"problems":[')
+for index, record in enumerate(output_records):
+    suffix = "," if index < len(output_records) - 1 else ""
+    print(json.dumps(record, ensure_ascii=False, separators=(",", ":")) + suffix)
+print("]}")
