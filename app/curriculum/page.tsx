@@ -1,20 +1,161 @@
 import type { Metadata } from 'next';
-import { ArrowDownRight, ArrowUpRight, Plus } from 'lucide-react';
+import { CurriculumConnections } from './CurriculumConnections';
+import { MobileEraNavigation } from './MobileEraNavigation';
 
 export const metadata: Metadata = {
   title: '교육 범위 — Project /N/',
   description: '2017학년도부터 2028학년도 이후까지, 수학 교육과정의 과목과 대단원 이동을 비교합니다.',
 };
 
+/*
 type UnitRoute = { unit: string; middle: string; past: string; note?: string };
 type CourseRoute = { id: string; course: string; summary: string; routes: UnitRoute[] };
+*/
 
 const eras = [
-  { year: '2017~2020', revision: '2009 개정', subjects: ['수학 I', '수학 II', '미적분 I', '확률과 통계', '미적분 II', '기하와 벡터'] },
+  { year: '2017~2020', revision: '2009 개정', subjects: ['수학 I', '수학 II', '', '미적분 I', '확률과 통계', '미적분 II', '기하와 벡터'] },
   { year: '2021~2027', revision: '2015 개정', subjects: ['수학 (상)', '수학 (하)', '수학 I', '수학 II', '확률과 통계', '미적분', '기하'] },
   { year: '2028~', revision: '2022 개정', subjects: ['공통수학 I', '공통수학 II', '대수', '미적분 I', '확률과 통계', '미적분 II', '기하'] },
 ];
 
+const subjectUnits: Record<string, Record<string, string>> = {
+  '2017~2020': {
+    '수학 I': '다항식 · 방정식과 부등식 · 도형의 방정식',
+    '수학 II': '집합과 명제 · 함수 · 수열 · 지수와 로그',
+    '미적분 I': '수열의 극한 · 함수의 극한과 연속 · 미분 · 적분',
+    '확률과 통계': '순열 · 조합 · 확률 · 통계',
+    '미적분 II': '지수·로그함수 · 삼각함수 · 미분법 · 적분법',
+    '기하와 벡터': '평면곡선 · 평면벡터 · 공간도형 · 공간벡터',
+  },
+  '2021~2027': {
+    '수학 (상)': '다항식 · 방정식과 부등식 · 도형의 방정식',
+    '수학 (하)': '집합과 명제 · 함수 · 순열과 조합',
+    '수학 I': '지수·로그함수 · 삼각함수 · 수열',
+    '수학 II': '함수의 극한과 연속 · 미분 · 적분',
+    '확률과 통계': '경우의 수 · 확률 · 통계',
+    '미적분': '수열의 극한 · 미분법 · 적분법',
+    '기하': '이차곡선 · 평면벡터 · 공간도형과 공간좌표',
+  },
+  '2028~': {
+    '공통수학 I': '다항식 · 방정식과 부등식 · 경우의 수 · 행렬',
+    '공통수학 II': '도형의 방정식 · 집합과 명제 · 함수',
+    '대수': '지수·로그함수 · 삼각함수 · 수열',
+    '미적분 I': '함수의 극한과 연속 · 미분 · 적분',
+    '확률과 통계': '경우의 수 · 확률 · 통계',
+    '미적분 II': '수열의 극한 · 미분법 · 적분법',
+    '기하': '이차곡선 · 벡터 · 공간도형과 공간좌표',
+  },
+};
+
+const examTypes = [
+  {
+    subject: '중3 도형',
+    items: [
+      '피타고라스',
+      '삼각형 각의 합',
+      '삼각형 넓이',
+      '삼각형의 닮음',
+      '이등변 삼각형',
+      '삼각형의 이등분선',
+      '원의 반지름',
+      '원주각과 중심각',
+      '원과 접선',
+    ],
+  },
+  {
+    subject: '수학 (상)',
+    items: [
+      '곱셈공식과 변형',
+      '인수분해',
+      '완전제곱식',
+      '근의공식',
+      '판별식',
+      '근과 계수의 관계',
+      '이차부등식',
+      '조립제법',
+      '절댓값 함수',
+      '평행이동과 대칭이동',
+    ],
+  },
+  {
+    subject: '수학 (하)',
+    items: [
+      '집합과 명제',
+      '절대부등식',
+      '산술·기하 평균',
+      '함수의 종류',
+      '유리함수',
+      '부분분수',
+      '무리함수',
+      '유리화',
+      '합성함수와 역함수',
+      '경우의 수',
+    ],
+  },
+  {
+    subject: '수학 I',
+    items: [
+      '거듭제곱근',
+      '지수·로그 계산',
+      '지수·로그 방정식·부등식',
+      '지수·로그함수 그래프',
+      '삼각함수 계산',
+      '삼각 방정식·부등식',
+      '삼각함수 그래프',
+      '사인·코사인 법칙',
+      '등차·등비수열',
+      '등차·등비수열의 합',
+      '수열의 합 Σ',
+      '수열의 합 k',
+      '수열의 합과 일반항',
+      '수학적 귀납법',
+    ],
+  },
+  {
+    subject: '수학 II',
+    items: [
+      '극한값',
+      '∞/∞ 꼴',
+      '0/0 꼴',
+      '함수의 연속 조건',
+      '미분계수',
+      '곱의 미분',
+      '도함수와 함수의 개형',
+      '접선의 방정식',
+      '함수의 교점과 방정식의 실근',
+      '인수 정리와 함수 추론',
+      '속도와 가속도',
+      '부정적분',
+      '정적분',
+      '정적분과 넓이',
+      '정적분으로 정의된 함수',
+      '위치와 거리',
+    ],
+  },
+  {
+    subject: '확률과 통계',
+    items: [
+      '원순열',
+      '중복순열',
+      '같있순',
+      '중복조합',
+      '이항정리',
+      '확률의 덧셈정리',
+      '여사건의 확률',
+      '조건부확률',
+      '독립과 종속',
+      '이산확률변수',
+      'Y = aX+b 변환',
+      '이항분포',
+      '연속확률변수',
+      '정규분포',
+      '표본평균',
+      '모평균의 추정',
+    ],
+  },
+];
+
+/*
 const courseRoutes: CourseRoute[] = [
   {
     id: 'common-1', course: '공통수학 I', summary: '수학 (상)을 중심으로 경우의 수와 행렬이 합류',
@@ -75,6 +216,7 @@ const courseRoutes: CourseRoute[] = [
     ],
   },
 ];
+*/
 
 export default function CurriculumPage() {
   return (
@@ -88,67 +230,46 @@ export default function CurriculumPage() {
       </header>
 
       <div className="curriculum-workspace">
-        <section className="curriculum-intro">
-          <h2>CURRICULUM.</h2>
-        </section>
-
-        <section className="era-section" aria-labelledby="era-title">
-          <div className="section-heading"><span>01</span><div><p>CURRICULUM INDEX</p><h2 id="era-title">시대별 과목 체계</h2></div></div>
-          <div className="era-grid">
-            {eras.map((era, index) => (
-              <article className={index === 1 ? 'era-card era-card-current' : 'era-card'} key={era.year}>
-                <div className="era-card-head"><span>{era.revision}</span><strong>{era.year}</strong></div>
-                <ol>{era.subjects.map((subject) => <li key={subject}>{subject}</li>)}</ol>
+        <section className="exam-type-section" aria-labelledby="exam-type-title">
+          <div className="section-heading">
+            <span>01</span>
+            <div><p>2021~2027 · 평가원/수능</p><h2 id="exam-type-title">출제 유형</h2></div>
+          </div>
+          <div className="exam-type-grid">
+            {examTypes.map(({ subject, items }) => (
+              <article className="exam-type-card" key={subject}>
+                <header className="exam-type-card-head">
+                  <span>{subject === '수학 I' || subject === '수학 II' || subject === '확률과 통계' ? '직접 출제' : '간접출제'}</span>
+                  <h3>{subject}</h3>
+                </header>
+                <ol className="exam-type-list">
+                  {items.map((item) => <li key={item}>{item}</li>)}
+                </ol>
               </article>
             ))}
           </div>
         </section>
 
-        <section className="route-section" aria-labelledby="route-title">
-          <div className="section-heading"><span>02</span><div><p>CONTENT ROUTES</p><h2 id="route-title">대단원 이동 경로</h2></div></div>
-          <p className="route-lead">대단원별로 나눠 보여주는 편이 정확합니다. 아래 표는 2022 개정 과목을 출발점으로 같은 내용이 과거 어느 과목에 있었는지 추적합니다.</p>
-
-          <nav className="course-jump" aria-label="과목 바로가기">
-            {courseRoutes.map(({ id, course }) => <a href={`#${id}`} key={id}>{course}</a>)}
-          </nav>
-
-          <div className="route-list">
-            {courseRoutes.map((course, index) => (
-              <details className="route-card" id={course.id} key={course.id} open={index === 0 || course.id === 'algebra'}>
-                <summary>
-                  <span className="route-number">{String(index + 1).padStart(2, '0')}</span>
-                  <span className="route-title"><strong>{course.course}</strong><small>{course.summary}</small></span>
-                  <span className="route-toggle"><Plus aria-hidden="true" /></span>
-                </summary>
-                <div className="route-table" role="table" aria-label={`${course.course} 대단원 이동 경로`}>
-                  <div className="route-row route-row-head" role="row"><b role="columnheader">2022 개정 대단원</b><b role="columnheader">2015 개정</b><b role="columnheader">2009 개정</b></div>
-                  {course.routes.map((route) => (
-                    <div className="route-row" role="row" key={route.unit}>
-                      <strong role="cell">{route.unit}{route.note && <small>{route.note}</small>}</strong>
-                      <span role="cell">{route.middle}</span>
-                      <span role="cell">{route.past}</span>
-                    </div>
-                  ))}
-                </div>
-              </details>
+        <section className="era-section" aria-labelledby="era-title">
+          <div className="section-heading"><span>02</span><div><p>CURRICULUM INDEX</p><h2 id="era-title">시대별 과목 체계</h2></div></div>
+          <div className="era-grid">
+            <MobileEraNavigation />
+            <CurriculumConnections />
+            {eras.map((era, index) => (
+              <article className={index === 1 ? 'era-card era-card-current' : 'era-card'} data-era-index={index} key={era.year}>
+                <div className="era-card-head"><span>{era.revision}</span><strong>{era.year}</strong></div>
+                <ol>{era.subjects.map((subject, subjectIndex) => subject ? (
+                  <li className={era.year === '2028~' && (subject === '미적분 II' || subject === '기하') ? 'era-subject-muted' : undefined} key={subject}>
+                    <strong>{subject}</strong>
+                    <ol className="era-unit-list">
+                      {subjectUnits[era.year][subject].split(' · ').map((unit) => <li data-unit-node={`${era.year}|${subject}|${unit}`} key={unit}>{unit}</li>)}
+                    </ol>
+                  </li>
+                ) : <li className="era-subject-spacer" aria-hidden="true" key={`spacer-${subjectIndex}`} />)}</ol>
+              </article>
             ))}
           </div>
         </section>
-
-        <section className="example-callout">
-          <span>EXAMPLE</span>
-          <div><h2>“수학 I”은 같은 수학 I이 아닙니다.</h2><p>2015 개정의 수학 I은 <b>지수·로그함수, 삼각함수, 수열</b>로 구성됩니다. 2009 개정에서는 앞의 두 대단원이 미적분 II에, 수열은 수학 II에 있었습니다.</p></div>
-          <ArrowDownRight aria-hidden="true" />
-        </section>
-
-        <footer className="curriculum-footer">
-          <div><span>기준 자료</span><p>교육부·국가교육과정정보센터 고시와 수능 적용 범위를 바탕으로 정리했습니다.</p></div>
-          <div className="source-links">
-            <a href="https://ncic.go.kr/board/B0031.cs?act=read&amp;bwrId=1271&amp;pageIndex=1&amp;pageUnit=15" target="_blank" rel="noreferrer">2022 개정 <ArrowUpRight aria-hidden="true" /></a>
-            <a href="https://ncic.go.kr/board/B0028.cs?act=read&amp;bwrId=912&amp;m=41&amp;pageIndex=1&amp;pageUnit=15" target="_blank" rel="noreferrer">2015 개정 <ArrowUpRight aria-hidden="true" /></a>
-            <a href="https://www.korea.kr/news/policyNewsView.do?newsId=156118863" target="_blank" rel="noreferrer">2017 수능 적용 <ArrowUpRight aria-hidden="true" /></a>
-          </div>
-        </footer>
       </div>
     </main>
   );

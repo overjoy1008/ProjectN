@@ -1,0 +1,530 @@
+import json
+import re
+from pathlib import Path
+
+from pypdf import PdfReader
+
+
+ROOT = Path(__file__).resolve().parents[1]
+CATEGORY_FILE = ROOT / "app" / "question-categories.ts"
+
+EXAM_ORDER = [f"{year}|{session}" for year in range(2022, 2028) for session in ("6모", "9모", "수능") if not (year == 2027 and session == "수능")]
+
+
+def find_exam_file(exam_key, kind):
+    year, session = exam_key.split("|")
+    directory = ROOT / f"public/archive/{year} {session}"
+    if kind == "paper":
+        return directory / f"{year} {session} 확통.pdf"
+    subject_solution = directory / f"{year} {session} 확통 해설.pdf"
+    shared_solution = directory / f"{year} {session} 해설.pdf"
+    return subject_solution if subject_solution.exists() else shared_solution
+
+
+PAPER_FILES = {exam_key: find_exam_file(exam_key, "paper") for exam_key in EXAM_ORDER}
+SOLUTION_FILES = {exam_key: find_exam_file(exam_key, "solution") for exam_key in EXAM_ORDER}
+
+CATEGORY_ACTIONS = {
+    "거듭제곱근": "거듭제곱근의 정의와 실수 조건을 적용한다.",
+    "지수·로그 계산": "밑을 통일하고 지수법칙 또는 로그의 성질로 식을 단순화한다.",
+    "지수·로그 방정식·부등식": "진수·밑 조건을 확인한 뒤 같은 밑으로 바꾸어 해의 범위를 좁힌다.",
+    "지수·로그함수 그래프": "증감, 점근선, 교점과 이동 관계를 그래프에 표시한다.",
+    "삼각함수 계산": "삼각함수 사이의 관계와 부호 조건으로 필요한 값을 정한다.",
+    "삼각 방정식·부등식": "주기와 정의역을 반영해 방정식 또는 부등식의 해를 선별한다.",
+    "삼각함수 그래프": "진폭·주기·위상과 교점을 읽어 조건을 식으로 옮긴다.",
+    "사인·코사인 법칙": "주어진 변과 각을 사인법칙 또는 코사인법칙으로 연결한다.",
+    "등차·등비수열": "일반항을 세우고 주어진 항 조건으로 첫째항과 공차·공비를 정한다.",
+    "등차·등비수열의 합": "합 공식을 적용해 항 조건과 합 조건을 하나의 식으로 연결한다.",
+    "수열의 합 Σ": "시그마의 선형성과 기본 합 공식을 이용해 항별로 계산한다.",
+    "수열의 합 k": "자연수 거듭제곱의 합 공식을 적용해 합을 계산한다.",
+    "수열의 합과 일반항": "부분합과 일반항의 관계를 이용해 필요한 항 또는 합을 복원한다.",
+    "수학적 귀납법": "초기항에서 가능한 분기를 만들고 점화 조건을 반복 적용한다.",
+    "극한값": "좌극한·우극한 또는 극한의 성질을 적용해 미정 조건을 결정한다.",
+    "∞/∞ 꼴": "최고차항 또는 지배항으로 나누어 무한대에서의 비를 정리한다.",
+    "0/0 꼴": "인수분해나 약분으로 영이 되는 공통 요인을 제거한 뒤 극한을 계산한다.",
+    "함수의 연속 조건": "좌극한·우극한·함숫값이 같다는 조건을 방정식으로 만든다.",
+    "미분계수": "차분몫을 도함수 값으로 바꾸거나 직접 미분한 뒤 해당 점을 대입한다.",
+    "곱의 미분": "곱의 미분법으로 도함수를 전개하고 주어진 함수값·미분계수를 대입한다.",
+    "도함수와 함수의 개형": "도함수의 영점과 부호를 조사해 증가·감소와 극값을 확정한다.",
+    "접선의 방정식": "접점의 좌표와 미분계수로 접선의 기울기와 방정식을 세운다.",
+    "함수의 교점과 방정식의 실근": "두 함숫값을 같게 두고 교점의 개수와 실근 조건을 대응시킨다.",
+    "인수 정리와 함수 추론": "주어진 근을 인수로 바꾸고 계수·함숫값 조건으로 나머지 인수를 정한다.",
+    "속도와 가속도": "위치를 미분해 속도와 가속도를 구하고 부호 변화를 확인한다.",
+    "부정적분": "도함수를 적분하고 주어진 함숫값으로 적분상수를 결정한다.",
+    "정적분": "원시함수를 구해 적분구간의 양 끝값을 대입한다.",
+    "정적분과 넓이": "교점을 경계로 위아래 함수를 구분하고 차를 정적분한다.",
+    "정적분으로 정의된 함수": "적분구간의 끝점을 미분해 도함수로 바꾸고 함수 조건을 해석한다.",
+    "위치와 거리": "위치 또는 속도식을 세우고 방향이 바뀌는 시점을 나누어 계산한다.",
+    "원순열": "회전으로 같은 배열을 하나로 보고 기준 대상을 고정해 배열한다.",
+    "중복순열": "각 자리에 가능한 선택 수를 곱해 함수 또는 배열의 수를 센다.",
+    "같있순": "같은 대상의 중복 개수만큼 팩토리얼로 나누어 배열 수를 계산한다.",
+    "중복조합": "대상별 선택 개수를 음이 아닌 정수해로 바꾸어 중복조합으로 센다.",
+    "이항정리": "일반항에서 필요한 차수의 지수를 맞추고 해당 계수를 계산한다.",
+    "확률의 덧셈정리": "사건을 합집합과 교집합으로 나누고 중복되는 경우를 조정한다.",
+    "여사건의 확률": "직접 세기 어려운 사건의 여사건을 센 뒤 전체 확률에서 뺀다.",
+    "조건부확률": "조건 사건으로 표본공간을 제한하고 교집합 확률과의 비를 계산한다.",
+    "독립과 종속": "각 시행 또는 사건의 의존 관계를 확인하고 필요한 확률을 곱한다.",
+    "이산확률변수": "가능한 값과 확률을 표로 정리한 뒤 기댓값·분산 공식을 적용한다.",
+    "Y = aX+b 변환": "일차변환에 따른 기댓값과 분산의 변화를 적용한다.",
+    "이항분포": "시행 횟수와 성공확률을 정해 이항확률 또는 평균·분산을 계산한다.",
+    "연속확률변수": "확률밀도함수의 전체 넓이와 구간 넓이 조건을 이용한다.",
+    "정규분포": "표준화한 뒤 대칭성과 표준정규분포 확률을 이용한다.",
+    "표본평균": "표본평균의 평균과 표준편차로 분포를 정리한다.",
+    "모평균의 추정": "신뢰수준의 임계값과 표준오차로 신뢰구간을 만든다.",
+    "피타고라스": "직각삼각형의 변 길이를 피타고라스 정리로 연결한다.",
+    "삼각형 각의 합": "삼각형의 내각 합을 이용해 필요한 각을 정한다.",
+    "삼각형 넓이": "밑변·높이 또는 두 변과 끼인각으로 넓이를 표현한다.",
+    "삼각형의 닮음": "대응각과 변의 비를 찾아 닮음비를 길이 관계로 옮긴다.",
+    "이등변 삼각형": "같은 두 변과 밑각의 성질을 이용해 길이·각 조건을 줄인다.",
+    "삼각형의 이등분선": "각의 이등분선 정리로 맞은편 변의 분할비를 구한다.",
+    "원의 반지름": "중심에서 원 위의 점까지 같은 거리라는 조건을 사용한다.",
+    "원주각과 중심각": "같은 호에 대한 중심각과 원주각의 관계를 적용한다.",
+    "원과 접선": "접점에서 반지름과 접선이 수직임을 이용한다.",
+    "곱셈공식과 변형": "곱셈공식으로 식을 전개하거나 필요한 대칭식으로 변형한다.",
+    "인수분해": "다항식을 인수분해해 근과 부호 또는 교점 조건을 드러낸다.",
+    "완전제곱식": "식을 완전제곱 형태로 바꾸어 최댓값·최솟값 또는 계수 조건을 읽는다.",
+    "근의공식": "이차방정식의 계수를 근의 공식에 대입해 해를 구한다.",
+    "판별식": "실근의 개수나 중근 조건을 판별식의 부호로 바꾼다.",
+    "근과 계수의 관계": "두 근의 합과 곱을 계수와 연결한다.",
+    "이차부등식": "이차식의 근과 그래프 방향으로 부호 구간을 정한다.",
+    "조립제법": "알려진 근으로 다항식을 나누어 남은 인수와 계수를 구한다.",
+    "절댓값 함수": "절댓값 안의 식의 부호가 바뀌는 지점에서 구간을 나눈다.",
+    "평행이동과 대칭이동": "기준 그래프에서 좌표 이동과 대칭 관계를 추적한다.",
+    "집합과 명제": "사건 조건을 집합의 포함·교집합·여집합 관계로 바꾼다.",
+    "절대부등식": "항상 성립하는 부등식의 등호 조건을 확인한다.",
+    "산술·기하 평균": "양수 조건을 확인하고 산술·기하평균 부등식의 등호 조건을 적용한다.",
+    "함수의 종류": "대응 관계가 함수가 되는 조건과 일대일·전사 여부를 확인한다.",
+    "유리함수": "점근선과 정의역을 확인하고 분수식을 표준형으로 정리한다.",
+    "부분분수": "유리식을 부분분수로 분해해 계산 가능한 합으로 바꾼다.",
+    "무리함수": "근호 안의 범위와 그래프의 시작점을 확인한다.",
+    "유리화": "분모·분자의 켤레식을 곱해 근호가 있는 분모를 정리한다.",
+    "합성함수와 역함수": "함숫값의 대응을 역으로 추적하고 합성 관계를 식으로 정리한다.",
+    "경우의 수": "겹치지 않게 경우를 나누고 합의 법칙과 곱의 법칙으로 센다.",
+}
+
+
+def parse_categories():
+    text = CATEGORY_FILE.read_text(encoding="utf-8")
+    exams = {}
+    for exam_match in re.finditer(r"'(202[67]\|(?:6모|9모|수능))':\s*\{(.*?)\n\s*\},", text, re.S):
+        exam_key, body = exam_match.groups()
+        entries = {}
+        for item in re.finditer(r"^\s*(\d+):\s*\[(.*?)\],?$", body, re.M):
+            entries[int(item.group(1))] = re.findall(r"'([^']+)'", item.group(2))
+        exams[exam_key] = entries
+    return exams
+
+
+def clean_intent(text):
+    text = re.sub(r"[\ue000-\uf8ff]", "", text)
+    text = re.sub(r"\s+", " ", text).strip()
+    text = re.sub(r"\s+\d+$", "", text)
+    text = text.replace("", "Σ")
+    return text
+
+
+def clean_problem_text(text):
+    translation = {ord(char): value for char, value in zip("", "0123456789")}
+    translation.update({
+        ord(chr(0xE0E5 + index)): chr(ord("a") + index)
+        for index in range(26)
+    })
+    translation.update({
+        ord(chr(0xE000 + index)): chr(ord("A") + index)
+        for index in range(26)
+    })
+    text = text.translate(translation)
+    replacements = {
+        "": "√", "": "√", "": "Σ", "": "π", "": "-", "": "+", "": "=",
+        "": "(", "": ")", "": "<", "": ">", "": "/", "′": "′",
+        "": "[", "": "]", "": "{", "": "}", "": "|", "": ":",
+        "": ",", "": ".", "": "∫", "": "", "": "", "": "", "": "",
+        "": "α", "": "β", "": "θ", "": "σ", "": "|",
+    }
+    for source, target in replacements.items():
+        text = text.replace(source, target)
+    text = re.sub(r"[\ue000-\uf8ff]", "", text)
+    text = re.sub(r"\s+", " ", text).strip()
+    return text
+
+
+def math_to_latex(text):
+    text = clean_problem_text(text)
+    text = re.sub(r"√\s*([A-Za-z0-9]+)", r"\\sqrt{\1}", text)
+    text = re.sub(r"Σ\s*([a-z])\s*=\s*(-?\d+)\s+(\d+)", r"\\sum_{\1=\2}^{\3}", text)
+    text = re.sub(r"∫\s*(-?\d+)\s+(\d+)", r"\\int_{\1}^{\2}", text)
+    text = re.sub(r"/(\d+)\s+(-?\d+)", r"\\frac{\2}{\1}", text)
+    text = re.sub(r"/([A-Z])", r"\\overline{\1}", text)
+    text = re.sub(r"([xt])([2-9])\b", r"\1^{\2}", text)
+    text = re.sub(r"\b(a|b|c|d|p|q|r|n|k)(\d+)\b", r"\1_{\2}", text)
+    text = re.sub(r"\blim\b", r"\\lim", text)
+    text = re.sub(r"\b(log|sin|cos|tan)\b", r"\\\1", text)
+    symbol_replacements = {
+        "≥": r"\ge ", "≤": r"\le ", "×": r"\times ", "∞": r"\infty ",
+        "→": r"\to ", "∪": r"\cup ", "∩": r"\cap ", "∈": r"\in ",
+        "≠": r"\ne ", "π": r"\pi ", "θ": r"\theta ", "α": r"\alpha ",
+        "β": r"\beta ", "σ": r"\sigma ",
+    }
+    for source, target in symbol_replacements.items():
+        text = text.replace(source, target)
+    parts = []
+    for part in re.split(r"([가-힣]+)", text):
+        if not part:
+            continue
+        if re.fullmatch(r"[가-힣]+", part):
+            parts.append(r"\text{" + part + "}")
+        else:
+            parts.append(part.replace("%", r"\%"))
+    return r"\(\displaystyle " + "".join(parts).strip() + r"\)"
+
+
+def parse_questions():
+    result = {}
+    for exam_key, path in PAPER_FILES.items():
+        text = "\n".join((page.extract_text() or "") for page in PdfReader(str(path)).pages)
+        starts = []
+        expected = 1
+        for match in re.finditer(r"(?<!\d)([1-9]|[12]\d|30)\.\s*", text):
+            if int(match.group(1)) == expected:
+                starts.append(match)
+                expected += 1
+                if expected == 31:
+                    break
+        questions = {}
+        for index, match in enumerate(starts):
+            end = starts[index + 1].start() if index + 1 < len(starts) else len(text)
+            body = text[match.end():end]
+            score_end = re.search(r"\[[234]점\]", body)
+            if score_end:
+                body = body[:score_end.end()]
+                questions[index + 1] = math_to_latex(body)
+        result[exam_key] = questions
+    return result
+
+
+def parse_intents():
+    result = {}
+    for exam_key, path in SOLUTION_FILES.items():
+        text = "\n".join((page.extract_text() or "") for page in PdfReader(str(path)).pages)
+        intents = {}
+        probability_marker = "■ [선택: 확률과 통계]"
+        if probability_marker in text:
+            common_text, probability_text = text.split(probability_marker, 1)
+            sections = ((common_text, 1, 22), (probability_text, 23, 30))
+        else:
+            sections = ((text, 1, 30),)
+        for section_text, first, last in sections:
+            for match in re.finditer(r"(\d{1,2})\.\s*출제\s*의도\s*:\s*(.*?)(?=(?:정답\s*)?풀이\s*:)", section_text, re.S):
+                number = int(match.group(1))
+                if first <= number <= last and number not in intents:
+                    intents[number] = clean_intent(match.group(2))
+        result[exam_key] = intents
+    return result
+
+
+def score_for(number):
+    if number in (1, 2, 23):
+        return 2
+    if 3 <= number <= 8 or 16 <= number <= 19 or 24 <= number <= 27:
+        return 3
+    return 4
+
+
+def difficulty_for(number, score):
+    if score == 2:
+        return {"level": "하", "rank": 1}
+    if score == 3:
+        return {"level": "중", "rank": 2}
+    if number in (21, 22, 29, 30):
+        return {"level": "상", "rank": 4}
+    return {"level": "중상", "rank": 3}
+
+
+def fallback_intent(categories):
+    joined = "·".join(categories)
+    return f"{joined}의 관계를 이용하여 문제에서 요구한 값을 구할 수 있는가?"
+
+
+def add_category(result, category):
+    if category not in result:
+        result.append(category)
+
+
+def infer_categories(intent, problem_text, number):
+    # 해설의 출제 의도가 있으면 문제 본문의 우연한 단어보다 우선한다.
+    source = intent if intent else problem_text
+    categories = []
+    if number <= 22:
+        trig_source = any(word in source for word in ("삼각함수", "사인함수", "코사인함수", "탄젠트함수"))
+        if "거듭제곱근" in source or "제곱근의 의미" in source or "제곱근의 뜻" in source:
+            add_category(categories, "거듭제곱근")
+        if "지수법칙" in source or ("로그" in source and "성질" in source and "그래프" not in source and "방정식" not in source and "부등식" not in source):
+            add_category(categories, "지수·로그 계산")
+        if "지수방정식" in source or "로그방정식" in source or "지수부등식" in source or "로그부등식" in source or ("로그" in source and ("미지수" in source or "방정식" in source)) or ("지수" in source and "미지수" in source):
+            add_category(categories, "지수·로그 방정식·부등식")
+        if ("지수함수" in source or "로그함수" in source) and ("그래프" in source or "점근선" in source or "위치 관계" in source):
+            add_category(categories, "지수·로그함수 그래프")
+        if trig_source and ("값" in source or "정의" in source or "관계" in source):
+            add_category(categories, "삼각함수 계산")
+        if trig_source and ("방정식" in source or "부등식" in source):
+            add_category(categories, "삼각 방정식·부등식")
+        if trig_source and ("그래프" in source or "주기" in source or "최댓값" in source or "최솟값" in source):
+            add_category(categories, "삼각함수 그래프")
+        if "사인법칙" in source or "코사인법칙" in source:
+            add_category(categories, "사인·코사인 법칙")
+        if "등차수열" in source or "등비수열" in source:
+            add_category(categories, "등차·등비수열")
+            if "수열의 합" in source or "등차수열의 합" in source or "등비수열의 합" in source:
+                add_category(categories, "등차·등비수열의 합")
+        if "합의 기호" in source or "시그마" in source or "여러 가지 수열의 합" in source:
+            add_category(categories, "수열의 합 Σ")
+        if "합과 일반항" in source:
+            add_category(categories, "수열의 합과 일반항")
+        if "귀납적" in source or "귀납적으로" in source:
+            add_category(categories, "수학적 귀납법")
+        if "좌극한" in source or "우극한" in source or "함수의 극한" in source:
+            add_category(categories, "극한값")
+        if "연속" in source:
+            add_category(categories, "함수의 연속 조건")
+        if "미분계수" in source or "평균변화율" in source:
+            add_category(categories, "미분계수")
+        if "곱의 미분" in source:
+            add_category(categories, "곱의 미분")
+        if "극대" in source or "극소" in source or "극댓값" in source or "극솟값" in source or "증가" in source or "감소" in source or "그래프의 개형" in source or (("최댓값" in source or "최솟값" in source) and ("도함수" in source or "미분" in source or "다항함수" in source)):
+            add_category(categories, "도함수와 함수의 개형")
+        if "접선" in source:
+            add_category(categories, "접선의 방정식")
+        if "실근" in source or "두 곡선이" in source and "만나" in source:
+            add_category(categories, "함수의 교점과 방정식의 실근")
+        if "속도" in source or "가속도" in source:
+            if "가속도" in source:
+                add_category(categories, "속도와 가속도")
+            add_category(categories, "위치와 거리")
+        if "부정적분" in source:
+            add_category(categories, "부정적분")
+        if "정적분으로" in source or "정적분으로 나타" in source or "정적분으로 정의" in source:
+            add_category(categories, "정적분으로 정의된 함수")
+        if "넓이" in source and ("정적분" in source or "곡선" in source):
+            add_category(categories, "정적분과 넓이")
+        elif "정적분" in source and "부정적분" not in source:
+            add_category(categories, "정적분")
+        if "삼각형의 넓이" in source or "삼각형의 넓" in source:
+            add_category(categories, "삼각형 넓이")
+        if "외접원" in source or "원의 반지름" in source:
+            add_category(categories, "원의 반지름")
+        if "절댓값" in source:
+            add_category(categories, "절댓값 함수")
+        if "명제의 참" in source or "명제의 참, 거짓" in source:
+            add_category(categories, "집합과 명제")
+        if "판별식" in source:
+            add_category(categories, "판별식")
+    else:
+        if "원순열" in source:
+            add_category(categories, "원순열")
+        if "중복순열" in source:
+            add_category(categories, "중복순열")
+        if "같은 것이" in source or "같은 것이 포함" in source:
+            add_category(categories, "같있순")
+        if "중복조합" in source:
+            add_category(categories, "중복조합")
+        if "이항정리" in source:
+            add_category(categories, "이항정리")
+        if "확률의 덧셈정리" in source or "합의 법칙" in source:
+            add_category(categories, "확률의 덧셈정리")
+        if "여사건" in source:
+            add_category(categories, "여사건의 확률")
+        if "조건부확률" in source or "조건부 확률" in source:
+            add_category(categories, "조건부확률")
+        if "독립시행" in source or "서로 독립" in source:
+            add_category(categories, "독립과 종속")
+        if "이산확률변수" in source or "확률분포가 표" in source or "확률변수의 평균" in source or "확률변수의 분산" in source:
+            add_category(categories, "이산확률변수")
+        if "이항분포" in source:
+            add_category(categories, "이항분포")
+        if "연속확률변수" in source or "확률밀도함수" in source:
+            add_category(categories, "연속확률변수")
+        if "정규분포" in source or "표준정규분포" in source:
+            add_category(categories, "정규분포")
+        if "표본평균" in source:
+            add_category(categories, "표본평균")
+        if "모평균" in source or "신뢰구간" in source:
+            add_category(categories, "모평균의 추정")
+        if not categories and "함수" in source and "개수" in source:
+            add_category(categories, "중복순열")
+        if not categories and "경우의 수" in source:
+            add_category(categories, "경우의 수")
+        if not categories and "확률" in source:
+            add_category(categories, "확률의 덧셈정리")
+    return categories or (["극한값"] if number <= 22 else ["경우의 수"])
+
+
+# 해설 문구만으로는 세부 풀이 유형이 드러나지 않거나, PDF 문자가 깨진 문항을
+# 문제와 해설을 함께 확인해 보정한다.
+CATEGORY_OVERRIDES = {
+    "2022|6모": {
+        13: ["삼각함수 그래프", "수열의 합 Σ"],
+        17: ["도함수와 함수의 개형"],
+        20: ["정적분으로 정의된 함수", "도함수와 함수의 개형"],
+        22: ["함수의 교점과 방정식의 실근", "도함수와 함수의 개형"],
+    },
+    "2022|9모": {
+        5: ["도함수와 함수의 개형"], 9: ["위치와 거리"],
+        10: ["삼각함수 그래프"],
+        14: ["정적분", "집합과 명제"],
+        17: ["부정적분"],
+        20: ["함수의 교점과 방정식의 실근", "도함수와 함수의 개형"],
+        21: ["지수·로그함수 그래프", "삼각형 넓이"],
+        22: ["함수의 연속 조건", "도함수와 함수의 개형"],
+        23: ["이항분포"],
+        27: ["표본평균"],
+    },
+    "2022|수능": {
+        1: ["지수·로그 계산"], 2: ["미분계수"], 3: ["등차·등비수열"],
+        4: ["극한값"], 5: ["수학적 귀납법", "수열의 합 Σ"],
+        6: ["도함수와 함수의 개형", "함수의 교점과 방정식의 실근"],
+        7: ["삼각함수 계산"], 8: ["정적분과 넓이"],
+        9: ["지수·로그함수 그래프"], 10: ["곱의 미분", "접선의 방정식"],
+        11: ["삼각함수 그래프", "삼각 방정식·부등식", "삼각형 넓이"],
+        12: ["함수의 연속 조건", "도함수와 함수의 개형"],
+        13: ["지수·로그 계산"], 14: ["위치와 거리", "정적분"],
+        15: ["사인·코사인 법칙", "원의 반지름", "원주각과 중심각"],
+        16: ["지수·로그 계산"], 17: ["부정적분"], 18: ["수열의 합 Σ"],
+        19: ["도함수와 함수의 개형"], 20: ["정적분"],
+        21: ["수학적 귀납법", "절댓값 함수", "수열의 합 Σ"],
+        22: ["도함수와 함수의 개형", "함수의 교점과 방정식의 실근"],
+        23: ["이항정리"], 24: ["이항분포", "Y = aX+b 변환"],
+        25: ["중복조합"], 26: ["확률의 덧셈정리"],
+        27: ["모평균의 추정", "표본평균", "정규분포"],
+        28: ["중복순열"], 29: ["연속확률변수"],
+        30: ["독립과 종속", "이항분포"],
+    },
+    "2023|6모": {
+        8: ["도함수와 함수의 개형"], 9: ["도함수와 함수의 개형"],
+        11: ["위치와 거리"],
+        13: ["등차·등비수열", "지수·로그 방정식·부등식"],
+        17: ["부정적분"],
+        20: ["정적분으로 정의된 함수", "도함수와 함수의 개형"],
+        21: ["지수·로그 계산"], 22: ["함수의 연속 조건", "극한값"],
+    },
+    "2023|9모": {
+        6: ["도함수와 함수의 개형"], 9: ["삼각함수 그래프"],
+        10: ["정적분", "위치와 거리"], 17: ["부정적분"],
+        19: ["함수의 교점과 방정식의 실근", "도함수와 함수의 개형"],
+        20: ["정적분과 넓이"],
+        22: ["함수의 연속 조건", "도함수와 함수의 개형"],
+        24: ["조건부확률", "확률의 덧셈정리"], 30: ["중복순열"],
+    },
+    "2023|수능": {
+        1: ["지수·로그 계산"], 6: ["도함수와 함수의 개형"],
+        9: ["삼각함수 그래프"], 10: ["정적분과 넓이"],
+        12: ["정적분과 넓이"],
+        19: ["도함수와 함수의 개형", "함수의 교점과 방정식의 실근"],
+        20: ["속도와 가속도", "위치와 거리"],
+        22: ["접선의 방정식", "도함수와 함수의 개형"],
+        24: ["중복순열", "경우의 수"], 30: ["중복순열"],
+    },
+    "2024|6모": {
+        8: ["도함수와 함수의 개형", "함수의 교점과 방정식의 실근"],
+        11: ["도함수와 함수의 개형"], 14: ["정적분", "위치와 거리"],
+        18: ["도함수와 함수의 개형"], 19: ["삼각함수 그래프"],
+        30: ["경우의 수", "확률의 덧셈정리"],
+    },
+    "2024|9모": {
+        6: ["도함수와 함수의 개형"], 8: ["부정적분"],
+        11: ["위치와 거리"], 22: ["곱의 미분", "부정적분", "정적분"],
+        25: ["독립과 종속"],
+    },
+    "2024|수능": {
+        7: ["도함수와 함수의 개형"], 10: ["위치와 거리"],
+        14: ["함수의 교점과 방정식의 실근", "도함수와 함수의 개형", "극한값"],
+        16: ["지수·로그 방정식·부등식"], 22: ["도함수와 함수의 개형"],
+        24: ["독립과 종속"], 27: ["모평균의 추정", "표본평균"],
+    },
+    "2025|6모": {
+        7: ["함수의 교점과 방정식의 실근", "도함수와 함수의 개형"],
+        10: ["사인·코사인 법칙", "삼각형 넓이"],
+        11: ["미분계수", "접선의 방정식"], 12: ["지수·로그함수 그래프"],
+        15: ["정적분", "도함수와 함수의 개형"],
+        16: ["지수·로그 방정식·부등식"], 17: ["부정적분"],
+        19: ["위치와 거리"], 20: ["삼각함수 그래프"],
+        21: ["도함수와 함수의 개형"],
+    },
+    "2025|9모": {
+        10: ["사인·코사인 법칙"],
+        12: ["등차·등비수열", "등차·등비수열의 합"],
+        14: ["도함수와 함수의 개형"],
+        16: ["지수·로그 방정식·부등식"], 17: ["부정적분"],
+        18: ["수열의 합 Σ"],
+        20: ["삼각함수 그래프", "삼각 방정식·부등식"],
+        21: ["도함수와 함수의 개형"], 24: ["독립과 종속"],
+        26: ["표본평균"], 29: ["이항분포", "정규분포"],
+    },
+    "2025|수능": {
+        7: ["정적분으로 정의된 함수"], 10: ["삼각함수 그래프"],
+        12: ["수열의 합 Σ"],
+        14: ["사인·코사인 법칙", "삼각형 넓이"],
+        15: ["도함수와 함수의 개형"], 17: ["부정적분"],
+        18: ["수학적 귀납법", "수열의 합 Σ"],
+        19: ["도함수와 함수의 개형"], 20: ["삼각함수 그래프"],
+        21: ["0/0 꼴", "인수 정리와 함수 추론"],
+        22: ["수학적 귀납법", "절댓값 함수"],
+        25: ["모평균의 추정"], 27: ["표본평균"],
+        30: ["독립과 종속"],
+    },
+}
+
+
+def make_goal(intent):
+    goal = intent.rstrip("?")
+    goal = goal.replace("구할 수 있는가", "구한다")
+    goal = goal.replace("해결할 수 있는가", "해결한다")
+    return goal
+
+
+def make_record(exam_key, number, categories, intents, questions):
+    year_text, session = exam_key.split("|")
+    year = int(year_text)
+    section = "공통" if number <= 22 else "확통"
+    score = score_for(number)
+    intent = intents.get(exam_key, {}).get(number) or fallback_intent(categories)
+    primary = categories[0]
+    problem_text = questions.get(exam_key, {}).get(number, "")
+    conditions = [problem_text] if problem_text else [f"문제에 제시된 {category} 관련 식·그래프·사건 조건" for category in categories]
+    steps = [f"주어진 조건에서 {primary}에 해당하는 핵심 관계를 먼저 찾는다."]
+    for category in categories:
+        action = CATEGORY_ACTIONS.get(category)
+        if action and action not in steps:
+            steps.append(action)
+    steps.append("계산 결과와 범위·부호·경우의 수 조건을 원문에 다시 대입해 요구값을 확정한다.")
+    return {
+        "id": f"{year}-{session}-{section}-{number:02d}",
+        "year": year,
+        "session": session,
+        "section": section,
+        "number": number,
+        "score": score,
+        "difficulty": difficulty_for(number, score),
+        "categories": categories,
+        "officialIntent": intent,
+        "problemText": problem_text,
+        "conditions": conditions,
+        "goal": make_goal(intent),
+        "journey": steps,
+        "sourceBasis": "평가원 해설의 출제의도·풀이" if exam_key in SOLUTION_FILES else "문제지·평가원 정답표·문항 분류",
+    }
+
+
+seed_categories = parse_categories()
+intents = parse_intents()
+questions = parse_questions()
+records = []
+for exam_key in EXAM_ORDER:
+    for number in range(1, 31):
+        intent = intents.get(exam_key, {}).get(number, "")
+        problem_text = questions.get(exam_key, {}).get(number, "")
+        categories = (seed_categories.get(exam_key, {}).get(number)
+            or CATEGORY_OVERRIDES.get(exam_key, {}).get(number)
+            or infer_categories(intent, problem_text, number))
+        records.append(make_record(exam_key, number, categories, intents, questions))
+
+print(json.dumps({"schemaVersion": 2, "problemTextFormat": "LaTeX", "generatedFrom": "2022~2027 평가원·수능 문제지 및 해설", "problems": records}, ensure_ascii=False, separators=(",", ":")))
