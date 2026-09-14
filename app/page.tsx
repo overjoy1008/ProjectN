@@ -1,6 +1,6 @@
 'use client';
 
-import { type TouchEvent, useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { ChevronLeft, ChevronRight, Download, FileText, Minus, Plus } from 'lucide-react';
 import { NativeSelect, NativeSelectOption } from '@/components/ui/native-select';
 import problemJourneyData from './problem-journeys.json';
@@ -157,7 +157,6 @@ export default function Home() {
   const [questionFitScale, setQuestionFitScale] = useState(1);
   const [questionNavTop, setQuestionNavTop] = useState<number | null>(null);
   const [daysUntilCsat, setDaysUntilCsat] = useState<number | null>(null);
-  const touchStartX = useRef<number | null>(null);
   const questionViewerRef = useRef<HTMLDivElement | null>(null);
   const holdDelayRef = useRef<number | null>(null);
   const holdIntervalRef = useRef<number | null>(null);
@@ -386,14 +385,6 @@ export default function Home() {
     window.requestAnimationFrame(() => document.querySelector('.document-shell')?.scrollIntoView({ behavior: 'smooth', block: 'start' }));
   }
 
-  function finishSwipe(event: TouchEvent<HTMLDivElement>) {
-    if (touchStartX.current === null) return;
-    const distance = event.changedTouches[0].clientX - touchStartX.current;
-    touchStartX.current = null;
-    if (Math.abs(distance) < 48) return;
-    moveQuestion(distance < 0 ? 1 : -1);
-  }
-
   return (
     <main className="min-h-screen bg-background text-foreground">
       <header className="site-header site-header-with-nav">
@@ -461,9 +452,6 @@ export default function Home() {
             <div
               ref={questionViewerRef}
               className="question-viewer"
-              onTouchStart={(event) => { touchStartX.current = event.touches[0].clientX; }}
-              onTouchEnd={finishSwipe}
-              onTouchCancel={() => { touchStartX.current = null; }}
             >
               <button className="question-nav question-nav-previous" style={questionNavTop === null ? undefined : { top: questionNavTop }} type="button" onClick={() => clickQuestionArrow(-1)} onPointerDown={(event) => { event.currentTarget.setPointerCapture(event.pointerId); startHoldingQuestion(-1); }} onPointerUp={stopHoldingQuestion} onPointerCancel={stopHoldingQuestion} onPointerLeave={stopHoldingQuestion} onContextMenu={(event) => event.preventDefault()} disabled={questionNumber === 1} aria-label="이전 문항"><ChevronLeft aria-hidden="true" /></button>
               <div
