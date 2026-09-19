@@ -12,7 +12,7 @@ export type CategoryProblem = {
   categories: string[];
 };
 
-type SortOrder = 'latest' | 'difficulty';
+type SortOrder = 'latest' | 'oldest' | 'easiest' | 'hardest';
 
 const sessionOrder: Record<string, number> = { '6모': 1, '9모': 2, 수능: 3 };
 
@@ -43,13 +43,26 @@ export function CategoryProblemBrowser({ problems }: { problems: CategoryProblem
   const selectedProblems = useMemo(() => problems
     .filter(({ categories }) => categories.includes(category))
     .toSorted((a, b) => {
-      if (sortOrder === 'difficulty' && b.difficulty.rank !== a.difficulty.rank) {
-        return b.difficulty.rank - a.difficulty.rank;
-      }
-      return b.year - a.year
+      const latestFirst = b.year - a.year
         || (sessionOrder[b.session] ?? 0) - (sessionOrder[a.session] ?? 0)
         || a.number - b.number;
+
+      if (sortOrder === 'oldest') {
+        return a.year - b.year
+          || (sessionOrder[a.session] ?? 0) - (sessionOrder[b.session] ?? 0)
+          || a.number - b.number;
+      }
+      if (sortOrder === 'easiest') return a.difficulty.rank - b.difficulty.rank || latestFirst;
+      if (sortOrder === 'hardest') return b.difficulty.rank - a.difficulty.rank || latestFirst;
+      return latestFirst;
     }), [category, problems, sortOrder]);
+
+  const sortOptions: { value: SortOrder; label: string }[] = [
+    { value: 'latest', label: '최신부터' },
+    { value: 'oldest', label: '과거부터' },
+    { value: 'easiest', label: '쉬운 문제부터' },
+    { value: 'hardest', label: '어려운 문제부터' },
+  ];
 
   return (
     <section className="category-browser" aria-labelledby="category-browser-title">
@@ -60,13 +73,24 @@ export function CategoryProblemBrowser({ problems }: { problems: CategoryProblem
           {category && <span>총 {selectedProblems.length}문항</span>}
         </div>
         {category && (
-          <label>
-            <span>정렬</span>
-            <select value={sortOrder} onChange={(event) => setSortOrder(event.target.value as SortOrder)}>
-              <option value="latest">최신순</option>
-              <option value="difficulty">난이도 높은 순</option>
-            </select>
-          </label>
+          <fieldset className="category-sort">
+            <legend>문항 정렬</legend>
+            <div className="category-sort-layout">
+              <span aria-hidden="true">정렬</span>
+              <div className="category-sort-options">
+                {sortOptions.map(({ value, label }) => (
+                  <button
+                    type="button"
+                    aria-pressed={sortOrder === value}
+                    onClick={() => setSortOrder(value)}
+                    key={value}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </fieldset>
         )}
       </div>
 

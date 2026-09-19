@@ -4,7 +4,7 @@ import { ExamTypeExplorer } from './ExamTypeExplorer';
 import { MobileEraNavigation } from './MobileEraNavigation';
 
 export const metadata: Metadata = {
-  title: '교육 범위 — Project /N/',
+  title: '교육 범위',
   description: '2017학년도부터 2028학년도 이후까지, 수학 교육과정의 과목과 대단원 이동을 비교합니다.',
 };
 

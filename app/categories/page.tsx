@@ -5,7 +5,7 @@ import calculusJourneyData from '../calculus-journeys.json';
 import legacyJourneyData from '../legacy-journeys.json';
 
 export const metadata: Metadata = {
-  title: '출제 유형별 문항 — Project /N/',
+  title: '출제 유형별 문항',
   description: '평가원 수학 문항을 출제 유형별로 모아 최신순과 난이도순으로 살펴봅니다.',
 };
 

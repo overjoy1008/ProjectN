@@ -36,6 +36,8 @@ next-env.d.ts
 /.wrangler/
 /outputs/
 /work/
+/public/robots.txt
+/public/sitemap.xml
 
 # local processing caches
 /.pnpm-store/
