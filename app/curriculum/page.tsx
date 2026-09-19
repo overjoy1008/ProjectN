@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { CurriculumConnections } from './CurriculumConnections';
+import { ExamTypeExplorer } from './ExamTypeExplorer';
 import { MobileEraNavigation } from './MobileEraNavigation';
 
 export const metadata: Metadata = {
@@ -266,19 +267,7 @@ export default function CurriculumPage() {
             <span>01</span>
             <div><p>2021~2027 · 평가원/수능</p><h2 id="exam-type-title">출제 유형</h2></div>
           </div>
-          <div className="exam-type-grid">
-            {examTypes.map(({ subject, items }) => (
-              <article className="exam-type-card" key={subject}>
-                <header className="exam-type-card-head">
-                  <span>{subject === '수학 I' || subject === '수학 II' || subject === '확률과 통계' ? '직접 출제' : '간접출제'}</span>
-                  <h3>{subject}</h3>
-                </header>
-                <ol className="exam-type-list">
-                  {items.map((item) => <li key={item}>{item}</li>)}
-                </ol>
-              </article>
-            ))}
-          </div>
+          <ExamTypeExplorer examTypes={examTypes} />
         </section>
 
         <section className="era-section" aria-labelledby="era-title">

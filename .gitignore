@@ -16,8 +16,8 @@
 /.vinext/
 /out/
 
-# misc
-.DS_Store
+# macOS metadata (all directories)
+**/.DS_Store
 *.pem
 
 # debug

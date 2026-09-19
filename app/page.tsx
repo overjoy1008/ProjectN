@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useRef, useState } from 'react';
+import Link from 'next/link';
 import { ChevronLeft, ChevronRight, Download, FileText, Minus, Plus } from 'lucide-react';
 import { NativeSelect, NativeSelectOption } from '@/components/ui/native-select';
 import problemJourneyData from './problem-journeys.json';
@@ -36,7 +37,7 @@ type ProblemHistoryState = {
 const years = Array.from({ length: 11 }, (_, index) => 2027 - index);
 const sessions: Session[] = ['6모', '9모', '수능'];
 const csatDate = { year: 2026, month: 11, day: 19 };
-const questionCanvas = { width: 1020, height: 2822 };
+const questionCanvas = { width: 1020 };
 const sessionLabel: Record<Session, string> = { '6모': '6월 모의평가', '9모': '9월 모의평가', 수능: '대학수학능력시험' };
 const subjectLabel: Record<Subject, string> = { 확통: '확률과 통계', 미적: '미적분', 기하: '기하', 가형: '가형', 나형: '나형' };
 const problemJourneys = [
@@ -155,8 +156,10 @@ export default function Home() {
   const [question, setQuestion] = useState('');
   const [questionZoom, setQuestionZoom] = useState(0.7);
   const [questionFitScale, setQuestionFitScale] = useState(1);
+  const [questionImageSize, setQuestionImageSize] = useState<{ url: string; height: number } | null>(null);
   const [questionNavTop, setQuestionNavTop] = useState<number | null>(null);
   const [daysUntilCsat, setDaysUntilCsat] = useState<number | null>(null);
+  const [isCsatCountdownRevealed, setIsCsatCountdownRevealed] = useState(false);
   const questionViewerRef = useRef<HTMLDivElement | null>(null);
   const holdDelayRef = useRef<number | null>(null);
   const holdIntervalRef = useRef<number | null>(null);
@@ -214,18 +217,10 @@ export default function Home() {
   const activePdfName = showingSolution ? solutionName : paperName;
   const activePdfUrl = showingSolution ? solutionUrl : pdfUrl;
   const questionScore = questionNumber ? getQuestionScore(year, questionNumber) : null;
-  const compactQuestionCanvas = Boolean(
-    questionNumber && (
-      (questionNumber >= 1 && questionNumber <= 6)
-      || (questionNumber >= 8 && questionNumber <= 9)
-      || (year >= 2022 && questionNumber >= 16 && questionNumber <= 19)
-      || (year < 2022 && questionNumber >= 22 && questionNumber <= 25)
-    ),
-  );
-  const questionCanvasHeight = compactQuestionCanvas ? questionCanvas.height / 2 : questionCanvas.height;
   const questionSection = modern && questionNumber && questionNumber <= 22 ? '공통' : subject;
   const questionFile = questionNumber ? `${exam} ${questionSection} ${String(questionNumber).padStart(2, '0')}번.png` : '';
   const questionUrl = questionNumber ? assetUrl(exam, 'Questions', questionSection, questionFile) : '';
+  const questionCanvasHeight = questionImageSize?.url === questionUrl ? questionImageSize.height : 0;
   const title = `${year}학년도 ${sessionLabel[session]} · ${subjectLabel[subject]}`;
   const questionTitle = `${year}학년도 ${sessionLabel[session]} · ${modern && questionNumber && questionNumber <= 22 ? '공통' : subjectLabel[subject]}`;
   const effectiveQuestionScale = questionFitScale * questionZoom;
@@ -398,10 +393,29 @@ export default function Home() {
       <div className="workspace">
         <div className="archive-ticket">
           <div className="ticket-masthead">
-            <time dateTime="2026-11-19" aria-label="2027학년도 수능 11월 19일">11.19</time>
-            <span aria-label={daysUntilCsat === null ? '수능 디데이 계산 중' : `수능까지 ${daysUntilCsat}일`}>
-              {daysUntilCsat === null ? 'D-—' : daysUntilCsat >= 0 ? `D-${daysUntilCsat}` : `D+${Math.abs(daysUntilCsat)}`}
-            </span>
+            <button
+              className="ticket-countdown"
+              type="button"
+              aria-expanded={isCsatCountdownRevealed}
+              aria-label={isCsatCountdownRevealed ? '2027학년도 수능 날짜와 디데이' : '2027학년도 수능 날짜 11월 19일, 디데이 보기'}
+              onClick={() => setIsCsatCountdownRevealed(true)}
+            >
+              <time dateTime="2026-11-19">11.19</time>
+              {isCsatCountdownRevealed ? (
+                <span aria-live="polite">
+                  {daysUntilCsat === null ? 'D-—' : daysUntilCsat >= 0 ? `D-${daysUntilCsat}` : `D+${Math.abs(daysUntilCsat)}`}
+                </span>
+              ) : (
+                <>
+                  <span className="ticket-countdown-prompt">눌러서 확인</span>
+                  <span aria-hidden="true">
+                    {daysUntilCsat === null
+                      ? 'D-—'
+                      : `D${daysUntilCsat >= 0 ? '-' : '+'}${'•'.repeat(String(Math.abs(daysUntilCsat)).length)}`}
+                  </span>
+                </>
+              )}
+            </button>
           </div>
           <section className="selector-strip" aria-label="시험지 선택">
             <label><span>연도</span><NativeSelect value={year} onChange={(event) => changeYear(Number(event.target.value))} aria-label="연도 선택">{years.map((item) => <NativeSelectOption key={item} value={item}>{item}학년도</NativeSelectOption>)}</NativeSelect></label>
@@ -437,7 +451,7 @@ export default function Home() {
               </div>
               {questionCategories.length > 0 && (
                 <div className="question-category-list" aria-label="출제 유형">
-                  {questionCategories.map((category) => <span key={category}>{category}</span>)}
+                  {questionCategories.map((category) => <Link href={`/categories?category=${encodeURIComponent(category)}`} key={category}>{category}</Link>)}
                 </div>
               )}
               <div className="question-zoom-controls" aria-label="문항 크기 조절">
@@ -465,7 +479,7 @@ export default function Home() {
                   className="question-canvas"
                   style={{ transform: `scale(${effectiveQuestionScale})` }}
                 >
-                  <img key={questionUrl} src={questionUrl} alt={`${questionTitle} ${questionNumber}번 문제`} />
+                  <img key={questionUrl} src={questionUrl} alt={`${questionTitle} ${questionNumber}번 문제`} onLoad={(event) => setQuestionImageSize({ url: questionUrl, height: event.currentTarget.naturalHeight })} />
                 </div>
               </div>
               <button className="question-nav question-nav-next" style={questionNavTop === null ? undefined : { top: questionNavTop }} type="button" onClick={() => clickQuestionArrow(1)} onPointerDown={(event) => { event.currentTarget.setPointerCapture(event.pointerId); startHoldingQuestion(1); }} onPointerUp={stopHoldingQuestion} onPointerCancel={stopHoldingQuestion} onPointerLeave={stopHoldingQuestion} onContextMenu={(event) => event.preventDefault()} disabled={questionNumber === 30} aria-label="다음 문항"><ChevronRight aria-hidden="true" /></button>
