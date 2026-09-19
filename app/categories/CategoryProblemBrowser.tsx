@@ -1,8 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
-import Link from 'next/link';
-import { useSearchParams } from 'next/navigation';
+import { useMemo, useState, useSyncExternalStore } from 'react';
 
 export type CategoryProblem = {
   id: string;
@@ -18,6 +16,15 @@ type SortOrder = 'latest' | 'difficulty';
 
 const sessionOrder: Record<string, number> = { '6모': 1, '9모': 2, 수능: 3 };
 
+function subscribeToLocation(onStoreChange: () => void) {
+  window.addEventListener('popstate', onStoreChange);
+  return () => window.removeEventListener('popstate', onStoreChange);
+}
+
+function getCategoryFromLocation() {
+  return new URLSearchParams(window.location.search).get('category') ?? '';
+}
+
 function problemUrl(problem: CategoryProblem) {
   const subject = problem.section === '공통' ? '확통' : problem.section;
   const params = new URLSearchParams({
@@ -30,8 +37,7 @@ function problemUrl(problem: CategoryProblem) {
 }
 
 export function CategoryProblemBrowser({ problems }: { problems: CategoryProblem[] }) {
-  const searchParams = useSearchParams();
-  const category = searchParams.get('category') ?? '';
+  const category = useSyncExternalStore(subscribeToLocation, getCategoryFromLocation, () => '');
   const [sortOrder, setSortOrder] = useState<SortOrder>('latest');
 
   const selectedProblems = useMemo(() => problems
@@ -68,7 +74,7 @@ export function CategoryProblemBrowser({ problems }: { problems: CategoryProblem
         <ol className="category-problem-list">
           {selectedProblems.map((problem) => (
             <li key={problem.id}>
-              <Link href={problemUrl(problem)}>
+              <a href={problemUrl(problem)}>
                 <span className="category-problem-number">{String(problem.number).padStart(2, '0')}</span>
                 <span className="category-problem-exam">
                   <strong>{problem.year}학년도 {problem.session} · {problem.section}</strong>
@@ -77,7 +83,7 @@ export function CategoryProblemBrowser({ problems }: { problems: CategoryProblem
                 <span className={`category-problem-difficulty difficulty-rank-${problem.difficulty.rank}`}>
                   {problem.difficulty.level}
                 </span>
-              </Link>
+              </a>
             </li>
           ))}
         </ol>

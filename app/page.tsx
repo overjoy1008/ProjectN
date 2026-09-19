@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useMemo, useRef, useState } from 'react';
-import Link from 'next/link';
 import { ChevronLeft, ChevronRight, Download, FileText, Minus, Plus } from 'lucide-react';
 import { NativeSelect, NativeSelectOption } from '@/components/ui/native-select';
 import problemJourneyData from './problem-journeys.json';
@@ -451,7 +450,7 @@ export default function Home() {
               </div>
               {questionCategories.length > 0 && (
                 <div className="question-category-list" aria-label="출제 유형">
-                  {questionCategories.map((category) => <Link href={`/categories?category=${encodeURIComponent(category)}`} key={category}>{category}</Link>)}
+                  {questionCategories.map((category) => <a href={`/categories.html?category=${encodeURIComponent(category)}`} key={category}>{category}</a>)}
                 </div>
               )}
               <div className="question-zoom-controls" aria-label="문항 크기 조절">

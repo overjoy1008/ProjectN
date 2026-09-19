@@ -1,11 +1,9 @@
-import Link from 'next/link';
-
 type ExamType = { subject: string; items: string[] };
 
 const directlyTestedSubjects = new Set(['수학 I', '수학 II', '확률과 통계', '미적분']);
 
 function categoryUrl(category: string) {
-  return `/categories?category=${encodeURIComponent(category)}`;
+  return `/categories.html?category=${encodeURIComponent(category)}`;
 }
 
 export function ExamTypeExplorer({ examTypes }: { examTypes: ExamType[] }) {
@@ -28,7 +26,7 @@ export function ExamTypeExplorer({ examTypes }: { examTypes: ExamType[] }) {
                 {items.map((item) => (
                   <li key={item}>
                     {kind === 'direct' ? (
-                      <Link className="exam-type-category-link" href={categoryUrl(item)}>{item}</Link>
+                      <a className="exam-type-category-link" href={categoryUrl(item)}>{item}</a>
                     ) : (
                       <span className="exam-type-category-label">{item}</span>
                     )}

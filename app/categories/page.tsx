@@ -1,6 +1,4 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
-import { Suspense } from 'react';
 import { CategoryProblemBrowser, type CategoryProblem } from './CategoryProblemBrowser';
 import problemJourneyData from '../problem-journeys.json';
 import calculusJourneyData from '../calculus-journeys.json';
@@ -30,21 +28,19 @@ export default function CategoriesPage() {
     <main className="category-page">
       <header className="site-header site-header-with-nav">
         <div className="brand-lockup">
-          <Link href="/" aria-label="Project N 메인으로"><h1 className="wordmark">Project <i>/N/</i></h1></Link>
+          <a href="/" aria-label="Project N 메인으로"><h1 className="wordmark">Project <i>/N/</i></h1></a>
           <p>평가원 수학 아카이브</p>
         </div>
-        <nav className="site-nav" aria-label="주요 메뉴"><Link href="/">문제 아카이브</Link><Link href="/curriculum">교육 범위</Link></nav>
+        <nav className="site-nav" aria-label="주요 메뉴"><a href="/">문제 아카이브</a><a href="/curriculum.html">교육 범위</a></nav>
       </header>
 
       <div className="curriculum-workspace category-workspace">
-        <Link className="category-back-link" href="/curriculum">← 교육 범위로 돌아가기</Link>
+        <a className="category-back-link" href="/curriculum.html">← 교육 범위로 돌아가기</a>
         <div className="section-heading category-page-heading">
           <span>TYPE</span>
           <div><p>PROBLEM INDEX</p><h1>출제 유형별 문항</h1></div>
         </div>
-        <Suspense fallback={<div className="category-browser category-browser-loading">문항을 불러오는 중입니다.</div>}>
-          <CategoryProblemBrowser problems={categoryProblems} />
-        </Suspense>
+        <CategoryProblemBrowser problems={categoryProblems} />
       </div>
     </main>
   );
