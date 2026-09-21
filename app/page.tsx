@@ -1,8 +1,9 @@
 'use client';
 
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { ChevronLeft, ChevronRight, Download, FileText, Minus, Plus } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Download, FileText, Minus, Play, Plus } from 'lucide-react';
 import { NativeSelect, NativeSelectOption } from '@/components/ui/native-select';
+import { getOfficialVideoLink } from './official-videos';
 import problemJourneyData from './problem-journeys.json';
 import calculusJourneyData from './calculus-journeys.json';
 import legacyJourneyData from './legacy-journeys.json';
@@ -216,6 +217,7 @@ export default function Home() {
   const activePdfName = showingSolution ? solutionName : paperName;
   const activePdfUrl = showingSolution ? solutionUrl : pdfUrl;
   const questionScore = questionNumber ? getQuestionScore(year, questionNumber) : null;
+  const officialVideo = getOfficialVideoLink(year, session, subject, questionNumber);
   const questionSection = modern && questionNumber && questionNumber <= 22 ? '공통' : subject;
   const questionFile = questionNumber ? `${exam} ${questionSection} ${String(questionNumber).padStart(2, '0')}번.png` : '';
   const questionUrl = questionNumber ? assetUrl(exam, 'Questions', questionSection, questionFile) : '';
@@ -437,7 +439,23 @@ export default function Home() {
                 <h2>{questionNumber ? `${questionTitle} · ${questionNumber}번` : showingSolution ? `${title} · 해설지` : title}</h2>
               </div>
             </div>
-            <a className="download-button" href={questionNumber ? questionUrl : activePdfUrl} download={questionNumber ? questionFile : activePdfName}><Download aria-hidden="true" /> {questionNumber ? '문항 다운로드' : showingSolution ? '해설지 다운로드' : 'PDF 다운로드'}</a>
+            <div className="document-actions">
+              {officialVideo && (
+                <a
+                  className="official-video-button"
+                  href={officialVideo.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={officialVideo.title}
+                  aria-label={`${officialVideo.title}${officialVideo.timeLabel ? `, ${officialVideo.timeLabel}부터 재생` : ''}`}
+                >
+                  <Play aria-hidden="true" />
+                  <span>어피셜 해설</span>
+                  {officialVideo.timeLabel && <time>{officialVideo.timeLabel}</time>}
+                </a>
+              )}
+              <a className="download-button" href={questionNumber ? questionUrl : activePdfUrl} download={questionNumber ? questionFile : activePdfName}><Download aria-hidden="true" /> {questionNumber ? '문항 다운로드' : showingSolution ? '해설지 다운로드' : 'PDF 다운로드'}</a>
+            </div>
           </div>
 
           {questionScore && (

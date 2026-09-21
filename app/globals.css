@@ -100,6 +100,12 @@ button, select { font: inherit; }
 .question-category-list::-webkit-scrollbar { display: none; }
 .question-category-list a { flex: 0 0 auto; padding: 4px 8px; border: 1px solid #686861; color: var(--paper); font-size: 0.66rem; line-height: 1; font-weight: 700; text-decoration: none; white-space: nowrap; }
 .question-category-list a:hover { border-color: var(--primary); background: var(--primary); }
+.document-actions { display: flex; flex: 0 0 auto; align-items: center; gap: 8px; }
+.official-video-button { height: 40px; display: inline-flex; flex: 0 0 auto; align-items: center; justify-content: center; gap: 7px; border: 1px solid #dcdcd7; background: var(--paper); color: var(--foreground); padding: 0 12px; font-size: 0.75rem; font-weight: 780; text-decoration: none; }
+.official-video-button:hover { border-color: #ff0033; background: #ff0033; color: #fff; }
+.official-video-button svg { width: 18px; height: 18px; color: #ff0033; }
+.official-video-button:hover svg { color: #fff; }
+.official-video-button time { padding-left: 7px; border-left: 1px solid currentColor; font-size: 0.68rem; font-variant-numeric: tabular-nums; opacity: 0.72; }
 .download-button { height: 40px; display: inline-flex; flex: 0 0 auto; align-items: center; justify-content: center; gap: 8px; border: 0; background: var(--foreground); color: var(--paper); padding: 0 15px; font-size: 0.78rem; font-weight: 780; cursor: pointer; text-decoration: none; }
 .download-button:hover { background: var(--primary); border-color: var(--primary); }
 .download-button svg { width: 16px; }
@@ -291,8 +297,8 @@ button, select { font: inherit; }
   .question-category-list a { padding-inline: 6px; font-size: 0.59rem; }
   .score-meter strong { text-align: left; }
   .score-cells i { height: 16px; }
-  .download-button { margin: 0 14px 14px; }
-  .download-button { justify-content: center; }
+  .document-actions { margin: 0 14px 14px; align-items: stretch; flex-direction: column; }
+  .download-button, .official-video-button { width: 100%; justify-content: center; }
   .pdf-viewer-wrap { height: 82vh; min-height: 680px; }
   .question-viewer { min-height: 50vh; padding: 66px 16px 28px; }
   .question-nav { width: 40px; height: 56px; }
