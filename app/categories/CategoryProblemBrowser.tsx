@@ -10,6 +10,7 @@ export type CategoryProblem = {
   number: number;
   difficulty: { level: string; rank: number };
   categories: string[];
+  wrongRate: number | null;
 };
 
 type SortOrder = 'latest' | 'oldest' | 'easiest' | 'hardest';
@@ -70,7 +71,7 @@ export function CategoryProblemBrowser({ problems }: { problems: CategoryProblem
         <div>
           <p>선택한 출제 유형</p>
           <h2 id="category-browser-title">{category || '카테고리를 선택해 주세요'}</h2>
-          {category && <span>총 {selectedProblems.length}문항</span>}
+          {category && <span>총 {selectedProblems.length}문항 · 오답률은 EBSi 채점 참여자 TOP15 기준</span>}
         </div>
         {category && (
           <fieldset className="category-sort">
@@ -102,7 +103,9 @@ export function CategoryProblemBrowser({ problems }: { problems: CategoryProblem
                 <span className="category-problem-number">{String(problem.number).padStart(2, '0')}</span>
                 <span className="category-problem-exam">
                   <strong>{problem.year}학년도 {problem.session} · {problem.section}</strong>
-                  <small>{problem.number}번 문항</small>
+                  <small>
+                    {problem.number}번 · 오답률 {problem.wrongRate === null ? '자료 없음' : `${problem.wrongRate}%`}
+                  </small>
                 </span>
                 <span className={`category-problem-difficulty difficulty-rank-${problem.difficulty.rank}`}>
                   {problem.difficulty.level}

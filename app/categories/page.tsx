@@ -3,25 +3,32 @@ import { CategoryProblemBrowser, type CategoryProblem } from './CategoryProblemB
 import problemJourneyData from '../problem-journeys.json';
 import calculusJourneyData from '../calculus-journeys.json';
 import legacyJourneyData from '../legacy-journeys.json';
+import problemStatsData from '../problem-stats.json';
 
 export const metadata: Metadata = {
   title: '출제 유형별 문항',
   description: '평가원 수학 문항을 출제 유형별로 모아 최신순과 난이도순으로 살펴봅니다.',
 };
 
+const wrongRates = problemStatsData.wrongRates as Record<string, number>;
+
 const categoryProblems: CategoryProblem[] = [
   ...legacyJourneyData.problems,
   ...problemJourneyData.problems,
   ...calculusJourneyData.problems,
-].map(({ id, year, session, section, number, difficulty, categories }) => ({
-  id,
-  year,
-  session,
-  section,
-  number,
-  difficulty,
-  categories,
-}));
+].map(({ id, year, session, section, number, difficulty, categories }) => {
+  const subject = section === '공통' ? '확통' : section;
+  return {
+    id,
+    year,
+    session,
+    section,
+    number,
+    difficulty,
+    categories,
+    wrongRate: wrongRates[`${year}|${session}|${subject}|${number}`] ?? null,
+  };
+});
 
 export default function CategoriesPage() {
   return (

@@ -1,0 +1,7951 @@
+{
+  "source": "평가원 정답 및 풀이 PDF",
+  "wrongRateSource": "EBSi 채점 참여자 분석 TOP15",
+  "problems": {
+    "2017|6모|가형|1": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2017|6모|가형|10": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2017|6모|가형|11": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2017|6모|가형|12": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2017|6모|가형|13": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2017|6모|가형|14": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2017|6모|가형|15": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2017|6모|가형|16": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2017|6모|가형|17": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2017|6모|가형|18": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2017|6모|가형|19": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2017|6모|가형|2": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2017|6모|가형|20": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2017|6모|가형|21": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2017|6모|가형|22": {
+      "answer": "2",
+      "wrongRate": null
+    },
+    "2017|6모|가형|23": {
+      "answer": "8",
+      "wrongRate": null
+    },
+    "2017|6모|가형|24": {
+      "answer": "60",
+      "wrongRate": null
+    },
+    "2017|6모|가형|25": {
+      "answer": "4",
+      "wrongRate": null
+    },
+    "2017|6모|가형|26": {
+      "answer": "6",
+      "wrongRate": null
+    },
+    "2017|6모|가형|27": {
+      "answer": "36",
+      "wrongRate": null
+    },
+    "2017|6모|가형|28": {
+      "answer": "19",
+      "wrongRate": null
+    },
+    "2017|6모|가형|29": {
+      "answer": "15",
+      "wrongRate": null
+    },
+    "2017|6모|가형|3": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2017|6모|가형|30": {
+      "answer": "83",
+      "wrongRate": null
+    },
+    "2017|6모|가형|4": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2017|6모|가형|5": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2017|6모|가형|6": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2017|6모|가형|7": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2017|6모|가형|8": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2017|6모|가형|9": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2017|6모|나형|1": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2017|6모|나형|10": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2017|6모|나형|11": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2017|6모|나형|12": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2017|6모|나형|13": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2017|6모|나형|14": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2017|6모|나형|15": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2017|6모|나형|16": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2017|6모|나형|17": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2017|6모|나형|18": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2017|6모|나형|19": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2017|6모|나형|2": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2017|6모|나형|20": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2017|6모|나형|21": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2017|6모|나형|22": {
+      "answer": "24",
+      "wrongRate": null
+    },
+    "2017|6모|나형|23": {
+      "answer": "25",
+      "wrongRate": null
+    },
+    "2017|6모|나형|24": {
+      "answer": "60",
+      "wrongRate": null
+    },
+    "2017|6모|나형|25": {
+      "answer": "96",
+      "wrongRate": null
+    },
+    "2017|6모|나형|26": {
+      "answer": "10",
+      "wrongRate": null
+    },
+    "2017|6모|나형|27": {
+      "answer": "30",
+      "wrongRate": null
+    },
+    "2017|6모|나형|28": {
+      "answer": "12",
+      "wrongRate": null
+    },
+    "2017|6모|나형|29": {
+      "answer": "186",
+      "wrongRate": null
+    },
+    "2017|6모|나형|3": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2017|6모|나형|30": {
+      "answer": "78",
+      "wrongRate": null
+    },
+    "2017|6모|나형|4": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2017|6모|나형|5": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2017|6모|나형|6": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2017|6모|나형|7": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2017|6모|나형|8": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2017|6모|나형|9": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2017|9모|가형|1": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2017|9모|가형|10": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2017|9모|가형|11": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2017|9모|가형|12": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2017|9모|가형|13": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2017|9모|가형|14": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2017|9모|가형|15": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2017|9모|가형|16": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2017|9모|가형|17": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2017|9모|가형|18": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2017|9모|가형|19": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2017|9모|가형|2": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2017|9모|가형|20": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2017|9모|가형|21": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2017|9모|가형|22": {
+      "answer": "21",
+      "wrongRate": null
+    },
+    "2017|9모|가형|23": {
+      "answer": "25",
+      "wrongRate": null
+    },
+    "2017|9모|가형|24": {
+      "answer": "16",
+      "wrongRate": null
+    },
+    "2017|9모|가형|25": {
+      "answer": "136",
+      "wrongRate": null
+    },
+    "2017|9모|가형|26": {
+      "answer": "4",
+      "wrongRate": null
+    },
+    "2017|9모|가형|27": {
+      "answer": "22",
+      "wrongRate": null
+    },
+    "2017|9모|가형|28": {
+      "answer": "196",
+      "wrongRate": null
+    },
+    "2017|9모|가형|29": {
+      "answer": "12",
+      "wrongRate": null
+    },
+    "2017|9모|가형|3": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2017|9모|가형|30": {
+      "answer": "48",
+      "wrongRate": null
+    },
+    "2017|9모|가형|4": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2017|9모|가형|5": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2017|9모|가형|6": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2017|9모|가형|7": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2017|9모|가형|8": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2017|9모|가형|9": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2017|9모|나형|1": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2017|9모|나형|10": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2017|9모|나형|11": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2017|9모|나형|12": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2017|9모|나형|13": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2017|9모|나형|14": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2017|9모|나형|15": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2017|9모|나형|16": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2017|9모|나형|17": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2017|9모|나형|18": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2017|9모|나형|19": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2017|9모|나형|2": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2017|9모|나형|20": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2017|9모|나형|21": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2017|9모|나형|22": {
+      "answer": "21",
+      "wrongRate": null
+    },
+    "2017|9모|나형|23": {
+      "answer": "24",
+      "wrongRate": null
+    },
+    "2017|9모|나형|24": {
+      "answer": "10",
+      "wrongRate": null
+    },
+    "2017|9모|나형|25": {
+      "answer": "2",
+      "wrongRate": null
+    },
+    "2017|9모|나형|26": {
+      "answer": "16",
+      "wrongRate": null
+    },
+    "2017|9모|나형|27": {
+      "answer": "8",
+      "wrongRate": null
+    },
+    "2017|9모|나형|28": {
+      "answer": "19",
+      "wrongRate": null
+    },
+    "2017|9모|나형|29": {
+      "answer": "43",
+      "wrongRate": null
+    },
+    "2017|9모|나형|3": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2017|9모|나형|30": {
+      "answer": "65",
+      "wrongRate": null
+    },
+    "2017|9모|나형|4": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2017|9모|나형|5": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2017|9모|나형|6": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2017|9모|나형|7": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2017|9모|나형|8": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2017|9모|나형|9": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2017|수능|가형|1": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2017|수능|가형|10": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2017|수능|가형|11": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2017|수능|가형|12": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2017|수능|가형|13": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2017|수능|가형|14": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2017|수능|가형|15": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2017|수능|가형|16": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2017|수능|가형|17": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2017|수능|가형|18": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2017|수능|가형|19": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2017|수능|가형|2": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2017|수능|가형|20": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2017|수능|가형|21": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2017|수능|가형|22": {
+      "answer": "10",
+      "wrongRate": null
+    },
+    "2017|수능|가형|23": {
+      "answer": "6",
+      "wrongRate": null
+    },
+    "2017|수능|가형|24": {
+      "answer": "16",
+      "wrongRate": null
+    },
+    "2017|수능|가형|25": {
+      "answer": "7",
+      "wrongRate": null
+    },
+    "2017|수능|가형|26": {
+      "answer": "11",
+      "wrongRate": null
+    },
+    "2017|수능|가형|27": {
+      "answer": "32",
+      "wrongRate": null
+    },
+    "2017|수능|가형|28": {
+      "answer": "12",
+      "wrongRate": null
+    },
+    "2017|수능|가형|29": {
+      "answer": "19",
+      "wrongRate": null
+    },
+    "2017|수능|가형|3": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2017|수능|가형|30": {
+      "answer": "216",
+      "wrongRate": null
+    },
+    "2017|수능|가형|4": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2017|수능|가형|5": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2017|수능|가형|6": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2017|수능|가형|7": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2017|수능|가형|8": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2017|수능|가형|9": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2017|수능|나형|1": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2017|수능|나형|10": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2017|수능|나형|11": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2017|수능|나형|12": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2017|수능|나형|13": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2017|수능|나형|14": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2017|수능|나형|15": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2017|수능|나형|16": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2017|수능|나형|17": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2017|수능|나형|18": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2017|수능|나형|19": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2017|수능|나형|2": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2017|수능|나형|20": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2017|수능|나형|21": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2017|수능|나형|22": {
+      "answer": "30",
+      "wrongRate": null
+    },
+    "2017|수능|나형|23": {
+      "answer": "24",
+      "wrongRate": null
+    },
+    "2017|수능|나형|24": {
+      "answer": "7",
+      "wrongRate": null
+    },
+    "2017|수능|나형|25": {
+      "answer": "150",
+      "wrongRate": null
+    },
+    "2017|수능|나형|26": {
+      "answer": "2",
+      "wrongRate": null
+    },
+    "2017|수능|나형|27": {
+      "answer": "32",
+      "wrongRate": null
+    },
+    "2017|수능|나형|28": {
+      "answer": "16",
+      "wrongRate": null
+    },
+    "2017|수능|나형|29": {
+      "answer": "62",
+      "wrongRate": null
+    },
+    "2017|수능|나형|3": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2017|수능|나형|30": {
+      "answer": "65",
+      "wrongRate": null
+    },
+    "2017|수능|나형|4": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2017|수능|나형|5": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2017|수능|나형|6": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2017|수능|나형|7": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2017|수능|나형|8": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2017|수능|나형|9": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2018|6모|가형|1": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2018|6모|가형|10": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2018|6모|가형|11": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2018|6모|가형|12": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2018|6모|가형|13": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2018|6모|가형|14": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2018|6모|가형|15": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2018|6모|가형|16": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2018|6모|가형|17": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2018|6모|가형|18": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2018|6모|가형|19": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2018|6모|가형|2": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2018|6모|가형|20": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2018|6모|가형|21": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2018|6모|가형|22": {
+      "answer": "15",
+      "wrongRate": null
+    },
+    "2018|6모|가형|23": {
+      "answer": "2",
+      "wrongRate": null
+    },
+    "2018|6모|가형|24": {
+      "answer": "4",
+      "wrongRate": null
+    },
+    "2018|6모|가형|25": {
+      "answer": "52",
+      "wrongRate": null
+    },
+    "2018|6모|가형|26": {
+      "answer": "34",
+      "wrongRate": null
+    },
+    "2018|6모|가형|27": {
+      "answer": "45",
+      "wrongRate": null
+    },
+    "2018|6모|가형|28": {
+      "answer": "20",
+      "wrongRate": null
+    },
+    "2018|6모|가형|29": {
+      "answer": "7",
+      "wrongRate": null
+    },
+    "2018|6모|가형|3": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2018|6모|가형|30": {
+      "answer": "16",
+      "wrongRate": null
+    },
+    "2018|6모|가형|4": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2018|6모|가형|5": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2018|6모|가형|6": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2018|6모|가형|7": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2018|6모|가형|8": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2018|6모|가형|9": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2018|6모|나형|1": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2018|6모|나형|10": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2018|6모|나형|11": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2018|6모|나형|12": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2018|6모|나형|13": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2018|6모|나형|14": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2018|6모|나형|15": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2018|6모|나형|16": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2018|6모|나형|17": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2018|6모|나형|18": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2018|6모|나형|19": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2018|6모|나형|2": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2018|6모|나형|20": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2018|6모|나형|21": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2018|6모|나형|22": {
+      "answer": "15",
+      "wrongRate": null
+    },
+    "2018|6모|나형|23": {
+      "answer": "35",
+      "wrongRate": null
+    },
+    "2018|6모|나형|24": {
+      "answer": "8",
+      "wrongRate": null
+    },
+    "2018|6모|나형|25": {
+      "answer": "3",
+      "wrongRate": null
+    },
+    "2018|6모|나형|26": {
+      "answer": "19",
+      "wrongRate": null
+    },
+    "2018|6모|나형|27": {
+      "answer": "6",
+      "wrongRate": null
+    },
+    "2018|6모|나형|28": {
+      "answer": "43",
+      "wrongRate": null
+    },
+    "2018|6모|나형|29": {
+      "answer": "13",
+      "wrongRate": null
+    },
+    "2018|6모|나형|3": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2018|6모|나형|30": {
+      "answer": "243",
+      "wrongRate": null
+    },
+    "2018|6모|나형|4": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2018|6모|나형|5": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2018|6모|나형|6": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2018|6모|나형|7": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2018|6모|나형|8": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2018|6모|나형|9": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2018|9모|가형|1": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2018|9모|가형|10": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2018|9모|가형|11": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2018|9모|가형|12": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2018|9모|가형|13": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2018|9모|가형|14": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2018|9모|가형|15": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2018|9모|가형|16": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2018|9모|가형|17": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2018|9모|가형|18": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2018|9모|가형|19": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2018|9모|가형|2": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2018|9모|가형|20": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2018|9모|가형|21": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2018|9모|가형|22": {
+      "answer": "210",
+      "wrongRate": null
+    },
+    "2018|9모|가형|23": {
+      "answer": "1",
+      "wrongRate": null
+    },
+    "2018|9모|가형|24": {
+      "answer": "4",
+      "wrongRate": null
+    },
+    "2018|9모|가형|25": {
+      "answer": "12",
+      "wrongRate": null
+    },
+    "2018|9모|가형|26": {
+      "answer": "25",
+      "wrongRate": null
+    },
+    "2018|9모|가형|27": {
+      "answer": "29",
+      "wrongRate": null
+    },
+    "2018|9모|가형|28": {
+      "answer": "50",
+      "wrongRate": null
+    },
+    "2018|9모|가형|29": {
+      "answer": "27",
+      "wrongRate": null
+    },
+    "2018|9모|가형|3": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2018|9모|가형|30": {
+      "answer": "6",
+      "wrongRate": null
+    },
+    "2018|9모|가형|4": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2018|9모|가형|5": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2018|9모|가형|6": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2018|9모|가형|7": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2018|9모|가형|8": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2018|9모|가형|9": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2018|9모|나형|1": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2018|9모|나형|10": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2018|9모|나형|11": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2018|9모|나형|12": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2018|9모|나형|13": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2018|9모|나형|14": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2018|9모|나형|15": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2018|9모|나형|16": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2018|9모|나형|17": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2018|9모|나형|18": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2018|9모|나형|19": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2018|9모|나형|2": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2018|9모|나형|20": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2018|9모|나형|21": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2018|9모|나형|22": {
+      "answer": "210",
+      "wrongRate": null
+    },
+    "2018|9모|나형|23": {
+      "answer": "4",
+      "wrongRate": null
+    },
+    "2018|9모|나형|24": {
+      "answer": "3",
+      "wrongRate": null
+    },
+    "2018|9모|나형|25": {
+      "answer": "20",
+      "wrongRate": null
+    },
+    "2018|9모|나형|26": {
+      "answer": "8",
+      "wrongRate": null
+    },
+    "2018|9모|나형|27": {
+      "answer": "25",
+      "wrongRate": null
+    },
+    "2018|9모|나형|28": {
+      "answer": "28",
+      "wrongRate": null
+    },
+    "2018|9모|나형|29": {
+      "answer": "10",
+      "wrongRate": null
+    },
+    "2018|9모|나형|3": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2018|9모|나형|30": {
+      "answer": "200",
+      "wrongRate": null
+    },
+    "2018|9모|나형|4": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2018|9모|나형|5": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2018|9모|나형|6": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2018|9모|나형|7": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2018|9모|나형|8": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2018|9모|나형|9": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2018|수능|가형|1": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2018|수능|가형|10": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2018|수능|가형|11": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2018|수능|가형|12": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2018|수능|가형|13": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2018|수능|가형|14": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2018|수능|가형|15": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2018|수능|가형|16": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2018|수능|가형|17": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2018|수능|가형|18": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2018|수능|가형|19": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2018|수능|가형|2": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2018|수능|가형|20": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2018|수능|가형|21": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2018|수능|가형|22": {
+      "answer": "10",
+      "wrongRate": null
+    },
+    "2018|수능|가형|23": {
+      "answer": "1",
+      "wrongRate": null
+    },
+    "2018|수능|가형|24": {
+      "answer": "2",
+      "wrongRate": null
+    },
+    "2018|수능|가형|25": {
+      "answer": "9",
+      "wrongRate": null
+    },
+    "2018|수능|가형|26": {
+      "answer": "155",
+      "wrongRate": null
+    },
+    "2018|수능|가형|27": {
+      "answer": "116",
+      "wrongRate": null
+    },
+    "2018|수능|가형|28": {
+      "answer": "19",
+      "wrongRate": null
+    },
+    "2018|수능|가형|29": {
+      "answer": "136",
+      "wrongRate": null
+    },
+    "2018|수능|가형|3": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2018|수능|가형|30": {
+      "answer": "21",
+      "wrongRate": null
+    },
+    "2018|수능|가형|4": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2018|수능|가형|5": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2018|수능|가형|6": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2018|수능|가형|7": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2018|수능|가형|8": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2018|수능|가형|9": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2018|수능|나형|1": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2018|수능|나형|10": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2018|수능|나형|11": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2018|수능|나형|12": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2018|수능|나형|13": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2018|수능|나형|14": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2018|수능|나형|15": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2018|수능|나형|16": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2018|수능|나형|17": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2018|수능|나형|18": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2018|수능|나형|19": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2018|수능|나형|2": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2018|수능|나형|20": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2018|수능|나형|21": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2018|수능|나형|22": {
+      "answer": "10",
+      "wrongRate": null
+    },
+    "2018|수능|나형|23": {
+      "answer": "7",
+      "wrongRate": null
+    },
+    "2018|수능|나형|24": {
+      "answer": "5",
+      "wrongRate": null
+    },
+    "2018|수능|나형|25": {
+      "answer": "30",
+      "wrongRate": null
+    },
+    "2018|수능|나형|26": {
+      "answer": "4",
+      "wrongRate": null
+    },
+    "2018|수능|나형|27": {
+      "answer": "14",
+      "wrongRate": null
+    },
+    "2018|수능|나형|28": {
+      "answer": "43",
+      "wrongRate": null
+    },
+    "2018|수능|나형|29": {
+      "answer": "32",
+      "wrongRate": null
+    },
+    "2018|수능|나형|3": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2018|수능|나형|30": {
+      "answer": "9",
+      "wrongRate": null
+    },
+    "2018|수능|나형|4": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2018|수능|나형|5": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2018|수능|나형|6": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2018|수능|나형|7": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2018|수능|나형|8": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2018|수능|나형|9": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2019|6모|가형|1": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2019|6모|가형|10": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2019|6모|가형|11": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2019|6모|가형|12": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2019|6모|가형|13": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2019|6모|가형|14": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2019|6모|가형|15": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2019|6모|가형|16": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2019|6모|가형|17": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2019|6모|가형|18": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2019|6모|가형|19": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2019|6모|가형|2": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2019|6모|가형|20": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2019|6모|가형|21": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2019|6모|가형|22": {
+      "answer": "14",
+      "wrongRate": null
+    },
+    "2019|6모|가형|23": {
+      "answer": "49",
+      "wrongRate": null
+    },
+    "2019|6모|가형|24": {
+      "answer": "3",
+      "wrongRate": null
+    },
+    "2019|6모|가형|25": {
+      "answer": "17",
+      "wrongRate": null
+    },
+    "2019|6모|가형|26": {
+      "answer": "96",
+      "wrongRate": null
+    },
+    "2019|6모|가형|27": {
+      "answer": "33",
+      "wrongRate": null
+    },
+    "2019|6모|가형|28": {
+      "answer": "48",
+      "wrongRate": null
+    },
+    "2019|6모|가형|29": {
+      "answer": "31",
+      "wrongRate": null
+    },
+    "2019|6모|가형|3": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2019|6모|가형|30": {
+      "answer": "16",
+      "wrongRate": null
+    },
+    "2019|6모|가형|4": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2019|6모|가형|5": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2019|6모|가형|6": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2019|6모|가형|7": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2019|6모|가형|8": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2019|6모|가형|9": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2019|6모|나형|1": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2019|6모|나형|10": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2019|6모|나형|11": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2019|6모|나형|12": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2019|6모|나형|13": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2019|6모|나형|14": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2019|6모|나형|15": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2019|6모|나형|16": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2019|6모|나형|17": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2019|6모|나형|18": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2019|6모|나형|19": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2019|6모|나형|2": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2019|6모|나형|20": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2019|6모|나형|21": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2019|6모|나형|22": {
+      "answer": "56",
+      "wrongRate": null
+    },
+    "2019|6모|나형|23": {
+      "answer": "15",
+      "wrongRate": null
+    },
+    "2019|6모|나형|24": {
+      "answer": "35",
+      "wrongRate": null
+    },
+    "2019|6모|나형|25": {
+      "answer": "3",
+      "wrongRate": null
+    },
+    "2019|6모|나형|26": {
+      "answer": "25",
+      "wrongRate": null
+    },
+    "2019|6모|나형|27": {
+      "answer": "13",
+      "wrongRate": null
+    },
+    "2019|6모|나형|28": {
+      "answer": "24",
+      "wrongRate": null
+    },
+    "2019|6모|나형|29": {
+      "answer": "20",
+      "wrongRate": null
+    },
+    "2019|6모|나형|3": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2019|6모|나형|30": {
+      "answer": "65",
+      "wrongRate": null
+    },
+    "2019|6모|나형|4": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2019|6모|나형|5": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2019|6모|나형|6": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2019|6모|나형|7": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2019|6모|나형|8": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2019|6모|나형|9": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2019|9모|가형|1": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2019|9모|가형|10": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2019|9모|가형|11": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2019|9모|가형|12": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2019|9모|가형|13": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2019|9모|가형|14": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2019|9모|가형|15": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2019|9모|가형|16": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2019|9모|가형|17": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2019|9모|가형|18": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2019|9모|가형|19": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2019|9모|가형|2": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2019|9모|가형|20": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2019|9모|가형|21": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2019|9모|가형|22": {
+      "answer": "9",
+      "wrongRate": null
+    },
+    "2019|9모|가형|23": {
+      "answer": "1",
+      "wrongRate": null
+    },
+    "2019|9모|가형|24": {
+      "answer": "80",
+      "wrongRate": null
+    },
+    "2019|9모|가형|25": {
+      "answer": "3",
+      "wrongRate": null
+    },
+    "2019|9모|가형|26": {
+      "answer": "10",
+      "wrongRate": null
+    },
+    "2019|9모|가형|27": {
+      "answer": "14",
+      "wrongRate": null
+    },
+    "2019|9모|가형|28": {
+      "answer": "89",
+      "wrongRate": null
+    },
+    "2019|9모|가형|29": {
+      "answer": "12",
+      "wrongRate": null
+    },
+    "2019|9모|가형|3": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2019|9모|가형|30": {
+      "answer": "30",
+      "wrongRate": null
+    },
+    "2019|9모|가형|4": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2019|9모|가형|5": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2019|9모|가형|6": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2019|9모|가형|7": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2019|9모|가형|8": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2019|9모|가형|9": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2019|9모|나형|1": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2019|9모|나형|10": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2019|9모|나형|11": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2019|9모|나형|12": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2019|9모|나형|13": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2019|9모|나형|14": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2019|9모|나형|15": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2019|9모|나형|16": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2019|9모|나형|17": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2019|9모|나형|18": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2019|9모|나형|19": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2019|9모|나형|2": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2019|9모|나형|20": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2019|9모|나형|21": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2019|9모|나형|22": {
+      "answer": "9",
+      "wrongRate": null
+    },
+    "2019|9모|나형|23": {
+      "answer": "13",
+      "wrongRate": null
+    },
+    "2019|9모|나형|24": {
+      "answer": "5",
+      "wrongRate": null
+    },
+    "2019|9모|나형|25": {
+      "answer": "6",
+      "wrongRate": null
+    },
+    "2019|9모|나형|26": {
+      "answer": "10",
+      "wrongRate": null
+    },
+    "2019|9모|나형|27": {
+      "answer": "80",
+      "wrongRate": null
+    },
+    "2019|9모|나형|28": {
+      "answer": "12",
+      "wrongRate": null
+    },
+    "2019|9모|나형|29": {
+      "answer": "8",
+      "wrongRate": null
+    },
+    "2019|9모|나형|3": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2019|9모|나형|30": {
+      "answer": "40",
+      "wrongRate": null
+    },
+    "2019|9모|나형|4": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2019|9모|나형|5": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2019|9모|나형|6": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2019|9모|나형|7": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2019|9모|나형|8": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2019|9모|나형|9": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2019|수능|가형|1": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2019|수능|가형|10": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2019|수능|가형|11": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2019|수능|가형|12": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2019|수능|가형|13": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2019|수능|가형|14": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2019|수능|가형|15": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2019|수능|가형|16": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2019|수능|가형|17": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2019|수능|가형|18": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2019|수능|가형|19": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2019|수능|가형|2": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2019|수능|가형|20": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2019|수능|가형|21": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2019|수능|가형|22": {
+      "answer": "15",
+      "wrongRate": null
+    },
+    "2019|수능|가형|23": {
+      "answer": "26",
+      "wrongRate": null
+    },
+    "2019|수능|가형|24": {
+      "answer": "4",
+      "wrongRate": null
+    },
+    "2019|수능|가형|25": {
+      "answer": "2",
+      "wrongRate": null
+    },
+    "2019|수능|가형|26": {
+      "answer": "12",
+      "wrongRate": null
+    },
+    "2019|수능|가형|27": {
+      "answer": "8",
+      "wrongRate": null
+    },
+    "2019|수능|가형|28": {
+      "answer": "11",
+      "wrongRate": null
+    },
+    "2019|수능|가형|29": {
+      "answer": "53",
+      "wrongRate": null
+    },
+    "2019|수능|가형|3": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2019|수능|가형|30": {
+      "answer": "27",
+      "wrongRate": null
+    },
+    "2019|수능|가형|4": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2019|수능|가형|5": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2019|수능|가형|6": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2019|수능|가형|7": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2019|수능|가형|8": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2019|수능|가형|9": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2019|수능|나형|1": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2019|수능|나형|10": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2019|수능|나형|11": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2019|수능|나형|12": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2019|수능|나형|13": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2019|수능|나형|14": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2019|수능|나형|15": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2019|수능|나형|16": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2019|수능|나형|17": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2019|수능|나형|18": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2019|수능|나형|19": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2019|수능|나형|2": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2019|수능|나형|20": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2019|수능|나형|21": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2019|수능|나형|22": {
+      "answer": "15",
+      "wrongRate": null
+    },
+    "2019|수능|나형|23": {
+      "answer": "20",
+      "wrongRate": null
+    },
+    "2019|수능|나형|24": {
+      "answer": "63",
+      "wrongRate": null
+    },
+    "2019|수능|나형|25": {
+      "answer": "10",
+      "wrongRate": null
+    },
+    "2019|수능|나형|26": {
+      "answer": "2",
+      "wrongRate": null
+    },
+    "2019|수능|나형|27": {
+      "answer": "22",
+      "wrongRate": null
+    },
+    "2019|수능|나형|28": {
+      "answer": "12",
+      "wrongRate": null
+    },
+    "2019|수능|나형|29": {
+      "answer": "117",
+      "wrongRate": null
+    },
+    "2019|수능|나형|3": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2019|수능|나형|30": {
+      "answer": "5",
+      "wrongRate": null
+    },
+    "2019|수능|나형|4": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2019|수능|나형|5": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2019|수능|나형|6": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2019|수능|나형|7": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2019|수능|나형|8": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2019|수능|나형|9": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2020|6모|가형|1": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2020|6모|가형|10": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2020|6모|가형|11": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2020|6모|가형|12": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2020|6모|가형|13": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2020|6모|가형|14": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2020|6모|가형|15": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2020|6모|가형|16": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2020|6모|가형|17": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2020|6모|가형|18": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2020|6모|가형|19": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2020|6모|가형|2": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2020|6모|가형|20": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2020|6모|가형|21": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2020|6모|가형|22": {
+      "answer": "30",
+      "wrongRate": null
+    },
+    "2020|6모|가형|23": {
+      "answer": "7",
+      "wrongRate": null
+    },
+    "2020|6모|가형|24": {
+      "answer": "15",
+      "wrongRate": null
+    },
+    "2020|6모|가형|25": {
+      "answer": "60",
+      "wrongRate": null
+    },
+    "2020|6모|가형|26": {
+      "answer": "48",
+      "wrongRate": null
+    },
+    "2020|6모|가형|27": {
+      "answer": "22",
+      "wrongRate": null
+    },
+    "2020|6모|가형|28": {
+      "answer": "40",
+      "wrongRate": null
+    },
+    "2020|6모|가형|29": {
+      "answer": "24",
+      "wrongRate": null
+    },
+    "2020|6모|가형|3": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2020|6모|가형|30": {
+      "answer": "12",
+      "wrongRate": null
+    },
+    "2020|6모|가형|4": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2020|6모|가형|5": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2020|6모|가형|6": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2020|6모|가형|7": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2020|6모|가형|8": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2020|6모|가형|9": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2020|6모|나형|1": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2020|6모|나형|10": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2020|6모|나형|11": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2020|6모|나형|12": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2020|6모|나형|13": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2020|6모|나형|14": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2020|6모|나형|15": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2020|6모|나형|16": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2020|6모|나형|17": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2020|6모|나형|18": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2020|6모|나형|19": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2020|6모|나형|2": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2020|6모|나형|20": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2020|6모|나형|21": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2020|6모|나형|22": {
+      "answer": "36",
+      "wrongRate": null
+    },
+    "2020|6모|나형|23": {
+      "answer": "5",
+      "wrongRate": null
+    },
+    "2020|6모|나형|24": {
+      "answer": "80",
+      "wrongRate": null
+    },
+    "2020|6모|나형|25": {
+      "answer": "8",
+      "wrongRate": null
+    },
+    "2020|6모|나형|26": {
+      "answer": "6",
+      "wrongRate": null
+    },
+    "2020|6모|나형|27": {
+      "answer": "3",
+      "wrongRate": null
+    },
+    "2020|6모|나형|28": {
+      "answer": "162",
+      "wrongRate": null
+    },
+    "2020|6모|나형|29": {
+      "answer": "84",
+      "wrongRate": null
+    },
+    "2020|6모|나형|3": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2020|6모|나형|30": {
+      "answer": "19",
+      "wrongRate": null
+    },
+    "2020|6모|나형|4": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2020|6모|나형|5": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2020|6모|나형|6": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2020|6모|나형|7": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2020|6모|나형|8": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2020|6모|나형|9": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2020|9모|가형|1": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2020|9모|가형|10": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2020|9모|가형|11": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2020|9모|가형|12": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2020|9모|가형|13": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2020|9모|가형|14": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2020|9모|가형|15": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2020|9모|가형|16": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2020|9모|가형|17": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2020|9모|가형|18": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2020|9모|가형|19": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2020|9모|가형|2": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2020|9모|가형|20": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2020|9모|가형|21": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2020|9모|가형|22": {
+      "answer": "32",
+      "wrongRate": null
+    },
+    "2020|9모|가형|23": {
+      "answer": "4",
+      "wrongRate": null
+    },
+    "2020|9모|가형|24": {
+      "answer": "25",
+      "wrongRate": null
+    },
+    "2020|9모|가형|25": {
+      "answer": "400",
+      "wrongRate": null
+    },
+    "2020|9모|가형|26": {
+      "answer": "2",
+      "wrongRate": null
+    },
+    "2020|9모|가형|27": {
+      "answer": "90",
+      "wrongRate": null
+    },
+    "2020|9모|가형|28": {
+      "answer": "49",
+      "wrongRate": null
+    },
+    "2020|9모|가형|29": {
+      "answer": "86",
+      "wrongRate": null
+    },
+    "2020|9모|가형|3": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2020|9모|가형|30": {
+      "answer": "93",
+      "wrongRate": null
+    },
+    "2020|9모|가형|4": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2020|9모|가형|5": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2020|9모|가형|6": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2020|9모|가형|7": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2020|9모|가형|8": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2020|9모|가형|9": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2020|9모|나형|1": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2020|9모|나형|10": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2020|9모|나형|11": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2020|9모|나형|12": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2020|9모|나형|13": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2020|9모|나형|14": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2020|9모|나형|15": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2020|9모|나형|16": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2020|9모|나형|17": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2020|9모|나형|18": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2020|9모|나형|19": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2020|9모|나형|2": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2020|9모|나형|20": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2020|9모|나형|21": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2020|9모|나형|22": {
+      "answer": "28",
+      "wrongRate": null
+    },
+    "2020|9모|나형|23": {
+      "answer": "6",
+      "wrongRate": null
+    },
+    "2020|9모|나형|24": {
+      "answer": "8",
+      "wrongRate": null
+    },
+    "2020|9모|나형|25": {
+      "answer": "10",
+      "wrongRate": null
+    },
+    "2020|9모|나형|26": {
+      "answer": "9",
+      "wrongRate": null
+    },
+    "2020|9모|나형|27": {
+      "answer": "21",
+      "wrongRate": null
+    },
+    "2020|9모|나형|28": {
+      "answer": "75",
+      "wrongRate": null
+    },
+    "2020|9모|나형|29": {
+      "answer": "49",
+      "wrongRate": null
+    },
+    "2020|9모|나형|3": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2020|9모|나형|30": {
+      "answer": "42",
+      "wrongRate": null
+    },
+    "2020|9모|나형|4": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2020|9모|나형|5": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2020|9모|나형|6": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2020|9모|나형|7": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2020|9모|나형|8": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2020|9모|나형|9": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2020|수능|가형|1": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2020|수능|가형|10": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2020|수능|가형|11": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2020|수능|가형|12": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2020|수능|가형|13": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2020|수능|가형|14": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2020|수능|가형|15": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2020|수능|가형|16": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2020|수능|가형|17": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2020|수능|가형|18": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2020|수능|가형|19": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2020|수능|가형|2": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2020|수능|가형|20": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2020|수능|가형|21": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2020|수능|가형|22": {
+      "answer": "4",
+      "wrongRate": null
+    },
+    "2020|수능|가형|23": {
+      "answer": "15",
+      "wrongRate": null
+    },
+    "2020|수능|가형|24": {
+      "answer": "2",
+      "wrongRate": null
+    },
+    "2020|수능|가형|25": {
+      "answer": "137",
+      "wrongRate": null
+    },
+    "2020|수능|가형|26": {
+      "answer": "5",
+      "wrongRate": null
+    },
+    "2020|수능|가형|27": {
+      "answer": "8",
+      "wrongRate": null
+    },
+    "2020|수능|가형|28": {
+      "answer": "450",
+      "wrongRate": null
+    },
+    "2020|수능|가형|29": {
+      "answer": "29",
+      "wrongRate": null
+    },
+    "2020|수능|가형|3": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2020|수능|가형|30": {
+      "answer": "64",
+      "wrongRate": null
+    },
+    "2020|수능|가형|4": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2020|수능|가형|5": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2020|수능|가형|6": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2020|수능|가형|7": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2020|수능|가형|8": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2020|수능|가형|9": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2020|수능|나형|1": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2020|수능|나형|10": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2020|수능|나형|11": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2020|수능|나형|12": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2020|수능|나형|13": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2020|수능|나형|14": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2020|수능|나형|15": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2020|수능|나형|16": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2020|수능|나형|17": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2020|수능|나형|18": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2020|수능|나형|19": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2020|수능|나형|2": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2020|수능|나형|20": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2020|수능|나형|21": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2020|수능|나형|22": {
+      "answer": "63",
+      "wrongRate": null
+    },
+    "2020|수능|나형|23": {
+      "answer": "36",
+      "wrongRate": null
+    },
+    "2020|수능|나형|24": {
+      "answer": "15",
+      "wrongRate": null
+    },
+    "2020|수능|나형|25": {
+      "answer": "91",
+      "wrongRate": null
+    },
+    "2020|수능|나형|26": {
+      "answer": "14",
+      "wrongRate": null
+    },
+    "2020|수능|나형|27": {
+      "answer": "27",
+      "wrongRate": null
+    },
+    "2020|수능|나형|28": {
+      "answer": "7",
+      "wrongRate": null
+    },
+    "2020|수능|나형|29": {
+      "answer": "285",
+      "wrongRate": null
+    },
+    "2020|수능|나형|3": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2020|수능|나형|30": {
+      "answer": "51",
+      "wrongRate": null
+    },
+    "2020|수능|나형|4": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2020|수능|나형|5": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2020|수능|나형|6": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2020|수능|나형|7": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2020|수능|나형|8": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2020|수능|나형|9": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2021|6모|가형|1": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2021|6모|가형|10": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2021|6모|가형|11": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2021|6모|가형|12": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2021|6모|가형|13": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2021|6모|가형|14": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2021|6모|가형|15": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2021|6모|가형|16": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2021|6모|가형|17": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2021|6모|가형|18": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2021|6모|가형|19": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2021|6모|가형|2": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2021|6모|가형|20": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2021|6모|가형|21": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2021|6모|가형|22": {
+      "answer": "24",
+      "wrongRate": null
+    },
+    "2021|6모|가형|23": {
+      "answer": "21",
+      "wrongRate": null
+    },
+    "2021|6모|가형|24": {
+      "answer": "33",
+      "wrongRate": null
+    },
+    "2021|6모|가형|25": {
+      "answer": "4",
+      "wrongRate": null
+    },
+    "2021|6모|가형|26": {
+      "answer": "7",
+      "wrongRate": null
+    },
+    "2021|6모|가형|27": {
+      "answer": "46",
+      "wrongRate": null
+    },
+    "2021|6모|가형|28": {
+      "answer": "15",
+      "wrongRate": null
+    },
+    "2021|6모|가형|29": {
+      "answer": "11430",
+      "wrongRate": null
+    },
+    "2021|6모|가형|3": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2021|6모|가형|30": {
+      "answer": "331",
+      "wrongRate": null
+    },
+    "2021|6모|가형|4": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2021|6모|가형|5": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2021|6모|가형|6": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2021|6모|가형|7": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2021|6모|가형|8": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2021|6모|가형|9": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2021|6모|나형|1": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2021|6모|나형|10": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2021|6모|나형|11": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2021|6모|나형|12": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2021|6모|나형|13": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2021|6모|나형|14": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2021|6모|나형|15": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2021|6모|나형|16": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2021|6모|나형|17": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2021|6모|나형|18": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2021|6모|나형|19": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2021|6모|나형|2": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2021|6모|나형|20": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2021|6모|나형|21": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2021|6모|나형|22": {
+      "answer": "6",
+      "wrongRate": null
+    },
+    "2021|6모|나형|23": {
+      "answer": "9",
+      "wrongRate": null
+    },
+    "2021|6모|나형|24": {
+      "answer": "10",
+      "wrongRate": null
+    },
+    "2021|6모|나형|25": {
+      "answer": "64",
+      "wrongRate": null
+    },
+    "2021|6모|나형|26": {
+      "answer": "3",
+      "wrongRate": null
+    },
+    "2021|6모|나형|27": {
+      "answer": "74",
+      "wrongRate": null
+    },
+    "2021|6모|나형|28": {
+      "answer": "58",
+      "wrongRate": null
+    },
+    "2021|6모|나형|29": {
+      "answer": "15",
+      "wrongRate": null
+    },
+    "2021|6모|나형|3": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2021|6모|나형|30": {
+      "answer": "38",
+      "wrongRate": null
+    },
+    "2021|6모|나형|4": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2021|6모|나형|5": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2021|6모|나형|6": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2021|6모|나형|7": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2021|6모|나형|8": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2021|6모|나형|9": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2021|9모|가형|1": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2021|9모|가형|10": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2021|9모|가형|11": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2021|9모|가형|12": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2021|9모|가형|13": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2021|9모|가형|14": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2021|9모|가형|15": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2021|9모|가형|16": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2021|9모|가형|17": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2021|9모|가형|18": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2021|9모|가형|19": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2021|9모|가형|2": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2021|9모|가형|20": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2021|9모|가형|21": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2021|9모|가형|22": {
+      "answer": "24",
+      "wrongRate": null
+    },
+    "2021|9모|가형|23": {
+      "answer": "2",
+      "wrongRate": null
+    },
+    "2021|9모|가형|24": {
+      "answer": "12",
+      "wrongRate": null
+    },
+    "2021|9모|가형|25": {
+      "answer": "242",
+      "wrongRate": null
+    },
+    "2021|9모|가형|26": {
+      "answer": "121",
+      "wrongRate": null
+    },
+    "2021|9모|가형|27": {
+      "answer": "9",
+      "wrongRate": null
+    },
+    "2021|9모|가형|28": {
+      "answer": "23",
+      "wrongRate": null
+    },
+    "2021|9모|가형|29": {
+      "answer": "168",
+      "wrongRate": null
+    },
+    "2021|9모|가형|3": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2021|9모|가형|30": {
+      "answer": "43",
+      "wrongRate": null
+    },
+    "2021|9모|가형|4": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2021|9모|가형|5": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2021|9모|가형|6": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2021|9모|가형|7": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2021|9모|가형|8": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2021|9모|가형|9": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2021|9모|나형|1": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2021|9모|나형|10": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2021|9모|나형|11": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2021|9모|나형|12": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2021|9모|나형|13": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2021|9모|나형|14": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2021|9모|나형|15": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2021|9모|나형|16": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2021|9모|나형|17": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2021|9모|나형|18": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2021|9모|나형|19": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2021|9모|나형|2": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2021|9모|나형|20": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2021|9모|나형|21": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2021|9모|나형|22": {
+      "answer": "24",
+      "wrongRate": null
+    },
+    "2021|9모|나형|23": {
+      "answer": "8",
+      "wrongRate": null
+    },
+    "2021|9모|나형|24": {
+      "answer": "2",
+      "wrongRate": null
+    },
+    "2021|9모|나형|25": {
+      "answer": "41",
+      "wrongRate": null
+    },
+    "2021|9모|나형|26": {
+      "answer": "12",
+      "wrongRate": null
+    },
+    "2021|9모|나형|27": {
+      "answer": "121",
+      "wrongRate": null
+    },
+    "2021|9모|나형|28": {
+      "answer": "5",
+      "wrongRate": null
+    },
+    "2021|9모|나형|29": {
+      "answer": "168",
+      "wrongRate": null
+    },
+    "2021|9모|나형|3": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2021|9모|나형|30": {
+      "answer": "105",
+      "wrongRate": null
+    },
+    "2021|9모|나형|4": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2021|9모|나형|5": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2021|9모|나형|6": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2021|9모|나형|7": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2021|9모|나형|8": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2021|9모|나형|9": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2021|수능|가형|1": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2021|수능|가형|10": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2021|수능|가형|11": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2021|수능|가형|12": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2021|수능|가형|13": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2021|수능|가형|14": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2021|수능|가형|15": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2021|수능|가형|16": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2021|수능|가형|17": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2021|수능|가형|18": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2021|수능|가형|19": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2021|수능|가형|2": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2021|수능|가형|20": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2021|수능|가형|21": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2021|수능|가형|22": {
+      "answer": "15",
+      "wrongRate": null
+    },
+    "2021|수능|가형|23": {
+      "answer": "8",
+      "wrongRate": null
+    },
+    "2021|수능|가형|24": {
+      "answer": "60",
+      "wrongRate": null
+    },
+    "2021|수능|가형|25": {
+      "answer": "160",
+      "wrongRate": null
+    },
+    "2021|수능|가형|26": {
+      "answer": "36",
+      "wrongRate": null
+    },
+    "2021|수능|가형|27": {
+      "answer": "13",
+      "wrongRate": null
+    },
+    "2021|수능|가형|28": {
+      "answer": "72",
+      "wrongRate": null
+    },
+    "2021|수능|가형|29": {
+      "answer": "201",
+      "wrongRate": null
+    },
+    "2021|수능|가형|3": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2021|수능|가형|30": {
+      "answer": "29",
+      "wrongRate": null
+    },
+    "2021|수능|가형|4": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2021|수능|가형|5": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2021|수능|가형|6": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2021|수능|가형|7": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2021|수능|가형|8": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2021|수능|가형|9": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2021|수능|나형|1": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2021|수능|나형|10": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2021|수능|나형|11": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2021|수능|나형|12": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2021|수능|나형|13": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2021|수능|나형|14": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2021|수능|나형|15": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2021|수능|나형|16": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2021|수능|나형|17": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2021|수능|나형|18": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2021|수능|나형|19": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2021|수능|나형|2": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2021|수능|나형|20": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2021|수능|나형|21": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2021|수능|나형|22": {
+      "answer": "24",
+      "wrongRate": null
+    },
+    "2021|수능|나형|23": {
+      "answer": "12",
+      "wrongRate": null
+    },
+    "2021|수능|나형|24": {
+      "answer": "2",
+      "wrongRate": null
+    },
+    "2021|수능|나형|25": {
+      "answer": "15",
+      "wrongRate": null
+    },
+    "2021|수능|나형|26": {
+      "answer": "6",
+      "wrongRate": null
+    },
+    "2021|수능|나형|27": {
+      "answer": "36",
+      "wrongRate": null
+    },
+    "2021|수능|나형|28": {
+      "answer": "21",
+      "wrongRate": null
+    },
+    "2021|수능|나형|29": {
+      "answer": "587",
+      "wrongRate": null
+    },
+    "2021|수능|나형|3": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2021|수능|나형|30": {
+      "answer": "39",
+      "wrongRate": null
+    },
+    "2021|수능|나형|4": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2021|수능|나형|5": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2021|수능|나형|6": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2021|수능|나형|7": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2021|수능|나형|8": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2021|수능|나형|9": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2022|6모|공통|1": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2022|6모|공통|10": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2022|6모|공통|11": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2022|6모|공통|12": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2022|6모|공통|13": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2022|6모|공통|14": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2022|6모|공통|15": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2022|6모|공통|16": {
+      "answer": "2",
+      "wrongRate": null
+    },
+    "2022|6모|공통|17": {
+      "answer": "11",
+      "wrongRate": null
+    },
+    "2022|6모|공통|18": {
+      "answer": "4",
+      "wrongRate": null
+    },
+    "2022|6모|공통|19": {
+      "answer": "6",
+      "wrongRate": null
+    },
+    "2022|6모|공통|2": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2022|6모|공통|20": {
+      "answer": "8",
+      "wrongRate": null
+    },
+    "2022|6모|공통|21": {
+      "answer": "24",
+      "wrongRate": null
+    },
+    "2022|6모|공통|22": {
+      "answer": "61",
+      "wrongRate": null
+    },
+    "2022|6모|공통|3": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2022|6모|공통|4": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2022|6모|공통|5": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2022|6모|공통|6": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2022|6모|공통|7": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2022|6모|공통|8": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2022|6모|공통|9": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2022|6모|기하|23": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2022|6모|기하|24": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2022|6모|기하|25": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2022|6모|기하|26": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2022|6모|기하|27": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2022|6모|기하|28": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2022|6모|기하|29": {
+      "answer": "80",
+      "wrongRate": null
+    },
+    "2022|6모|기하|30": {
+      "answer": "48",
+      "wrongRate": null
+    },
+    "2022|6모|미적|23": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2022|6모|미적|24": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2022|6모|미적|25": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2022|6모|미적|26": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2022|6모|미적|27": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2022|6모|미적|28": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2022|6모|미적|29": {
+      "answer": "17",
+      "wrongRate": null
+    },
+    "2022|6모|미적|30": {
+      "answer": "11",
+      "wrongRate": null
+    },
+    "2022|6모|확통|23": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2022|6모|확통|24": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2022|6모|확통|25": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2022|6모|확통|26": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2022|6모|확통|27": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2022|6모|확통|28": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2022|6모|확통|29": {
+      "answer": "48",
+      "wrongRate": null
+    },
+    "2022|6모|확통|30": {
+      "answer": "47",
+      "wrongRate": null
+    },
+    "2022|9모|공통|1": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2022|9모|공통|10": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2022|9모|공통|11": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2022|9모|공통|12": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2022|9모|공통|13": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2022|9모|공통|14": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2022|9모|공통|15": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2022|9모|공통|16": {
+      "answer": "2",
+      "wrongRate": null
+    },
+    "2022|9모|공통|17": {
+      "answer": "8",
+      "wrongRate": null
+    },
+    "2022|9모|공통|18": {
+      "answer": "9",
+      "wrongRate": null
+    },
+    "2022|9모|공통|19": {
+      "answer": "11",
+      "wrongRate": null
+    },
+    "2022|9모|공통|2": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2022|9모|공통|20": {
+      "answer": "21",
+      "wrongRate": null
+    },
+    "2022|9모|공통|21": {
+      "answer": "192",
+      "wrongRate": null
+    },
+    "2022|9모|공통|22": {
+      "answer": "108",
+      "wrongRate": null
+    },
+    "2022|9모|공통|3": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2022|9모|공통|4": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2022|9모|공통|5": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2022|9모|공통|6": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2022|9모|공통|7": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2022|9모|공통|8": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2022|9모|공통|9": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2022|9모|기하|23": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2022|9모|기하|24": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2022|9모|기하|25": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2022|9모|기하|26": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2022|9모|기하|27": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2022|9모|기하|28": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2022|9모|기하|29": {
+      "answer": "40",
+      "wrongRate": null
+    },
+    "2022|9모|기하|30": {
+      "answer": "45",
+      "wrongRate": null
+    },
+    "2022|9모|미적|23": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2022|9모|미적|24": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2022|9모|미적|25": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2022|9모|미적|26": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2022|9모|미적|27": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2022|9모|미적|28": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2022|9모|미적|29": {
+      "answer": "24",
+      "wrongRate": null
+    },
+    "2022|9모|미적|30": {
+      "answer": "115",
+      "wrongRate": null
+    },
+    "2022|9모|확통|23": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2022|9모|확통|24": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2022|9모|확통|25": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2022|9모|확통|26": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2022|9모|확통|27": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2022|9모|확통|28": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2022|9모|확통|29": {
+      "answer": "78",
+      "wrongRate": null
+    },
+    "2022|9모|확통|30": {
+      "answer": "218",
+      "wrongRate": null
+    },
+    "2022|수능|공통|1": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2022|수능|공통|10": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2022|수능|공통|11": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2022|수능|공통|12": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2022|수능|공통|13": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2022|수능|공통|14": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2022|수능|공통|15": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2022|수능|공통|16": {
+      "answer": "3",
+      "wrongRate": null
+    },
+    "2022|수능|공통|17": {
+      "answer": "4",
+      "wrongRate": null
+    },
+    "2022|수능|공통|18": {
+      "answer": "12",
+      "wrongRate": null
+    },
+    "2022|수능|공통|19": {
+      "answer": "6",
+      "wrongRate": null
+    },
+    "2022|수능|공통|2": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2022|수능|공통|20": {
+      "answer": "110",
+      "wrongRate": null
+    },
+    "2022|수능|공통|21": {
+      "answer": "678",
+      "wrongRate": null
+    },
+    "2022|수능|공통|22": {
+      "answer": "9",
+      "wrongRate": null
+    },
+    "2022|수능|공통|3": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2022|수능|공통|4": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2022|수능|공통|5": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2022|수능|공통|6": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2022|수능|공통|7": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2022|수능|공통|8": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2022|수능|공통|9": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2022|수능|기하|23": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2022|수능|기하|24": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2022|수능|기하|25": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2022|수능|기하|26": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2022|수능|기하|27": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2022|수능|기하|28": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2022|수능|기하|29": {
+      "answer": "100",
+      "wrongRate": null
+    },
+    "2022|수능|기하|30": {
+      "answer": "23",
+      "wrongRate": null
+    },
+    "2022|수능|미적|23": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2022|수능|미적|24": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2022|수능|미적|25": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2022|수능|미적|26": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2022|수능|미적|27": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2022|수능|미적|28": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2022|수능|미적|29": {
+      "answer": "11",
+      "wrongRate": null
+    },
+    "2022|수능|미적|30": {
+      "answer": "143",
+      "wrongRate": null
+    },
+    "2022|수능|확통|23": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2022|수능|확통|24": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2022|수능|확통|25": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2022|수능|확통|26": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2022|수능|확통|27": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2022|수능|확통|28": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2022|수능|확통|29": {
+      "answer": "31",
+      "wrongRate": null
+    },
+    "2022|수능|확통|30": {
+      "answer": "191",
+      "wrongRate": null
+    },
+    "2023|6모|공통|1": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2023|6모|공통|10": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2023|6모|공통|11": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2023|6모|공통|12": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2023|6모|공통|13": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2023|6모|공통|14": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2023|6모|공통|15": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2023|6모|공통|16": {
+      "answer": "6",
+      "wrongRate": null
+    },
+    "2023|6모|공통|17": {
+      "answer": "15",
+      "wrongRate": null
+    },
+    "2023|6모|공통|18": {
+      "answer": "3",
+      "wrongRate": null
+    },
+    "2023|6모|공통|19": {
+      "answer": "2",
+      "wrongRate": null
+    },
+    "2023|6모|공통|2": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2023|6모|공통|20": {
+      "answer": "13",
+      "wrongRate": null
+    },
+    "2023|6모|공통|21": {
+      "answer": "426",
+      "wrongRate": null
+    },
+    "2023|6모|공통|22": {
+      "answer": "19",
+      "wrongRate": null
+    },
+    "2023|6모|공통|3": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2023|6모|공통|4": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2023|6모|공통|5": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2023|6모|공통|6": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2023|6모|공통|7": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2023|6모|공통|8": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2023|6모|공통|9": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2023|6모|기하|23": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2023|6모|기하|24": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2023|6모|기하|25": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2023|6모|기하|26": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2023|6모|기하|27": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2023|6모|기하|28": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2023|6모|기하|29": {
+      "answer": "23",
+      "wrongRate": null
+    },
+    "2023|6모|기하|30": {
+      "answer": "8",
+      "wrongRate": null
+    },
+    "2023|6모|미적|23": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2023|6모|미적|24": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2023|6모|미적|25": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2023|6모|미적|26": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2023|6모|미적|27": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2023|6모|미적|28": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2023|6모|미적|29": {
+      "answer": "50",
+      "wrongRate": null
+    },
+    "2023|6모|미적|30": {
+      "answer": "16",
+      "wrongRate": null
+    },
+    "2023|6모|확통|23": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2023|6모|확통|24": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2023|6모|확통|25": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2023|6모|확통|26": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2023|6모|확통|27": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2023|6모|확통|28": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2023|6모|확통|29": {
+      "answer": "115",
+      "wrongRate": null
+    },
+    "2023|6모|확통|30": {
+      "answer": "9",
+      "wrongRate": null
+    },
+    "2023|9모|공통|1": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2023|9모|공통|10": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2023|9모|공통|11": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2023|9모|공통|12": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2023|9모|공통|13": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2023|9모|공통|14": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2023|9모|공통|15": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2023|9모|공통|16": {
+      "answer": "7",
+      "wrongRate": null
+    },
+    "2023|9모|공통|17": {
+      "answer": "16",
+      "wrongRate": null
+    },
+    "2023|9모|공통|18": {
+      "answer": "13",
+      "wrongRate": null
+    },
+    "2023|9모|공통|19": {
+      "answer": "4",
+      "wrongRate": null
+    },
+    "2023|9모|공통|2": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2023|9모|공통|20": {
+      "answer": "80",
+      "wrongRate": null
+    },
+    "2023|9모|공통|21": {
+      "answer": "220",
+      "wrongRate": null
+    },
+    "2023|9모|공통|22": {
+      "answer": "58",
+      "wrongRate": null
+    },
+    "2023|9모|공통|3": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2023|9모|공통|4": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2023|9모|공통|5": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2023|9모|공통|6": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2023|9모|공통|7": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2023|9모|공통|8": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2023|9모|공통|9": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2023|9모|기하|23": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2023|9모|기하|24": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2023|9모|기하|25": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2023|9모|기하|26": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2023|9모|기하|27": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2023|9모|기하|28": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2023|9모|기하|29": {
+      "answer": "127",
+      "wrongRate": null
+    },
+    "2023|9모|기하|30": {
+      "answer": "17",
+      "wrongRate": null
+    },
+    "2023|9모|미적|23": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2023|9모|미적|24": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2023|9모|미적|25": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2023|9모|미적|26": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2023|9모|미적|27": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2023|9모|미적|28": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2023|9모|미적|29": {
+      "answer": "3",
+      "wrongRate": null
+    },
+    "2023|9모|미적|30": {
+      "answer": "283",
+      "wrongRate": null
+    },
+    "2023|9모|확통|23": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2023|9모|확통|24": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2023|9모|확통|25": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2023|9모|확통|26": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2023|9모|확통|27": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2023|9모|확통|28": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2023|9모|확통|29": {
+      "answer": "175",
+      "wrongRate": null
+    },
+    "2023|9모|확통|30": {
+      "answer": "260",
+      "wrongRate": null
+    },
+    "2023|수능|공통|1": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2023|수능|공통|10": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2023|수능|공통|11": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2023|수능|공통|12": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2023|수능|공통|13": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2023|수능|공통|14": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2023|수능|공통|15": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2023|수능|공통|16": {
+      "answer": "10",
+      "wrongRate": null
+    },
+    "2023|수능|공통|17": {
+      "answer": "15",
+      "wrongRate": null
+    },
+    "2023|수능|공통|18": {
+      "answer": "22",
+      "wrongRate": null
+    },
+    "2023|수능|공통|19": {
+      "answer": "7",
+      "wrongRate": null
+    },
+    "2023|수능|공통|2": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2023|수능|공통|20": {
+      "answer": "17",
+      "wrongRate": null
+    },
+    "2023|수능|공통|21": {
+      "answer": "33",
+      "wrongRate": null
+    },
+    "2023|수능|공통|22": {
+      "answer": "13",
+      "wrongRate": null
+    },
+    "2023|수능|공통|3": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2023|수능|공통|4": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2023|수능|공통|5": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2023|수능|공통|6": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2023|수능|공통|7": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2023|수능|공통|8": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2023|수능|공통|9": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2023|수능|기하|23": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2023|수능|기하|24": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2023|수능|기하|25": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2023|수능|기하|26": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2023|수능|기하|27": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2023|수능|기하|28": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2023|수능|기하|29": {
+      "answer": "12",
+      "wrongRate": null
+    },
+    "2023|수능|기하|30": {
+      "answer": "24",
+      "wrongRate": null
+    },
+    "2023|수능|미적|23": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2023|수능|미적|24": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2023|수능|미적|25": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2023|수능|미적|26": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2023|수능|미적|27": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2023|수능|미적|28": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2023|수능|미적|29": {
+      "answer": "26",
+      "wrongRate": null
+    },
+    "2023|수능|미적|30": {
+      "answer": "31",
+      "wrongRate": null
+    },
+    "2023|수능|확통|23": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2023|수능|확통|24": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2023|수능|확통|25": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2023|수능|확통|26": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2023|수능|확통|27": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2023|수능|확통|28": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2023|수능|확통|29": {
+      "answer": "49",
+      "wrongRate": null
+    },
+    "2023|수능|확통|30": {
+      "answer": "100",
+      "wrongRate": null
+    },
+    "2024|6모|공통|1": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2024|6모|공통|10": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2024|6모|공통|11": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2024|6모|공통|12": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2024|6모|공통|13": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2024|6모|공통|14": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2024|6모|공통|15": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2024|6모|공통|16": {
+      "answer": "3",
+      "wrongRate": null
+    },
+    "2024|6모|공통|17": {
+      "answer": "33",
+      "wrongRate": null
+    },
+    "2024|6모|공통|18": {
+      "answer": "6",
+      "wrongRate": null
+    },
+    "2024|6모|공통|19": {
+      "answer": "8",
+      "wrongRate": null
+    },
+    "2024|6모|공통|2": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2024|6모|공통|20": {
+      "answer": "39",
+      "wrongRate": null
+    },
+    "2024|6모|공통|21": {
+      "answer": "110",
+      "wrongRate": null
+    },
+    "2024|6모|공통|22": {
+      "answer": "380",
+      "wrongRate": null
+    },
+    "2024|6모|공통|3": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2024|6모|공통|4": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2024|6모|공통|5": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2024|6모|공통|6": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2024|6모|공통|7": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2024|6모|공통|8": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2024|6모|공통|9": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2024|6모|기하|23": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2024|6모|기하|24": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2024|6모|기하|25": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2024|6모|기하|26": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2024|6모|기하|27": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2024|6모|기하|28": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2024|6모|기하|29": {
+      "answer": "80",
+      "wrongRate": null
+    },
+    "2024|6모|기하|30": {
+      "answer": "13",
+      "wrongRate": null
+    },
+    "2024|6모|미적|23": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2024|6모|미적|24": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2024|6모|미적|25": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2024|6모|미적|26": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2024|6모|미적|27": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2024|6모|미적|28": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2024|6모|미적|29": {
+      "answer": "5",
+      "wrongRate": null
+    },
+    "2024|6모|미적|30": {
+      "answer": "24",
+      "wrongRate": null
+    },
+    "2024|6모|확통|23": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2024|6모|확통|24": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2024|6모|확통|25": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2024|6모|확통|26": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2024|6모|확통|27": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2024|6모|확통|28": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2024|6모|확통|29": {
+      "answer": "25",
+      "wrongRate": null
+    },
+    "2024|6모|확통|30": {
+      "answer": "51",
+      "wrongRate": null
+    },
+    "2024|9모|공통|1": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2024|9모|공통|10": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2024|9모|공통|11": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2024|9모|공통|12": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2024|9모|공통|13": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2024|9모|공통|14": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2024|9모|공통|15": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2024|9모|공통|16": {
+      "answer": "6",
+      "wrongRate": null
+    },
+    "2024|9모|공통|17": {
+      "answer": "24",
+      "wrongRate": null
+    },
+    "2024|9모|공통|18": {
+      "answer": "5",
+      "wrongRate": null
+    },
+    "2024|9모|공통|19": {
+      "answer": "4",
+      "wrongRate": null
+    },
+    "2024|9모|공통|2": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2024|9모|공통|20": {
+      "answer": "98",
+      "wrongRate": null
+    },
+    "2024|9모|공통|21": {
+      "answer": "19",
+      "wrongRate": null
+    },
+    "2024|9모|공통|22": {
+      "answer": "10",
+      "wrongRate": null
+    },
+    "2024|9모|공통|3": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2024|9모|공통|4": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2024|9모|공통|5": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2024|9모|공통|6": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2024|9모|공통|7": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2024|9모|공통|8": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2024|9모|공통|9": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2024|9모|기하|23": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2024|9모|기하|24": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2024|9모|기하|25": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2024|9모|기하|26": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2024|9모|기하|27": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2024|9모|기하|28": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2024|9모|기하|29": {
+      "answer": "17",
+      "wrongRate": null
+    },
+    "2024|9모|기하|30": {
+      "answer": "27",
+      "wrongRate": null
+    },
+    "2024|9모|미적|23": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2024|9모|미적|24": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2024|9모|미적|25": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2024|9모|미적|26": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2024|9모|미적|27": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2024|9모|미적|28": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2024|9모|미적|29": {
+      "answer": "18",
+      "wrongRate": null
+    },
+    "2024|9모|미적|30": {
+      "answer": "32",
+      "wrongRate": null
+    },
+    "2024|9모|확통|23": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2024|9모|확통|24": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2024|9모|확통|25": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2024|9모|확통|26": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2024|9모|확통|27": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2024|9모|확통|28": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2024|9모|확통|29": {
+      "answer": "62",
+      "wrongRate": null
+    },
+    "2024|9모|확통|30": {
+      "answer": "336",
+      "wrongRate": null
+    },
+    "2024|수능|공통|1": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2024|수능|공통|10": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2024|수능|공통|11": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2024|수능|공통|12": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2024|수능|공통|13": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2024|수능|공통|14": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2024|수능|공통|15": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2024|수능|공통|16": {
+      "answer": "2",
+      "wrongRate": null
+    },
+    "2024|수능|공통|17": {
+      "answer": "8",
+      "wrongRate": null
+    },
+    "2024|수능|공통|18": {
+      "answer": "9",
+      "wrongRate": null
+    },
+    "2024|수능|공통|19": {
+      "answer": "32",
+      "wrongRate": null
+    },
+    "2024|수능|공통|2": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2024|수능|공통|20": {
+      "answer": "25",
+      "wrongRate": null
+    },
+    "2024|수능|공통|21": {
+      "answer": "10",
+      "wrongRate": null
+    },
+    "2024|수능|공통|22": {
+      "answer": "483",
+      "wrongRate": null
+    },
+    "2024|수능|공통|3": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2024|수능|공통|4": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2024|수능|공통|5": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2024|수능|공통|6": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2024|수능|공통|7": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2024|수능|공통|8": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2024|수능|공통|9": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2024|수능|기하|23": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2024|수능|기하|24": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2024|수능|기하|25": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2024|수능|기하|26": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2024|수능|기하|27": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2024|수능|기하|28": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2024|수능|기하|29": {
+      "answer": "11",
+      "wrongRate": null
+    },
+    "2024|수능|기하|30": {
+      "answer": "147",
+      "wrongRate": null
+    },
+    "2024|수능|미적|23": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2024|수능|미적|24": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2024|수능|미적|25": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2024|수능|미적|26": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2024|수능|미적|27": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2024|수능|미적|28": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2024|수능|미적|29": {
+      "answer": "162",
+      "wrongRate": null
+    },
+    "2024|수능|미적|30": {
+      "answer": "125",
+      "wrongRate": null
+    },
+    "2024|수능|확통|23": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2024|수능|확통|24": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2024|수능|확통|25": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2024|수능|확통|26": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2024|수능|확통|27": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2024|수능|확통|28": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2024|수능|확통|29": {
+      "answer": "196",
+      "wrongRate": null
+    },
+    "2024|수능|확통|30": {
+      "answer": "673",
+      "wrongRate": null
+    },
+    "2025|6모|공통|1": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2025|6모|공통|10": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2025|6모|공통|11": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2025|6모|공통|12": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2025|6모|공통|13": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2025|6모|공통|14": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2025|6모|공통|15": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2025|6모|공통|16": {
+      "answer": "7",
+      "wrongRate": null
+    },
+    "2025|6모|공통|17": {
+      "answer": "23",
+      "wrongRate": null
+    },
+    "2025|6모|공통|18": {
+      "answer": "2",
+      "wrongRate": null
+    },
+    "2025|6모|공통|19": {
+      "answer": "16",
+      "wrongRate": null
+    },
+    "2025|6모|공통|2": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2025|6모|공통|20": {
+      "answer": "24",
+      "wrongRate": null
+    },
+    "2025|6모|공통|21": {
+      "answer": "15",
+      "wrongRate": null
+    },
+    "2025|6모|공통|22": {
+      "answer": "231",
+      "wrongRate": null
+    },
+    "2025|6모|공통|3": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2025|6모|공통|4": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2025|6모|공통|5": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2025|6모|공통|6": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2025|6모|공통|7": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2025|6모|공통|8": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2025|6모|공통|9": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2025|6모|기하|23": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2025|6모|기하|24": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2025|6모|기하|25": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2025|6모|기하|26": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2025|6모|기하|27": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2025|6모|기하|28": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2025|6모|기하|29": {
+      "answer": "25",
+      "wrongRate": null
+    },
+    "2025|6모|기하|30": {
+      "answer": "10",
+      "wrongRate": null
+    },
+    "2025|6모|미적|23": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2025|6모|미적|24": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2025|6모|미적|25": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2025|6모|미적|26": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2025|6모|미적|27": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2025|6모|미적|28": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2025|6모|미적|29": {
+      "answer": "55",
+      "wrongRate": null
+    },
+    "2025|6모|미적|30": {
+      "answer": "25",
+      "wrongRate": null
+    },
+    "2025|6모|확통|23": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2025|6모|확통|24": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2025|6모|확통|25": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2025|6모|확통|26": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2025|6모|확통|27": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2025|6모|확통|28": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2025|6모|확통|29": {
+      "answer": "6",
+      "wrongRate": null
+    },
+    "2025|6모|확통|30": {
+      "answer": "108",
+      "wrongRate": null
+    },
+    "2025|9모|공통|1": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2025|9모|공통|10": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2025|9모|공통|11": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2025|9모|공통|12": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2025|9모|공통|13": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2025|9모|공통|14": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2025|9모|공통|15": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2025|9모|공통|16": {
+      "answer": "7",
+      "wrongRate": null
+    },
+    "2025|9모|공통|17": {
+      "answer": "5",
+      "wrongRate": null
+    },
+    "2025|9모|공통|18": {
+      "answer": "29",
+      "wrongRate": null
+    },
+    "2025|9모|공통|19": {
+      "answer": "4",
+      "wrongRate": null
+    },
+    "2025|9모|공통|2": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2025|9모|공통|20": {
+      "answer": "15",
+      "wrongRate": null
+    },
+    "2025|9모|공통|21": {
+      "answer": "31",
+      "wrongRate": null
+    },
+    "2025|9모|공통|22": {
+      "answer": "8",
+      "wrongRate": null
+    },
+    "2025|9모|공통|3": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2025|9모|공통|4": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2025|9모|공통|5": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2025|9모|공통|6": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2025|9모|공통|7": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2025|9모|공통|8": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2025|9모|공통|9": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2025|9모|기하|23": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2025|9모|기하|24": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2025|9모|기하|25": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2025|9모|기하|26": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2025|9모|기하|27": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2025|9모|기하|28": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2025|9모|기하|29": {
+      "answer": "63",
+      "wrongRate": null
+    },
+    "2025|9모|기하|30": {
+      "answer": "54",
+      "wrongRate": null
+    },
+    "2025|9모|미적|23": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2025|9모|미적|24": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2025|9모|미적|25": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2025|9모|미적|26": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2025|9모|미적|27": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2025|9모|미적|28": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2025|9모|미적|29": {
+      "answer": "57",
+      "wrongRate": null
+    },
+    "2025|9모|미적|30": {
+      "answer": "25",
+      "wrongRate": null
+    },
+    "2025|9모|확통|23": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2025|9모|확통|24": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2025|9모|확통|25": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2025|9모|확통|26": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2025|9모|확통|27": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2025|9모|확통|28": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2025|9모|확통|29": {
+      "answer": "994",
+      "wrongRate": null
+    },
+    "2025|9모|확통|30": {
+      "answer": "93",
+      "wrongRate": null
+    },
+    "2025|수능|공통|1": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2025|수능|공통|10": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2025|수능|공통|11": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2025|수능|공통|12": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2025|수능|공통|13": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2025|수능|공통|14": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2025|수능|공통|15": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2025|수능|공통|16": {
+      "answer": "7",
+      "wrongRate": null
+    },
+    "2025|수능|공통|17": {
+      "answer": "33",
+      "wrongRate": null
+    },
+    "2025|수능|공통|18": {
+      "answer": "96",
+      "wrongRate": null
+    },
+    "2025|수능|공통|19": {
+      "answer": "41",
+      "wrongRate": null
+    },
+    "2025|수능|공통|2": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2025|수능|공통|20": {
+      "answer": "36",
+      "wrongRate": null
+    },
+    "2025|수능|공통|21": {
+      "answer": "16",
+      "wrongRate": null
+    },
+    "2025|수능|공통|22": {
+      "answer": "64",
+      "wrongRate": null
+    },
+    "2025|수능|공통|3": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2025|수능|공통|4": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2025|수능|공통|5": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2025|수능|공통|6": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2025|수능|공통|7": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2025|수능|공통|8": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2025|수능|공통|9": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2025|수능|기하|23": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2025|수능|기하|24": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2025|수능|기하|25": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2025|수능|기하|26": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2025|수능|기하|27": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2025|수능|기하|28": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2025|수능|기하|29": {
+      "answer": "107",
+      "wrongRate": null
+    },
+    "2025|수능|기하|30": {
+      "answer": "316",
+      "wrongRate": null
+    },
+    "2025|수능|미적|23": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2025|수능|미적|24": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2025|수능|미적|25": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2025|수능|미적|26": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2025|수능|미적|27": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2025|수능|미적|28": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2025|수능|미적|29": {
+      "answer": "25",
+      "wrongRate": null
+    },
+    "2025|수능|미적|30": {
+      "answer": "17",
+      "wrongRate": null
+    },
+    "2025|수능|확통|23": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2025|수능|확통|24": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2025|수능|확통|25": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2025|수능|확통|26": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2025|수능|확통|27": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2025|수능|확통|28": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2025|수능|확통|29": {
+      "answer": "25",
+      "wrongRate": null
+    },
+    "2025|수능|확통|30": {
+      "answer": "19",
+      "wrongRate": null
+    },
+    "2026|6모|공통|1": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2026|6모|공통|10": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2026|6모|공통|11": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2026|6모|공통|12": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2026|6모|공통|13": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2026|6모|공통|14": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2026|6모|공통|15": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2026|6모|공통|16": {
+      "answer": "2",
+      "wrongRate": null
+    },
+    "2026|6모|공통|17": {
+      "answer": "6",
+      "wrongRate": null
+    },
+    "2026|6모|공통|18": {
+      "answer": "133",
+      "wrongRate": null
+    },
+    "2026|6모|공통|19": {
+      "answer": "8",
+      "wrongRate": null
+    },
+    "2026|6모|공통|2": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2026|6모|공통|20": {
+      "answer": "85",
+      "wrongRate": null
+    },
+    "2026|6모|공통|21": {
+      "answer": "42",
+      "wrongRate": null
+    },
+    "2026|6모|공통|22": {
+      "answer": "38",
+      "wrongRate": null
+    },
+    "2026|6모|공통|3": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2026|6모|공통|4": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2026|6모|공통|5": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2026|6모|공통|6": {
+      "answer": "5",
+      "wrongRate": null
+    },
+    "2026|6모|공통|7": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2026|6모|공통|8": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2026|6모|공통|9": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2026|6모|기하|23": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2026|6모|기하|24": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2026|6모|기하|25": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2026|6모|기하|26": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2026|6모|기하|27": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2026|6모|기하|28": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2026|6모|기하|29": {
+      "answer": "20",
+      "wrongRate": null
+    },
+    "2026|6모|기하|30": {
+      "answer": "36",
+      "wrongRate": null
+    },
+    "2026|6모|미적|23": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2026|6모|미적|24": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2026|6모|미적|25": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2026|6모|미적|26": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2026|6모|미적|27": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2026|6모|미적|28": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2026|6모|미적|29": {
+      "answer": "109",
+      "wrongRate": null
+    },
+    "2026|6모|미적|30": {
+      "answer": "25",
+      "wrongRate": null
+    },
+    "2026|6모|확통|23": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2026|6모|확통|24": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2026|6모|확통|25": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2026|6모|확통|26": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2026|6모|확통|27": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2026|6모|확통|28": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2026|6모|확통|29": {
+      "answer": "44",
+      "wrongRate": null
+    },
+    "2026|6모|확통|30": {
+      "answer": "115",
+      "wrongRate": null
+    },
+    "2026|9모|공통|1": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2026|9모|공통|10": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2026|9모|공통|11": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2026|9모|공통|12": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2026|9모|공통|13": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2026|9모|공통|14": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2026|9모|공통|15": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2026|9모|공통|16": {
+      "answer": "8",
+      "wrongRate": null
+    },
+    "2026|9모|공통|17": {
+      "answer": "17",
+      "wrongRate": null
+    },
+    "2026|9모|공통|18": {
+      "answer": "30",
+      "wrongRate": null
+    },
+    "2026|9모|공통|19": {
+      "answer": "10",
+      "wrongRate": null
+    },
+    "2026|9모|공통|2": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2026|9모|공통|20": {
+      "answer": "12",
+      "wrongRate": null
+    },
+    "2026|9모|공통|21": {
+      "answer": "296",
+      "wrongRate": null
+    },
+    "2026|9모|공통|22": {
+      "answer": "73",
+      "wrongRate": null
+    },
+    "2026|9모|공통|3": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2026|9모|공통|4": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2026|9모|공통|5": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2026|9모|공통|6": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2026|9모|공통|7": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2026|9모|공통|8": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2026|9모|공통|9": {
+      "answer": "08",
+      "wrongRate": null
+    },
+    "2026|9모|기하|23": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2026|9모|기하|24": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2026|9모|기하|25": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2026|9모|기하|26": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2026|9모|기하|27": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2026|9모|기하|28": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2026|9모|기하|29": {
+      "answer": "396",
+      "wrongRate": null
+    },
+    "2026|9모|기하|30": {
+      "answer": "69",
+      "wrongRate": null
+    },
+    "2026|9모|미적|23": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2026|9모|미적|24": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2026|9모|미적|25": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2026|9모|미적|26": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2026|9모|미적|27": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2026|9모|미적|28": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2026|9모|미적|29": {
+      "answer": "91",
+      "wrongRate": null
+    },
+    "2026|9모|미적|30": {
+      "answer": "31",
+      "wrongRate": null
+    },
+    "2026|9모|확통|23": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2026|9모|확통|24": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2026|9모|확통|25": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2026|9모|확통|26": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2026|9모|확통|27": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2026|9모|확통|28": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2026|9모|확통|29": {
+      "answer": "23",
+      "wrongRate": null
+    },
+    "2026|9모|확통|30": {
+      "answer": "80",
+      "wrongRate": null
+    },
+    "2026|수능|공통|1": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2026|수능|공통|10": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2026|수능|공통|11": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2026|수능|공통|12": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2026|수능|공통|13": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2026|수능|공통|14": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2026|수능|공통|15": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2026|수능|공통|16": {
+      "answer": "9",
+      "wrongRate": null
+    },
+    "2026|수능|공통|17": {
+      "answer": "16",
+      "wrongRate": null
+    },
+    "2026|수능|공통|18": {
+      "answer": "12",
+      "wrongRate": null
+    },
+    "2026|수능|공통|19": {
+      "answer": "15",
+      "wrongRate": null
+    },
+    "2026|수능|공통|2": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2026|수능|공통|20": {
+      "answer": "130",
+      "wrongRate": null
+    },
+    "2026|수능|공통|21": {
+      "answer": "65",
+      "wrongRate": null
+    },
+    "2026|수능|공통|22": {
+      "answer": "457",
+      "wrongRate": null
+    },
+    "2026|수능|공통|3": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2026|수능|공통|4": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2026|수능|공통|5": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2026|수능|공통|6": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2026|수능|공통|7": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2026|수능|공통|8": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2026|수능|공통|9": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2026|수능|기하|23": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2026|수능|기하|24": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2026|수능|기하|25": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2026|수능|기하|26": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2026|수능|기하|27": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2026|수능|기하|28": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2026|수능|기하|29": {
+      "answer": "360",
+      "wrongRate": null
+    },
+    "2026|수능|기하|30": {
+      "answer": "221",
+      "wrongRate": null
+    },
+    "2026|수능|미적|23": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2026|수능|미적|24": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2026|수능|미적|25": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2026|수능|미적|26": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2026|수능|미적|27": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2026|수능|미적|28": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2026|수능|미적|29": {
+      "answer": "97",
+      "wrongRate": null
+    },
+    "2026|수능|미적|30": {
+      "answer": "11",
+      "wrongRate": null
+    },
+    "2026|수능|확통|23": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2026|수능|확통|24": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2026|수능|확통|25": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2026|수능|확통|26": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2026|수능|확통|27": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2026|수능|확통|28": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2026|수능|확통|29": {
+      "answer": "977",
+      "wrongRate": null
+    },
+    "2026|수능|확통|30": {
+      "answer": "262",
+      "wrongRate": null
+    },
+    "2027|6모|공통|1": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2027|6모|공통|10": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2027|6모|공통|11": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2027|6모|공통|12": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2027|6모|공통|13": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2027|6모|공통|14": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2027|6모|공통|15": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2027|6모|공통|16": {
+      "answer": "2",
+      "wrongRate": null
+    },
+    "2027|6모|공통|17": {
+      "answer": "10",
+      "wrongRate": null
+    },
+    "2027|6모|공통|18": {
+      "answer": "15",
+      "wrongRate": null
+    },
+    "2027|6모|공통|19": {
+      "answer": "9",
+      "wrongRate": null
+    },
+    "2027|6모|공통|2": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2027|6모|공통|20": {
+      "answer": "48",
+      "wrongRate": null
+    },
+    "2027|6모|공통|21": {
+      "answer": "11",
+      "wrongRate": null
+    },
+    "2027|6모|공통|22": {
+      "answer": "32",
+      "wrongRate": null
+    },
+    "2027|6모|공통|3": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2027|6모|공통|4": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2027|6모|공통|5": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2027|6모|공통|6": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2027|6모|공통|7": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2027|6모|공통|8": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2027|6모|공통|9": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2027|6모|기하|23": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2027|6모|기하|24": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2027|6모|기하|25": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2027|6모|기하|26": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2027|6모|기하|27": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2027|6모|기하|28": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2027|6모|기하|29": {
+      "answer": "14",
+      "wrongRate": null
+    },
+    "2027|6모|기하|30": {
+      "answer": "29",
+      "wrongRate": null
+    },
+    "2027|6모|미적|23": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2027|6모|미적|24": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2027|6모|미적|25": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2027|6모|미적|26": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2027|6모|미적|27": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2027|6모|미적|28": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2027|6모|미적|29": {
+      "answer": "54",
+      "wrongRate": null
+    },
+    "2027|6모|미적|30": {
+      "answer": "20",
+      "wrongRate": null
+    },
+    "2027|6모|확통|23": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2027|6모|확통|24": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2027|6모|확통|25": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2027|6모|확통|26": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2027|6모|확통|27": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2027|6모|확통|28": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2027|6모|확통|29": {
+      "answer": "98",
+      "wrongRate": null
+    },
+    "2027|6모|확통|30": {
+      "answer": "780",
+      "wrongRate": null
+    },
+    "2027|9모|공통|1": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2027|9모|공통|10": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2027|9모|공통|11": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2027|9모|공통|12": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2027|9모|공통|13": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2027|9모|공통|14": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2027|9모|공통|15": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2027|9모|공통|16": {
+      "answer": "6",
+      "wrongRate": null
+    },
+    "2027|9모|공통|17": {
+      "answer": "11",
+      "wrongRate": null
+    },
+    "2027|9모|공통|18": {
+      "answer": "38",
+      "wrongRate": null
+    },
+    "2027|9모|공통|19": {
+      "answer": "15",
+      "wrongRate": null
+    },
+    "2027|9모|공통|2": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2027|9모|공통|20": {
+      "answer": "17",
+      "wrongRate": null
+    },
+    "2027|9모|공통|21": {
+      "answer": "12",
+      "wrongRate": null
+    },
+    "2027|9모|공통|22": {
+      "answer": "97",
+      "wrongRate": null
+    },
+    "2027|9모|공통|3": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2027|9모|공통|4": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2027|9모|공통|5": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2027|9모|공통|6": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2027|9모|공통|7": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2027|9모|공통|8": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2027|9모|공통|9": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2027|9모|기하|23": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2027|9모|기하|24": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2027|9모|기하|25": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2027|9모|기하|26": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2027|9모|기하|27": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2027|9모|기하|28": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2027|9모|기하|29": {
+      "answer": "60",
+      "wrongRate": null
+    },
+    "2027|9모|기하|30": {
+      "answer": "457",
+      "wrongRate": null
+    },
+    "2027|9모|미적|23": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2027|9모|미적|24": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2027|9모|미적|25": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2027|9모|미적|26": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2027|9모|미적|27": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2027|9모|미적|28": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2027|9모|미적|29": {
+      "answer": "81",
+      "wrongRate": null
+    },
+    "2027|9모|미적|30": {
+      "answer": "49",
+      "wrongRate": null
+    },
+    "2027|9모|확통|23": {
+      "answer": "①",
+      "wrongRate": null
+    },
+    "2027|9모|확통|24": {
+      "answer": "④",
+      "wrongRate": null
+    },
+    "2027|9모|확통|25": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2027|9모|확통|26": {
+      "answer": "②",
+      "wrongRate": null
+    },
+    "2027|9모|확통|27": {
+      "answer": "③",
+      "wrongRate": null
+    },
+    "2027|9모|확통|28": {
+      "answer": "⑤",
+      "wrongRate": null
+    },
+    "2027|9모|확통|29": {
+      "answer": "190",
+      "wrongRate": null
+    },
+    "2027|9모|확통|30": {
+      "answer": "170",
+      "wrongRate": null
+    }
+  },
+  "wrongRates": {
+    "2017|6모|가형|10": 27.4,
+    "2017|6모|가형|12": 22.4,
+    "2017|6모|가형|14": 32.6,
+    "2017|6모|가형|15": 22.5,
+    "2017|6모|가형|16": 27.5,
+    "2017|6모|가형|17": 23.2,
+    "2017|6모|가형|18": 22.7,
+    "2017|6모|가형|19": 29.2,
+    "2017|6모|가형|20": 47.9,
+    "2017|6모|가형|21": 52.6,
+    "2017|6모|가형|26": 31.5,
+    "2017|6모|가형|27": 36.1,
+    "2017|6모|가형|28": 59.5,
+    "2017|6모|가형|29": 73.4,
+    "2017|6모|가형|30": 92.5,
+    "2017|6모|나형|13": 29.5,
+    "2017|6모|나형|14": 34.7,
+    "2017|6모|나형|15": 31.6,
+    "2017|6모|나형|16": 39.0,
+    "2017|6모|나형|17": 63.6,
+    "2017|6모|나형|18": 58.2,
+    "2017|6모|나형|19": 43.1,
+    "2017|6모|나형|20": 42.7,
+    "2017|6모|나형|21": 65.6,
+    "2017|6모|나형|24": 32.6,
+    "2017|6모|나형|26": 34.8,
+    "2017|6모|나형|27": 55.9,
+    "2017|6모|나형|28": 56.5,
+    "2017|6모|나형|29": 86.9,
+    "2017|6모|나형|30": 96.6,
+    "2017|9모|가형|13": 21.1,
+    "2017|9모|가형|14": 19.8,
+    "2017|9모|가형|16": 33.5,
+    "2017|9모|가형|17": 41.0,
+    "2017|9모|가형|18": 31.9,
+    "2017|9모|가형|19": 26.4,
+    "2017|9모|가형|20": 30.2,
+    "2017|9모|가형|21": 67.7,
+    "2017|9모|가형|24": 19.9,
+    "2017|9모|가형|25": 30.7,
+    "2017|9모|가형|26": 24.8,
+    "2017|9모|가형|27": 30.0,
+    "2017|9모|가형|28": 41.6,
+    "2017|9모|가형|29": 67.1,
+    "2017|9모|가형|30": 91.0,
+    "2017|9모|나형|11": 26.5,
+    "2017|9모|나형|14": 34.4,
+    "2017|9모|나형|16": 51.1,
+    "2017|9모|나형|17": 34.6,
+    "2017|9모|나형|18": 62.6,
+    "2017|9모|나형|19": 27.8,
+    "2017|9모|나형|20": 58.1,
+    "2017|9모|나형|21": 76.2,
+    "2017|9모|나형|23": 30.7,
+    "2017|9모|나형|25": 33.9,
+    "2017|9모|나형|26": 34.1,
+    "2017|9모|나형|27": 43.5,
+    "2017|9모|나형|28": 68.3,
+    "2017|9모|나형|29": 78.3,
+    "2017|9모|나형|30": 97.3,
+    "2017|수능|가형|14": 38.3,
+    "2017|수능|가형|15": 33.4,
+    "2017|수능|가형|16": 38.1,
+    "2017|수능|가형|17": 30.8,
+    "2017|수능|가형|18": 36.7,
+    "2017|수능|가형|19": 54.7,
+    "2017|수능|가형|20": 46.4,
+    "2017|수능|가형|21": 70.1,
+    "2017|수능|가형|24": 38.4,
+    "2017|수능|가형|25": 31.7,
+    "2017|수능|가형|26": 43.8,
+    "2017|수능|가형|27": 70.6,
+    "2017|수능|가형|28": 41.5,
+    "2017|수능|가형|29": 88.7,
+    "2017|수능|가형|30": 96.5,
+    "2017|수능|나형|10": 35.2,
+    "2017|수능|나형|12": 33.4,
+    "2017|수능|나형|16": 38.7,
+    "2017|수능|나형|17": 54.0,
+    "2017|수능|나형|18": 55.0,
+    "2017|수능|나형|19": 55.4,
+    "2017|수능|나형|20": 58.1,
+    "2017|수능|나형|21": 69.1,
+    "2017|수능|나형|25": 33.9,
+    "2017|수능|나형|26": 52.2,
+    "2017|수능|나형|27": 82.3,
+    "2017|수능|나형|28": 64.1,
+    "2017|수능|나형|29": 77.2,
+    "2017|수능|나형|30": 96.9,
+    "2017|수능|나형|7": 30.0,
+    "2018|6모|가형|14": 27.6,
+    "2018|6모|가형|15": 37.8,
+    "2018|6모|가형|16": 52.2,
+    "2018|6모|가형|17": 37.7,
+    "2018|6모|가형|18": 57.6,
+    "2018|6모|가형|19": 41.5,
+    "2018|6모|가형|20": 56.6,
+    "2018|6모|가형|21": 68.3,
+    "2018|6모|가형|25": 30.9,
+    "2018|6모|가형|26": 74.0,
+    "2018|6모|가형|27": 64.1,
+    "2018|6모|가형|28": 74.4,
+    "2018|6모|가형|29": 90.0,
+    "2018|6모|가형|30": 92.5,
+    "2018|6모|가형|8": 35.4,
+    "2018|6모|나형|13": 29.6,
+    "2018|6모|나형|14": 28.7,
+    "2018|6모|나형|16": 37.5,
+    "2018|6모|나형|17": 33.7,
+    "2018|6모|나형|18": 57.6,
+    "2018|6모|나형|19": 63.0,
+    "2018|6모|나형|20": 56.3,
+    "2018|6모|나형|21": 77.5,
+    "2018|6모|나형|24": 33.8,
+    "2018|6모|나형|25": 31.4,
+    "2018|6모|나형|26": 38.6,
+    "2018|6모|나형|27": 65.6,
+    "2018|6모|나형|28": 72.3,
+    "2018|6모|나형|29": 80.5,
+    "2018|6모|나형|30": 96.4,
+    "2018|9모|가형|13": 28.0,
+    "2018|9모|가형|14": 48.2,
+    "2018|9모|가형|15": 29.8,
+    "2018|9모|가형|16": 43.5,
+    "2018|9모|가형|17": 46.2,
+    "2018|9모|가형|18": 41.0,
+    "2018|9모|가형|19": 37.0,
+    "2018|9모|가형|20": 62.1,
+    "2018|9모|가형|21": 68.2,
+    "2018|9모|가형|24": 22.0,
+    "2018|9모|가형|26": 49.4,
+    "2018|9모|가형|27": 60.9,
+    "2018|9모|가형|28": 43.1,
+    "2018|9모|가형|29": 88.8,
+    "2018|9모|가형|30": 93.8,
+    "2018|9모|나형|13": 42.7,
+    "2018|9모|나형|14": 38.7,
+    "2018|9모|나형|15": 32.9,
+    "2018|9모|나형|16": 35.9,
+    "2018|9모|나형|17": 50.2,
+    "2018|9모|나형|18": 62.1,
+    "2018|9모|나형|19": 62.0,
+    "2018|9모|나형|20": 68.8,
+    "2018|9모|나형|21": 73.5,
+    "2018|9모|나형|26": 46.5,
+    "2018|9모|나형|27": 64.3,
+    "2018|9모|나형|28": 77.9,
+    "2018|9모|나형|29": 83.4,
+    "2018|9모|나형|30": 97.2,
+    "2018|9모|나형|5": 34.5,
+    "2018|수능|가형|12": 31.2,
+    "2018|수능|가형|14": 31.5,
+    "2018|수능|가형|15": 44.0,
+    "2018|수능|가형|16": 35.5,
+    "2018|수능|가형|17": 45.6,
+    "2018|수능|가형|18": 36.9,
+    "2018|수능|가형|19": 29.3,
+    "2018|수능|가형|20": 42.6,
+    "2018|수능|가형|21": 73.0,
+    "2018|수능|가형|25": 32.3,
+    "2018|수능|가형|26": 43.7,
+    "2018|수능|가형|27": 64.1,
+    "2018|수능|가형|28": 61.3,
+    "2018|수능|가형|29": 93.5,
+    "2018|수능|가형|30": 97.3,
+    "2018|수능|나형|11": 44.5,
+    "2018|수능|나형|14": 42.5,
+    "2018|수능|나형|15": 44.2,
+    "2018|수능|나형|16": 39.0,
+    "2018|수능|나형|17": 48.4,
+    "2018|수능|나형|18": 46.9,
+    "2018|수능|나형|19": 53.3,
+    "2018|수능|나형|20": 58.0,
+    "2018|수능|나형|21": 81.5,
+    "2018|수능|나형|26": 60.2,
+    "2018|수능|나형|27": 54.6,
+    "2018|수능|나형|28": 55.8,
+    "2018|수능|나형|29": 81.5,
+    "2018|수능|나형|30": 93.4,
+    "2018|수능|나형|8": 38.4,
+    "2019|6모|가형|12": 40.1,
+    "2019|6모|가형|14": 53.0,
+    "2019|6모|가형|15": 41.6,
+    "2019|6모|가형|16": 51.2,
+    "2019|6모|가형|17": 57.2,
+    "2019|6모|가형|18": 54.9,
+    "2019|6모|가형|19": 71.7,
+    "2019|6모|가형|20": 58.3,
+    "2019|6모|가형|21": 77.7,
+    "2019|6모|가형|24": 41.7,
+    "2019|6모|가형|26": 51.3,
+    "2019|6모|가형|27": 49.6,
+    "2019|6모|가형|28": 85.0,
+    "2019|6모|가형|29": 89.8,
+    "2019|6모|가형|30": 93.0,
+    "2019|6모|나형|11": 45.8,
+    "2019|6모|나형|13": 33.0,
+    "2019|6모|나형|15": 36.0,
+    "2019|6모|나형|17": 42.3,
+    "2019|6모|나형|18": 53.1,
+    "2019|6모|나형|19": 42.7,
+    "2019|6모|나형|20": 61.8,
+    "2019|6모|나형|21": 70.7,
+    "2019|6모|나형|25": 49.6,
+    "2019|6모|나형|26": 45.0,
+    "2019|6모|나형|27": 59.2,
+    "2019|6모|나형|28": 63.7,
+    "2019|6모|나형|29": 93.2,
+    "2019|6모|나형|30": 98.1,
+    "2019|6모|나형|6": 33.7,
+    "2019|9모|가형|14": 44.2,
+    "2019|9모|가형|16": 37.6,
+    "2019|9모|가형|17": 34.9,
+    "2019|9모|가형|18": 40.6,
+    "2019|9모|가형|19": 40.9,
+    "2019|9모|가형|20": 59.4,
+    "2019|9모|가형|21": 77.7,
+    "2019|9모|가형|24": 27.9,
+    "2019|9모|가형|25": 41.0,
+    "2019|9모|가형|26": 29.1,
+    "2019|9모|가형|27": 32.6,
+    "2019|9모|가형|28": 53.0,
+    "2019|9모|가형|29": 81.5,
+    "2019|9모|가형|30": 89.8,
+    "2019|9모|가형|8": 34.2,
+    "2019|9모|나형|12": 37.2,
+    "2019|9모|나형|14": 42.6,
+    "2019|9모|나형|15": 44.5,
+    "2019|9모|나형|16": 48.6,
+    "2019|9모|나형|17": 54.8,
+    "2019|9모|나형|18": 65.3,
+    "2019|9모|나형|19": 57.4,
+    "2019|9모|나형|20": 49.6,
+    "2019|9모|나형|21": 67.0,
+    "2019|9모|나형|24": 37.9,
+    "2019|9모|나형|26": 34.0,
+    "2019|9모|나형|27": 52.1,
+    "2019|9모|나형|28": 61.2,
+    "2019|9모|나형|29": 85.3,
+    "2019|9모|나형|30": 97.0,
+    "2019|수능|가형|13": 45.4,
+    "2019|수능|가형|14": 54.4,
+    "2019|수능|가형|15": 32.8,
+    "2019|수능|가형|16": 44.0,
+    "2019|수능|가형|17": 44.6,
+    "2019|수능|가형|18": 50.0,
+    "2019|수능|가형|19": 57.5,
+    "2019|수능|가형|20": 50.4,
+    "2019|수능|가형|21": 63.0,
+    "2019|수능|가형|24": 37.7,
+    "2019|수능|가형|26": 37.1,
+    "2019|수능|가형|27": 42.6,
+    "2019|수능|가형|28": 35.2,
+    "2019|수능|가형|29": 92.6,
+    "2019|수능|가형|30": 94.4,
+    "2019|수능|나형|12": 44.0,
+    "2019|수능|나형|14": 37.8,
+    "2019|수능|나형|16": 43.6,
+    "2019|수능|나형|17": 49.2,
+    "2019|수능|나형|18": 59.1,
+    "2019|수능|나형|19": 64.7,
+    "2019|수능|나형|20": 66.7,
+    "2019|수능|나형|21": 85.7,
+    "2019|수능|나형|24": 43.6,
+    "2019|수능|나형|25": 63.4,
+    "2019|수능|나형|26": 46.8,
+    "2019|수능|나형|27": 40.7,
+    "2019|수능|나형|28": 56.8,
+    "2019|수능|나형|29": 91.8,
+    "2019|수능|나형|30": 96.2,
+    "2020|6모|가형|12": 25.8,
+    "2020|6모|가형|15": 32.2,
+    "2020|6모|가형|16": 26.5,
+    "2020|6모|가형|17": 50.6,
+    "2020|6모|가형|18": 57.6,
+    "2020|6모|가형|19": 50.7,
+    "2020|6모|가형|20": 51.7,
+    "2020|6모|가형|21": 61.7,
+    "2020|6모|가형|24": 55.7,
+    "2020|6모|가형|25": 71.0,
+    "2020|6모|가형|26": 55.5,
+    "2020|6모|가형|27": 78.7,
+    "2020|6모|가형|28": 73.5,
+    "2020|6모|가형|29": 91.2,
+    "2020|6모|가형|30": 92.4,
+    "2020|6모|나형|12": 48.3,
+    "2020|6모|나형|14": 39.0,
+    "2020|6모|나형|15": 51.2,
+    "2020|6모|나형|16": 40.3,
+    "2020|6모|나형|17": 60.8,
+    "2020|6모|나형|18": 56.5,
+    "2020|6모|나형|19": 53.4,
+    "2020|6모|나형|20": 63.0,
+    "2020|6모|나형|21": 79.0,
+    "2020|6모|나형|25": 36.0,
+    "2020|6모|나형|26": 54.1,
+    "2020|6모|나형|27": 68.8,
+    "2020|6모|나형|28": 68.6,
+    "2020|6모|나형|29": 79.6,
+    "2020|6모|나형|30": 94.5,
+    "2020|9모|가형|14": 29.3,
+    "2020|9모|가형|15": 51.4,
+    "2020|9모|가형|16": 41.6,
+    "2020|9모|가형|17": 40.4,
+    "2020|9모|가형|18": 46.1,
+    "2020|9모|가형|19": 49.7,
+    "2020|9모|가형|20": 44.9,
+    "2020|9모|가형|21": 72.1,
+    "2020|9모|가형|24": 33.6,
+    "2020|9모|가형|25": 44.3,
+    "2020|9모|가형|26": 51.4,
+    "2020|9모|가형|27": 50.8,
+    "2020|9모|가형|28": 61.9,
+    "2020|9모|가형|29": 93.7,
+    "2020|9모|가형|30": 96.1,
+    "2020|9모|나형|13": 34.0,
+    "2020|9모|나형|14": 44.9,
+    "2020|9모|나형|15": 39.8,
+    "2020|9모|나형|16": 48.6,
+    "2020|9모|나형|17": 46.5,
+    "2020|9모|나형|18": 55.0,
+    "2020|9모|나형|19": 73.0,
+    "2020|9모|나형|20": 56.0,
+    "2020|9모|나형|21": 57.4,
+    "2020|9모|나형|25": 61.6,
+    "2020|9모|나형|26": 62.6,
+    "2020|9모|나형|27": 62.2,
+    "2020|9모|나형|28": 90.2,
+    "2020|9모|나형|29": 81.8,
+    "2020|9모|나형|30": 96.6,
+    "2020|수능|가형|11": 44.1,
+    "2020|수능|가형|17": 61.4,
+    "2020|수능|가형|18": 33.1,
+    "2020|수능|가형|19": 55.4,
+    "2020|수능|가형|20": 53.1,
+    "2020|수능|가형|21": 55.0,
+    "2020|수능|가형|24": 38.3,
+    "2020|수능|가형|25": 46.2,
+    "2020|수능|가형|26": 44.7,
+    "2020|수능|가형|27": 83.3,
+    "2020|수능|가형|28": 65.2,
+    "2020|수능|가형|29": 89.4,
+    "2020|수능|가형|30": 95.5,
+    "2020|수능|가형|8": 32.6,
+    "2020|수능|가형|9": 37.2,
+    "2020|수능|나형|12": 44.0,
+    "2020|수능|나형|14": 48.0,
+    "2020|수능|나형|15": 74.4,
+    "2020|수능|나형|16": 47.0,
+    "2020|수능|나형|17": 58.1,
+    "2020|수능|나형|18": 62.3,
+    "2020|수능|나형|19": 69.3,
+    "2020|수능|나형|20": 85.0,
+    "2020|수능|나형|21": 69.2,
+    "2020|수능|나형|25": 53.4,
+    "2020|수능|나형|26": 78.7,
+    "2020|수능|나형|27": 44.8,
+    "2020|수능|나형|28": 92.7,
+    "2020|수능|나형|29": 87.6,
+    "2020|수능|나형|30": 97.9,
+    "2021|6모|가형|10": 40.8,
+    "2021|6모|가형|12": 50.8,
+    "2021|6모|가형|16": 40.7,
+    "2021|6모|가형|17": 53.7,
+    "2021|6모|가형|18": 51.0,
+    "2021|6모|가형|19": 58.1,
+    "2021|6모|가형|20": 77.5,
+    "2021|6모|가형|21": 59.6,
+    "2021|6모|가형|24": 45.5,
+    "2021|6모|가형|25": 46.4,
+    "2021|6모|가형|26": 58.5,
+    "2021|6모|가형|27": 78.8,
+    "2021|6모|가형|28": 88.9,
+    "2021|6모|가형|29": 81.1,
+    "2021|6모|가형|30": 97.8,
+    "2021|6모|나형|11": 37.1,
+    "2021|6모|나형|13": 41.2,
+    "2021|6모|나형|16": 44.3,
+    "2021|6모|나형|17": 59.6,
+    "2021|6모|나형|18": 61.7,
+    "2021|6모|나형|19": 50.5,
+    "2021|6모|나형|20": 56.4,
+    "2021|6모|나형|21": 56.0,
+    "2021|6모|나형|24": 58.7,
+    "2021|6모|나형|25": 58.9,
+    "2021|6모|나형|26": 53.8,
+    "2021|6모|나형|27": 62.7,
+    "2021|6모|나형|28": 75.5,
+    "2021|6모|나형|29": 79.3,
+    "2021|6모|나형|30": 94.0,
+    "2021|9모|가형|12": 25.8,
+    "2021|9모|가형|15": 28.0,
+    "2021|9모|가형|16": 29.5,
+    "2021|9모|가형|17": 26.1,
+    "2021|9모|가형|18": 62.8,
+    "2021|9모|가형|19": 43.4,
+    "2021|9모|가형|20": 55.0,
+    "2021|9모|가형|21": 75.0,
+    "2021|9모|가형|25": 44.8,
+    "2021|9모|가형|26": 45.4,
+    "2021|9모|가형|27": 34.7,
+    "2021|9모|가형|28": 87.5,
+    "2021|9모|가형|29": 81.3,
+    "2021|9모|가형|30": 92.5,
+    "2021|9모|가형|8": 24.0,
+    "2021|9모|나형|12": 47.0,
+    "2021|9모|나형|13": 36.3,
+    "2021|9모|나형|15": 40.2,
+    "2021|9모|나형|16": 60.0,
+    "2021|9모|나형|17": 55.9,
+    "2021|9모|나형|18": 69.9,
+    "2021|9모|나형|19": 65.1,
+    "2021|9모|나형|20": 75.5,
+    "2021|9모|나형|21": 79.8,
+    "2021|9모|나형|25": 76.0,
+    "2021|9모|나형|26": 49.0,
+    "2021|9모|나형|27": 77.9,
+    "2021|9모|나형|28": 71.9,
+    "2021|9모|나형|29": 94.3,
+    "2021|9모|나형|30": 97.1,
+    "2021|수능|가형|11": 41.4,
+    "2021|수능|가형|13": 35.3,
+    "2021|수능|가형|14": 48.2,
+    "2021|수능|가형|15": 40.7,
+    "2021|수능|가형|16": 36.3,
+    "2021|수능|가형|17": 51.4,
+    "2021|수능|가형|19": 47.6,
+    "2021|수능|가형|20": 65.9,
+    "2021|수능|가형|21": 63.0,
+    "2021|수능|가형|24": 42.2,
+    "2021|수능|가형|26": 39.0,
+    "2021|수능|가형|27": 71.3,
+    "2021|수능|가형|28": 80.5,
+    "2021|수능|가형|29": 86.4,
+    "2021|수능|가형|30": 91.8,
+    "2021|수능|나형|12": 32.4,
+    "2021|수능|나형|13": 48.9,
+    "2021|수능|나형|16": 46.4,
+    "2021|수능|나형|17": 48.6,
+    "2021|수능|나형|18": 61.9,
+    "2021|수능|나형|19": 48.0,
+    "2021|수능|나형|20": 78.3,
+    "2021|수능|나형|21": 60.1,
+    "2021|수능|나형|25": 39.7,
+    "2021|수능|나형|26": 48.5,
+    "2021|수능|나형|27": 46.8,
+    "2021|수능|나형|28": 58.2,
+    "2021|수능|나형|29": 85.3,
+    "2021|수능|나형|30": 95.4,
+    "2021|수능|나형|9": 34.7,
+    "2022|6모|기하|10": 40.8,
+    "2022|6모|기하|11": 50.9,
+    "2022|6모|기하|12": 40.0,
+    "2022|6모|기하|13": 47.6,
+    "2022|6모|기하|14": 60.8,
+    "2022|6모|기하|15": 75.9,
+    "2022|6모|기하|19": 48.3,
+    "2022|6모|기하|20": 74.4,
+    "2022|6모|기하|21": 89.9,
+    "2022|6모|기하|22": 95.6,
+    "2022|6모|기하|26": 35.6,
+    "2022|6모|기하|27": 48.3,
+    "2022|6모|기하|28": 41.8,
+    "2022|6모|기하|29": 76.1,
+    "2022|6모|기하|30": 90.6,
+    "2022|6모|미적|10": 40.8,
+    "2022|6모|미적|11": 50.9,
+    "2022|6모|미적|12": 40.0,
+    "2022|6모|미적|13": 47.6,
+    "2022|6모|미적|14": 60.8,
+    "2022|6모|미적|15": 75.9,
+    "2022|6모|미적|19": 48.3,
+    "2022|6모|미적|20": 74.4,
+    "2022|6모|미적|21": 89.9,
+    "2022|6모|미적|22": 95.6,
+    "2022|6모|미적|25": 34.9,
+    "2022|6모|미적|27": 43.3,
+    "2022|6모|미적|28": 62.3,
+    "2022|6모|미적|29": 76.7,
+    "2022|6모|미적|30": 91.0,
+    "2022|6모|확통|10": 40.8,
+    "2022|6모|확통|11": 50.9,
+    "2022|6모|확통|12": 40.0,
+    "2022|6모|확통|13": 47.6,
+    "2022|6모|확통|14": 60.8,
+    "2022|6모|확통|15": 75.9,
+    "2022|6모|확통|19": 48.3,
+    "2022|6모|확통|20": 74.4,
+    "2022|6모|확통|21": 89.9,
+    "2022|6모|확통|22": 95.6,
+    "2022|6모|확통|26": 49.2,
+    "2022|6모|확통|27": 57.2,
+    "2022|6모|확통|28": 56.9,
+    "2022|6모|확통|29": 78.8,
+    "2022|6모|확통|30": 84.8,
+    "2022|9모|기하|10": 37.3,
+    "2022|9모|기하|11": 38.6,
+    "2022|9모|기하|12": 44.7,
+    "2022|9모|기하|13": 54.3,
+    "2022|9모|기하|14": 53.7,
+    "2022|9모|기하|15": 70.1,
+    "2022|9모|기하|18": 39.0,
+    "2022|9모|기하|19": 45.0,
+    "2022|9모|기하|20": 78.1,
+    "2022|9모|기하|21": 88.5,
+    "2022|9모|기하|22": 96.1,
+    "2022|9모|기하|25": 42.6,
+    "2022|9모|기하|28": 49.1,
+    "2022|9모|기하|29": 79.3,
+    "2022|9모|기하|30": 93.0,
+    "2022|9모|미적|10": 37.3,
+    "2022|9모|미적|11": 38.6,
+    "2022|9모|미적|12": 44.7,
+    "2022|9모|미적|13": 54.3,
+    "2022|9모|미적|14": 53.7,
+    "2022|9모|미적|15": 70.1,
+    "2022|9모|미적|18": 39.0,
+    "2022|9모|미적|19": 45.0,
+    "2022|9모|미적|20": 78.1,
+    "2022|9모|미적|21": 88.5,
+    "2022|9모|미적|22": 96.1,
+    "2022|9모|미적|27": 60.1,
+    "2022|9모|미적|28": 64.2,
+    "2022|9모|미적|29": 82.6,
+    "2022|9모|미적|30": 95.1,
+    "2022|9모|확통|11": 38.6,
+    "2022|9모|확통|12": 44.7,
+    "2022|9모|확통|13": 54.3,
+    "2022|9모|확통|14": 53.7,
+    "2022|9모|확통|15": 70.1,
+    "2022|9모|확통|18": 39.0,
+    "2022|9모|확통|19": 45.0,
+    "2022|9모|확통|20": 78.1,
+    "2022|9모|확통|21": 88.5,
+    "2022|9모|확통|22": 96.1,
+    "2022|9모|확통|26": 52.2,
+    "2022|9모|확통|27": 58.6,
+    "2022|9모|확통|28": 49.5,
+    "2022|9모|확통|29": 80.2,
+    "2022|9모|확통|30": 90.5,
+    "2022|수능|기하|10": 50.3,
+    "2022|수능|기하|11": 47.2,
+    "2022|수능|기하|12": 51.3,
+    "2022|수능|기하|13": 55.9,
+    "2022|수능|기하|14": 70.4,
+    "2022|수능|기하|15": 62.8,
+    "2022|수능|기하|19": 48.3,
+    "2022|수능|기하|20": 84.9,
+    "2022|수능|기하|21": 73.2,
+    "2022|수능|기하|22": 93.0,
+    "2022|수능|기하|26": 59.6,
+    "2022|수능|기하|28": 65.9,
+    "2022|수능|기하|29": 92.2,
+    "2022|수능|기하|30": 92.3,
+    "2022|수능|기하|9": 44.0,
+    "2022|수능|미적|10": 50.3,
+    "2022|수능|미적|11": 47.2,
+    "2022|수능|미적|12": 51.3,
+    "2022|수능|미적|13": 55.9,
+    "2022|수능|미적|14": 70.4,
+    "2022|수능|미적|15": 62.8,
+    "2022|수능|미적|19": 48.3,
+    "2022|수능|미적|20": 84.9,
+    "2022|수능|미적|21": 73.2,
+    "2022|수능|미적|22": 93.0,
+    "2022|수능|미적|27": 61.5,
+    "2022|수능|미적|28": 55.8,
+    "2022|수능|미적|29": 85.5,
+    "2022|수능|미적|30": 93.9,
+    "2022|수능|미적|9": 44.0,
+    "2022|수능|확통|10": 50.3,
+    "2022|수능|확통|11": 47.2,
+    "2022|수능|확통|12": 51.3,
+    "2022|수능|확통|13": 55.9,
+    "2022|수능|확통|14": 70.4,
+    "2022|수능|확통|15": 62.8,
+    "2022|수능|확통|19": 48.3,
+    "2022|수능|확통|20": 84.9,
+    "2022|수능|확통|21": 73.2,
+    "2022|수능|확통|22": 93.0,
+    "2022|수능|확통|25": 51.8,
+    "2022|수능|확통|27": 49.7,
+    "2022|수능|확통|28": 79.5,
+    "2022|수능|확통|29": 91.4,
+    "2022|수능|확통|30": 96.4,
+    "2023|6모|기하|10": 53.9,
+    "2023|6모|기하|11": 42.7,
+    "2023|6모|기하|12": 50.1,
+    "2023|6모|기하|13": 58.0,
+    "2023|6모|기하|14": 62.0,
+    "2023|6모|기하|15": 75.4,
+    "2023|6모|기하|19": 47.9,
+    "2023|6모|기하|20": 87.5,
+    "2023|6모|기하|21": 84.7,
+    "2023|6모|기하|22": 97.7,
+    "2023|6모|기하|26": 53.3,
+    "2023|6모|기하|28": 64.5,
+    "2023|6모|기하|29": 86.7,
+    "2023|6모|기하|30": 95.8,
+    "2023|6모|기하|8": 44.4,
+    "2023|6모|미적|10": 53.9,
+    "2023|6모|미적|11": 42.7,
+    "2023|6모|미적|12": 50.1,
+    "2023|6모|미적|13": 58.0,
+    "2023|6모|미적|14": 62.0,
+    "2023|6모|미적|15": 75.4,
+    "2023|6모|미적|19": 47.9,
+    "2023|6모|미적|20": 87.5,
+    "2023|6모|미적|21": 84.7,
+    "2023|6모|미적|22": 97.7,
+    "2023|6모|미적|26": 48.8,
+    "2023|6모|미적|28": 66.4,
+    "2023|6모|미적|29": 90.0,
+    "2023|6모|미적|30": 93.9,
+    "2023|6모|미적|8": 44.4,
+    "2023|6모|확통|10": 53.9,
+    "2023|6모|확통|11": 42.7,
+    "2023|6모|확통|12": 50.1,
+    "2023|6모|확통|13": 58.0,
+    "2023|6모|확통|14": 62.0,
+    "2023|6모|확통|15": 75.4,
+    "2023|6모|확통|19": 47.9,
+    "2023|6모|확통|20": 87.5,
+    "2023|6모|확통|21": 84.7,
+    "2023|6모|확통|22": 97.7,
+    "2023|6모|확통|26": 54.4,
+    "2023|6모|확통|28": 55.9,
+    "2023|6모|확통|29": 86.4,
+    "2023|6모|확통|30": 93.2,
+    "2023|6모|확통|8": 44.4,
+    "2023|9모|기하|11": 58.9,
+    "2023|9모|기하|12": 52.2,
+    "2023|9모|기하|13": 73.7,
+    "2023|9모|기하|14": 60.5,
+    "2023|9모|기하|15": 66.5,
+    "2023|9모|기하|19": 43.7,
+    "2023|9모|기하|20": 78.1,
+    "2023|9모|기하|21": 91.2,
+    "2023|9모|기하|22": 95.4,
+    "2023|9모|기하|27": 47.3,
+    "2023|9모|기하|28": 56.3,
+    "2023|9모|기하|29": 92.5,
+    "2023|9모|기하|30": 90.5,
+    "2023|9모|기하|8": 39.2,
+    "2023|9모|기하|9": 41.0,
+    "2023|9모|미적|11": 58.9,
+    "2023|9모|미적|12": 52.2,
+    "2023|9모|미적|13": 73.7,
+    "2023|9모|미적|14": 60.5,
+    "2023|9모|미적|15": 66.5,
+    "2023|9모|미적|19": 43.7,
+    "2023|9모|미적|20": 78.1,
+    "2023|9모|미적|21": 91.2,
+    "2023|9모|미적|22": 95.4,
+    "2023|9모|미적|27": 52.4,
+    "2023|9모|미적|28": 51.7,
+    "2023|9모|미적|29": 87.8,
+    "2023|9모|미적|30": 96.5,
+    "2023|9모|미적|8": 39.2,
+    "2023|9모|미적|9": 41.0,
+    "2023|9모|확통|11": 58.9,
+    "2023|9모|확통|12": 52.2,
+    "2023|9모|확통|13": 73.7,
+    "2023|9모|확통|14": 60.5,
+    "2023|9모|확통|15": 66.5,
+    "2023|9모|확통|19": 43.7,
+    "2023|9모|확통|20": 78.1,
+    "2023|9모|확통|21": 91.2,
+    "2023|9모|확통|22": 95.4,
+    "2023|9모|확통|25": 41.5,
+    "2023|9모|확통|26": 45.9,
+    "2023|9모|확통|27": 55.4,
+    "2023|9모|확통|28": 59.8,
+    "2023|9모|확통|29": 91.1,
+    "2023|9모|확통|30": 96.0,
+    "2023|수능|기하|11": 52.3,
+    "2023|수능|기하|12": 64.3,
+    "2023|수능|기하|13": 50.8,
+    "2023|수능|기하|14": 86.6,
+    "2023|수능|기하|15": 71.6,
+    "2023|수능|기하|19": 50.6,
+    "2023|수능|기하|20": 68.8,
+    "2023|수능|기하|21": 84.2,
+    "2023|수능|기하|22": 94.5,
+    "2023|수능|기하|28": 57.5,
+    "2023|수능|기하|29": 74.0,
+    "2023|수능|기하|30": 87.7,
+    "2023|수능|기하|5": 41.9,
+    "2023|수능|기하|7": 40.9,
+    "2023|수능|기하|9": 41.1,
+    "2023|수능|미적|11": 52.3,
+    "2023|수능|미적|12": 64.3,
+    "2023|수능|미적|13": 50.8,
+    "2023|수능|미적|14": 86.6,
+    "2023|수능|미적|15": 71.6,
+    "2023|수능|미적|19": 50.6,
+    "2023|수능|미적|20": 68.8,
+    "2023|수능|미적|21": 84.2,
+    "2023|수능|미적|22": 94.5,
+    "2023|수능|미적|26": 42.5,
+    "2023|수능|미적|27": 49.7,
+    "2023|수능|미적|28": 61.9,
+    "2023|수능|미적|29": 85.4,
+    "2023|수능|미적|30": 94.3,
+    "2023|수능|미적|5": 41.9,
+    "2023|수능|확통|11": 52.3,
+    "2023|수능|확통|12": 64.3,
+    "2023|수능|확통|13": 50.8,
+    "2023|수능|확통|14": 86.6,
+    "2023|수능|확통|15": 71.6,
+    "2023|수능|확통|19": 50.6,
+    "2023|수능|확통|20": 68.8,
+    "2023|수능|확통|21": 84.2,
+    "2023|수능|확통|22": 94.5,
+    "2023|수능|확통|26": 47.8,
+    "2023|수능|확통|27": 62.5,
+    "2023|수능|확통|28": 54.6,
+    "2023|수능|확통|29": 97.4,
+    "2023|수능|확통|30": 96.5,
+    "2023|수능|확통|5": 41.9,
+    "2024|6모|기하|11": 46.8,
+    "2024|6모|기하|12": 63.9,
+    "2024|6모|기하|13": 80.3,
+    "2024|6모|기하|14": 56.7,
+    "2024|6모|기하|15": 80.0,
+    "2024|6모|기하|19": 60.1,
+    "2024|6모|기하|20": 87.9,
+    "2024|6모|기하|21": 90.0,
+    "2024|6모|기하|22": 97.1,
+    "2024|6모|기하|25": 54.3,
+    "2024|6모|기하|27": 56.8,
+    "2024|6모|기하|28": 66.6,
+    "2024|6모|기하|29": 81.4,
+    "2024|6모|기하|30": 83.4,
+    "2024|6모|기하|9": 60.0,
+    "2024|6모|미적|10": 44.7,
+    "2024|6모|미적|11": 46.8,
+    "2024|6모|미적|12": 63.9,
+    "2024|6모|미적|13": 80.3,
+    "2024|6모|미적|14": 56.7,
+    "2024|6모|미적|15": 80.0,
+    "2024|6모|미적|19": 60.1,
+    "2024|6모|미적|20": 87.9,
+    "2024|6모|미적|21": 90.0,
+    "2024|6모|미적|22": 97.1,
+    "2024|6모|미적|27": 47.7,
+    "2024|6모|미적|28": 79.9,
+    "2024|6모|미적|29": 87.9,
+    "2024|6모|미적|30": 94.1,
+    "2024|6모|미적|9": 60.0,
+    "2024|6모|확통|10": 44.7,
+    "2024|6모|확통|11": 46.8,
+    "2024|6모|확통|12": 63.9,
+    "2024|6모|확통|13": 80.3,
+    "2024|6모|확통|14": 56.7,
+    "2024|6모|확통|15": 80.0,
+    "2024|6모|확통|19": 60.1,
+    "2024|6모|확통|20": 87.9,
+    "2024|6모|확통|21": 90.0,
+    "2024|6모|확통|22": 97.1,
+    "2024|6모|확통|26": 48.3,
+    "2024|6모|확통|28": 62.0,
+    "2024|6모|확통|29": 84.0,
+    "2024|6모|확통|30": 85.7,
+    "2024|6모|확통|9": 60.0,
+    "2024|9모|기하|10": 47.2,
+    "2024|9모|기하|11": 70.2,
+    "2024|9모|기하|12": 58.8,
+    "2024|9모|기하|13": 69.9,
+    "2024|9모|기하|14": 67.4,
+    "2024|9모|기하|15": 66.6,
+    "2024|9모|기하|19": 43.2,
+    "2024|9모|기하|20": 72.9,
+    "2024|9모|기하|21": 88.1,
+    "2024|9모|기하|22": 88.5,
+    "2024|9모|기하|26": 36.9,
+    "2024|9모|기하|28": 70.6,
+    "2024|9모|기하|29": 90.6,
+    "2024|9모|기하|30": 89.8,
+    "2024|9모|기하|9": 50.8,
+    "2024|9모|미적|10": 47.2,
+    "2024|9모|미적|11": 70.2,
+    "2024|9모|미적|12": 58.8,
+    "2024|9모|미적|13": 69.9,
+    "2024|9모|미적|14": 67.4,
+    "2024|9모|미적|15": 66.6,
+    "2024|9모|미적|20": 72.9,
+    "2024|9모|미적|21": 88.1,
+    "2024|9모|미적|22": 88.5,
+    "2024|9모|미적|26": 47.0,
+    "2024|9모|미적|27": 65.0,
+    "2024|9모|미적|28": 82.6,
+    "2024|9모|미적|29": 62.3,
+    "2024|9모|미적|30": 93.3,
+    "2024|9모|미적|9": 50.8,
+    "2024|9모|확통|10": 47.2,
+    "2024|9모|확통|11": 70.2,
+    "2024|9모|확통|12": 58.8,
+    "2024|9모|확통|13": 69.9,
+    "2024|9모|확통|14": 67.4,
+    "2024|9모|확통|15": 66.6,
+    "2024|9모|확통|20": 72.9,
+    "2024|9모|확통|21": 88.1,
+    "2024|9모|확통|22": 88.5,
+    "2024|9모|확통|25": 53.3,
+    "2024|9모|확통|27": 50.7,
+    "2024|9모|확통|28": 72.3,
+    "2024|9모|확통|29": 86.3,
+    "2024|9모|확통|30": 94.8,
+    "2024|9모|확통|9": 50.8,
+    "2024|수능|기하|10": 54.5,
+    "2024|수능|기하|11": 52.9,
+    "2024|수능|기하|12": 45.0,
+    "2024|수능|기하|13": 58.8,
+    "2024|수능|기하|14": 84.5,
+    "2024|수능|기하|15": 45.8,
+    "2024|수능|기하|19": 75.2,
+    "2024|수능|기하|20": 84.7,
+    "2024|수능|기하|21": 78.1,
+    "2024|수능|기하|22": 98.2,
+    "2024|수능|기하|27": 58.2,
+    "2024|수능|기하|28": 69.9,
+    "2024|수능|기하|29": 82.2,
+    "2024|수능|기하|30": 87.0,
+    "2024|수능|기하|9": 44.9,
+    "2024|수능|미적|10": 54.5,
+    "2024|수능|미적|11": 52.9,
+    "2024|수능|미적|12": 45.0,
+    "2024|수능|미적|13": 58.8,
+    "2024|수능|미적|14": 84.5,
+    "2024|수능|미적|15": 45.8,
+    "2024|수능|미적|19": 75.2,
+    "2024|수능|미적|20": 84.7,
+    "2024|수능|미적|21": 78.1,
+    "2024|수능|미적|22": 98.2,
+    "2024|수능|미적|27": 76.6,
+    "2024|수능|미적|28": 84.7,
+    "2024|수능|미적|29": 93.2,
+    "2024|수능|미적|30": 96.3,
+    "2024|수능|미적|9": 44.9,
+    "2024|수능|확통|10": 54.5,
+    "2024|수능|확통|11": 52.9,
+    "2024|수능|확통|12": 45.0,
+    "2024|수능|확통|13": 58.8,
+    "2024|수능|확통|14": 84.5,
+    "2024|수능|확통|15": 45.8,
+    "2024|수능|확통|19": 75.2,
+    "2024|수능|확통|20": 84.7,
+    "2024|수능|확통|21": 78.1,
+    "2024|수능|확통|22": 98.2,
+    "2024|수능|확통|26": 63.4,
+    "2024|수능|확통|27": 52.6,
+    "2024|수능|확통|28": 58.4,
+    "2024|수능|확통|29": 83.4,
+    "2024|수능|확통|30": 86.5,
+    "2025|6모|기하|10": 58.0,
+    "2025|6모|기하|11": 42.3,
+    "2025|6모|기하|12": 64.3,
+    "2025|6모|기하|13": 48.9,
+    "2025|6모|기하|14": 64.1,
+    "2025|6모|기하|15": 59.0,
+    "2025|6모|기하|19": 69.9,
+    "2025|6모|기하|20": 79.3,
+    "2025|6모|기하|21": 82.3,
+    "2025|6모|기하|22": 92.0,
+    "2025|6모|기하|27": 37.0,
+    "2025|6모|기하|28": 75.9,
+    "2025|6모|기하|29": 82.6,
+    "2025|6모|기하|30": 86.4,
+    "2025|6모|기하|6": 37.1,
+    "2025|6모|미적|10": 58.0,
+    "2025|6모|미적|11": 42.3,
+    "2025|6모|미적|12": 64.3,
+    "2025|6모|미적|13": 48.9,
+    "2025|6모|미적|14": 64.1,
+    "2025|6모|미적|15": 59.0,
+    "2025|6모|미적|19": 69.9,
+    "2025|6모|미적|20": 79.3,
+    "2025|6모|미적|21": 82.3,
+    "2025|6모|미적|22": 92.0,
+    "2025|6모|미적|27": 65.1,
+    "2025|6모|미적|28": 50.3,
+    "2025|6모|미적|29": 87.7,
+    "2025|6모|미적|30": 94.8,
+    "2025|6모|미적|6": 37.1,
+    "2025|6모|확통|10": 58.0,
+    "2025|6모|확통|11": 42.3,
+    "2025|6모|확통|12": 64.3,
+    "2025|6모|확통|13": 48.9,
+    "2025|6모|확통|14": 64.1,
+    "2025|6모|확통|15": 59.0,
+    "2025|6모|확통|19": 69.9,
+    "2025|6모|확통|20": 79.3,
+    "2025|6모|확통|21": 82.3,
+    "2025|6모|확통|22": 92.0,
+    "2025|6모|확통|26": 46.1,
+    "2025|6모|확통|27": 40.4,
+    "2025|6모|확통|28": 81.4,
+    "2025|6모|확통|29": 63.7,
+    "2025|6모|확통|30": 95.2,
+    "2025|9모|기하|10": 57.3,
+    "2025|9모|기하|11": 35.0,
+    "2025|9모|기하|12": 45.6,
+    "2025|9모|기하|13": 42.3,
+    "2025|9모|기하|14": 68.7,
+    "2025|9모|기하|15": 58.0,
+    "2025|9모|기하|18": 32.0,
+    "2025|9모|기하|20": 66.1,
+    "2025|9모|기하|21": 89.2,
+    "2025|9모|기하|22": 84.4,
+    "2025|9모|기하|26": 42.3,
+    "2025|9모|기하|27": 47.1,
+    "2025|9모|기하|28": 61.8,
+    "2025|9모|기하|29": 62.7,
+    "2025|9모|기하|30": 89.8,
+    "2025|9모|미적|10": 57.3,
+    "2025|9모|미적|11": 35.0,
+    "2025|9모|미적|12": 45.6,
+    "2025|9모|미적|13": 42.3,
+    "2025|9모|미적|14": 68.7,
+    "2025|9모|미적|15": 58.0,
+    "2025|9모|미적|18": 32.0,
+    "2025|9모|미적|20": 66.1,
+    "2025|9모|미적|21": 89.2,
+    "2025|9모|미적|22": 84.4,
+    "2025|9모|미적|26": 31.4,
+    "2025|9모|미적|27": 37.9,
+    "2025|9모|미적|28": 54.4,
+    "2025|9모|미적|29": 69.2,
+    "2025|9모|미적|30": 90.5,
+    "2025|9모|확통|10": 57.3,
+    "2025|9모|확통|12": 45.6,
+    "2025|9모|확통|13": 42.3,
+    "2025|9모|확통|14": 68.7,
+    "2025|9모|확통|15": 58.0,
+    "2025|9모|확통|20": 66.1,
+    "2025|9모|확통|21": 89.2,
+    "2025|9모|확통|22": 84.4,
+    "2025|9모|확통|24": 49.3,
+    "2025|9모|확통|25": 38.5,
+    "2025|9모|확통|26": 43.7,
+    "2025|9모|확통|27": 41.0,
+    "2025|9모|확통|28": 63.5,
+    "2025|9모|확통|29": 86.7,
+    "2025|9모|확통|30": 92.6,
+    "2025|수능|기하|12": 40.7,
+    "2025|수능|기하|13": 46.2,
+    "2025|수능|기하|14": 61.8,
+    "2025|수능|기하|15": 63.4,
+    "2025|수능|기하|18": 36.0,
+    "2025|수능|기하|19": 33.1,
+    "2025|수능|기하|20": 86.4,
+    "2025|수능|기하|21": 87.6,
+    "2025|수능|기하|22": 94.4,
+    "2025|수능|기하|26": 43.8,
+    "2025|수능|기하|27": 57.7,
+    "2025|수능|기하|28": 63.6,
+    "2025|수능|기하|29": 62.4,
+    "2025|수능|기하|30": 91.2,
+    "2025|수능|기하|6": 32.0,
+    "2025|수능|미적|12": 40.7,
+    "2025|수능|미적|13": 46.2,
+    "2025|수능|미적|14": 61.8,
+    "2025|수능|미적|15": 63.4,
+    "2025|수능|미적|18": 36.0,
+    "2025|수능|미적|19": 33.1,
+    "2025|수능|미적|20": 86.4,
+    "2025|수능|미적|21": 87.6,
+    "2025|수능|미적|22": 94.4,
+    "2025|수능|미적|26": 32.2,
+    "2025|수능|미적|27": 64.9,
+    "2025|수능|미적|28": 72.5,
+    "2025|수능|미적|29": 86.7,
+    "2025|수능|미적|30": 86.3,
+    "2025|수능|미적|6": 32.0,
+    "2025|수능|확통|12": 40.7,
+    "2025|수능|확통|13": 46.2,
+    "2025|수능|확통|14": 61.8,
+    "2025|수능|확통|15": 63.4,
+    "2025|수능|확통|18": 36.0,
+    "2025|수능|확통|19": 33.1,
+    "2025|수능|확통|20": 86.4,
+    "2025|수능|확통|21": 87.6,
+    "2025|수능|확통|22": 94.4,
+    "2025|수능|확통|24": 35.9,
+    "2025|수능|확통|25": 52.1,
+    "2025|수능|확통|27": 71.4,
+    "2025|수능|확통|28": 57.5,
+    "2025|수능|확통|29": 76.8,
+    "2025|수능|확통|30": 79.8,
+    "2026|6모|기하|10": 40.2,
+    "2026|6모|기하|12": 47.1,
+    "2026|6모|기하|13": 30.4,
+    "2026|6모|기하|14": 60.1,
+    "2026|6모|기하|15": 80.6,
+    "2026|6모|기하|20": 73.1,
+    "2026|6모|기하|21": 87.8,
+    "2026|6모|기하|22": 96.9,
+    "2026|6모|기하|25": 31.6,
+    "2026|6모|기하|26": 43.2,
+    "2026|6모|기하|27": 39.3,
+    "2026|6모|기하|28": 61.2,
+    "2026|6모|기하|29": 69.1,
+    "2026|6모|기하|30": 90.8,
+    "2026|6모|기하|8": 40.2,
+    "2026|6모|미적|10": 40.2,
+    "2026|6모|미적|12": 47.1,
+    "2026|6모|미적|13": 30.4,
+    "2026|6모|미적|14": 60.1,
+    "2026|6모|미적|15": 80.6,
+    "2026|6모|미적|20": 73.1,
+    "2026|6모|미적|21": 87.8,
+    "2026|6모|미적|22": 96.9,
+    "2026|6모|미적|26": 32.0,
+    "2026|6모|미적|27": 41.6,
+    "2026|6모|미적|28": 91.0,
+    "2026|6모|미적|29": 85.6,
+    "2026|6모|미적|30": 94.7,
+    "2026|6모|미적|8": 40.2,
+    "2026|6모|미적|9": 30.4,
+    "2026|6모|확통|10": 40.2,
+    "2026|6모|확통|12": 47.1,
+    "2026|6모|확통|13": 30.4,
+    "2026|6모|확통|14": 60.1,
+    "2026|6모|확통|15": 80.6,
+    "2026|6모|확통|20": 73.1,
+    "2026|6모|확통|21": 87.8,
+    "2026|6모|확통|22": 96.9,
+    "2026|6모|확통|26": 38.7,
+    "2026|6모|확통|27": 36.6,
+    "2026|6모|확통|28": 57.8,
+    "2026|6모|확통|29": 83.6,
+    "2026|6모|확통|30": 91.5,
+    "2026|6모|확통|8": 40.2,
+    "2026|6모|확통|9": 30.4,
+    "2026|9모|기하|11": 50.1,
+    "2026|9모|기하|12": 45.6,
+    "2026|9모|기하|13": 61.6,
+    "2026|9모|기하|14": 44.4,
+    "2026|9모|기하|15": 77.1,
+    "2026|9모|기하|19": 30.8,
+    "2026|9모|기하|20": 49.5,
+    "2026|9모|기하|21": 94.3,
+    "2026|9모|기하|22": 92.0,
+    "2026|9모|기하|27": 39.7,
+    "2026|9모|기하|28": 74.8,
+    "2026|9모|기하|29": 72.2,
+    "2026|9모|기하|30": 92.7,
+    "2026|9모|기하|6": 35.1,
+    "2026|9모|기하|9": 42.3,
+    "2026|9모|미적|11": 50.1,
+    "2026|9모|미적|12": 45.6,
+    "2026|9모|미적|13": 61.6,
+    "2026|9모|미적|14": 44.4,
+    "2026|9모|미적|15": 77.1,
+    "2026|9모|미적|19": 30.8,
+    "2026|9모|미적|20": 49.5,
+    "2026|9모|미적|21": 94.3,
+    "2026|9모|미적|22": 92.0,
+    "2026|9모|미적|27": 44.2,
+    "2026|9모|미적|28": 80.3,
+    "2026|9모|미적|29": 80.3,
+    "2026|9모|미적|30": 90.6,
+    "2026|9모|미적|6": 35.1,
+    "2026|9모|미적|9": 42.3,
+    "2026|9모|확통|11": 50.1,
+    "2026|9모|확통|12": 45.6,
+    "2026|9모|확통|13": 61.6,
+    "2026|9모|확통|14": 44.4,
+    "2026|9모|확통|15": 77.1,
+    "2026|9모|확통|20": 49.5,
+    "2026|9모|확통|21": 94.3,
+    "2026|9모|확통|22": 92.0,
+    "2026|9모|확통|26": 40.4,
+    "2026|9모|확통|27": 50.1,
+    "2026|9모|확통|28": 73.1,
+    "2026|9모|확통|29": 83.3,
+    "2026|9모|확통|30": 90.4,
+    "2026|9모|확통|6": 35.1,
+    "2026|9모|확통|9": 42.3,
+    "2026|수능|기하|10": 38.9,
+    "2026|수능|기하|11": 50.0,
+    "2026|수능|기하|13": 42.6,
+    "2026|수능|기하|14": 53.0,
+    "2026|수능|기하|15": 61.9,
+    "2026|수능|기하|18": 38.3,
+    "2026|수능|기하|19": 51.3,
+    "2026|수능|기하|20": 70.1,
+    "2026|수능|기하|21": 97.6,
+    "2026|수능|기하|22": 96.7,
+    "2026|수능|기하|27": 36.6,
+    "2026|수능|기하|28": 58.1,
+    "2026|수능|기하|29": 86.9,
+    "2026|수능|기하|30": 96.0,
+    "2026|수능|기하|8": 37.0,
+    "2026|수능|미적|10": 38.9,
+    "2026|수능|미적|11": 50.0,
+    "2026|수능|미적|13": 42.6,
+    "2026|수능|미적|14": 53.0,
+    "2026|수능|미적|15": 61.9,
+    "2026|수능|미적|18": 38.3,
+    "2026|수능|미적|19": 51.3,
+    "2026|수능|미적|20": 70.1,
+    "2026|수능|미적|21": 97.6,
+    "2026|수능|미적|22": 96.7,
+    "2026|수능|미적|27": 36.8,
+    "2026|수능|미적|28": 72.0,
+    "2026|수능|미적|29": 81.6,
+    "2026|수능|미적|30": 96.9,
+    "2026|수능|미적|8": 37.0,
+    "2026|수능|확통|10": 38.9,
+    "2026|수능|확통|11": 50.0,
+    "2026|수능|확통|13": 42.6,
+    "2026|수능|확통|14": 53.0,
+    "2026|수능|확통|15": 61.9,
+    "2026|수능|확통|19": 51.3,
+    "2026|수능|확통|20": 70.1,
+    "2026|수능|확통|21": 97.6,
+    "2026|수능|확통|22": 96.7,
+    "2026|수능|확통|24": 44.8,
+    "2026|수능|확통|26": 47.6,
+    "2026|수능|확통|27": 39.1,
+    "2026|수능|확통|28": 69.4,
+    "2026|수능|확통|29": 81.3,
+    "2026|수능|확통|30": 98.5,
+    "2027|6모|기하|11": 36.7,
+    "2027|6모|기하|12": 31.2,
+    "2027|6모|기하|13": 46.3,
+    "2027|6모|기하|14": 53.9,
+    "2027|6모|기하|15": 58.9,
+    "2027|6모|기하|19": 31.8,
+    "2027|6모|기하|20": 50.7,
+    "2027|6모|기하|21": 88.1,
+    "2027|6모|기하|22": 94.5,
+    "2027|6모|기하|25": 32.9,
+    "2027|6모|기하|26": 30.6,
+    "2027|6모|기하|27": 40.3,
+    "2027|6모|기하|28": 37.2,
+    "2027|6모|기하|29": 76.5,
+    "2027|6모|기하|30": 87.4,
+    "2027|6모|미적|11": 36.7,
+    "2027|6모|미적|12": 31.2,
+    "2027|6모|미적|13": 46.3,
+    "2027|6모|미적|14": 53.9,
+    "2027|6모|미적|15": 58.9,
+    "2027|6모|미적|19": 31.8,
+    "2027|6모|미적|20": 50.7,
+    "2027|6모|미적|21": 88.1,
+    "2027|6모|미적|22": 94.5,
+    "2027|6모|미적|27": 36.7,
+    "2027|6모|미적|28": 69.7,
+    "2027|6모|미적|29": 87.3,
+    "2027|6모|미적|30": 87.4,
+    "2027|6모|미적|6": 27.7,
+    "2027|6모|미적|9": 27.3,
+    "2027|6모|확통|11": 36.7,
+    "2027|6모|확통|12": 31.2,
+    "2027|6모|확통|13": 46.3,
+    "2027|6모|확통|14": 53.9,
+    "2027|6모|확통|15": 58.9,
+    "2027|6모|확통|19": 31.8,
+    "2027|6모|확통|20": 50.7,
+    "2027|6모|확통|21": 88.1,
+    "2027|6모|확통|22": 94.5,
+    "2027|6모|확통|26": 42.1,
+    "2027|6모|확통|28": 72.9,
+    "2027|6모|확통|29": 77.4,
+    "2027|6모|확통|30": 95.8,
+    "2027|6모|확통|6": 27.7,
+    "2027|6모|확통|9": 27.3,
+    "2027|9모|기하|11": 31.4,
+    "2027|9모|기하|12": 29.1,
+    "2027|9모|기하|13": 43.1,
+    "2027|9모|기하|14": 55.1,
+    "2027|9모|기하|15": 62.0,
+    "2027|9모|기하|18": 36.3,
+    "2027|9모|기하|19": 40.4,
+    "2027|9모|기하|20": 63.2,
+    "2027|9모|기하|21": 89.9,
+    "2027|9모|기하|22": 95.5,
+    "2027|9모|기하|26": 37.3,
+    "2027|9모|기하|27": 28.2,
+    "2027|9모|기하|28": 65.3,
+    "2027|9모|기하|29": 81.7,
+    "2027|9모|기하|30": 90.7,
+    "2027|9모|미적|11": 31.4,
+    "2027|9모|미적|12": 29.1,
+    "2027|9모|미적|13": 43.1,
+    "2027|9모|미적|14": 55.1,
+    "2027|9모|미적|15": 62.0,
+    "2027|9모|미적|18": 36.3,
+    "2027|9모|미적|19": 40.4,
+    "2027|9모|미적|20": 63.2,
+    "2027|9모|미적|21": 89.9,
+    "2027|9모|미적|22": 95.5,
+    "2027|9모|미적|26": 32.1,
+    "2027|9모|미적|27": 43.7,
+    "2027|9모|미적|28": 71.8,
+    "2027|9모|미적|29": 73.9,
+    "2027|9모|미적|30": 90.7,
+    "2027|9모|확통|11": 31.4,
+    "2027|9모|확통|12": 29.1,
+    "2027|9모|확통|13": 43.1,
+    "2027|9모|확통|14": 55.1,
+    "2027|9모|확통|15": 62.0,
+    "2027|9모|확통|18": 36.3,
+    "2027|9모|확통|19": 40.4,
+    "2027|9모|확통|20": 63.2,
+    "2027|9모|확통|21": 89.9,
+    "2027|9모|확통|22": 95.5,
+    "2027|9모|확통|26": 38.4,
+    "2027|9모|확통|27": 42.9,
+    "2027|9모|확통|28": 79.0,
+    "2027|9모|확통|29": 89.9,
+    "2027|9모|확통|30": 94.0
+  }
+}

@@ -7,6 +7,7 @@ import { getOfficialVideoLink } from './official-videos';
 import problemJourneyData from './problem-journeys.json';
 import calculusJourneyData from './calculus-journeys.json';
 import legacyJourneyData from './legacy-journeys.json';
+import problemStatsData from './problem-stats.json';
 
 type Session = '6모' | '9모' | '수능';
 type Subject = '확통' | '미적' | '기하' | '가형' | '나형';
@@ -33,6 +34,7 @@ type ProblemHistoryState = {
   question: string;
   questionZoom?: number;
 };
+type ProblemStat = { answer: string; wrongRate: number | null };
 
 const years = Array.from({ length: 11 }, (_, index) => 2027 - index);
 const sessions: Session[] = ['6모', '9모', '수능'];
@@ -46,6 +48,15 @@ const problemJourneys = [
   ...calculusJourneyData.problems,
 ] as ProblemJourney[];
 const sessionOrder: Record<Session, number> = { '6모': 1, '9모': 2, 수능: 3 };
+const problemStats = problemStatsData.problems as Record<string, ProblemStat>;
+const wrongRates = problemStatsData.wrongRates as Record<string, number>;
+const choiceAnswerLabels: Record<string, string> = {
+  '①': '1번',
+  '②': '2번',
+  '③': '3번',
+  '④': '4번',
+  '⑤': '5번',
+};
 
 const journeyStopWords = new Set([
   '주어진', '조건', '문제', '해당하는', '핵심', '관계를', '먼저', '찾는다',
@@ -157,6 +168,7 @@ export default function Home() {
   const [questionZoom, setQuestionZoom] = useState(0.7);
   const [questionFitScale, setQuestionFitScale] = useState(1);
   const [questionImageSize, setQuestionImageSize] = useState<{ url: string; height: number } | null>(null);
+  const [revealedAnswerKey, setRevealedAnswerKey] = useState<string | null>(null);
   const [questionNavTop, setQuestionNavTop] = useState<number | null>(null);
   const [daysUntilCsat, setDaysUntilCsat] = useState<number | null>(null);
   const [isCsatCountdownRevealed, setIsCsatCountdownRevealed] = useState(false);
@@ -226,6 +238,15 @@ export default function Home() {
   const questionTitle = `${year}학년도 ${sessionLabel[session]} · ${modern && questionNumber && questionNumber <= 22 ? '공통' : subjectLabel[subject]}`;
   const effectiveQuestionScale = questionFitScale * questionZoom;
   const journeySection = modern && questionNumber && questionNumber <= 22 ? '공통' : subject;
+  const currentStat = questionNumber
+    ? problemStats[`${year}|${session}|${questionSection}|${questionNumber}`]
+    : undefined;
+  const currentAnswerKey = questionNumber ? `${year}|${session}|${questionSection}|${questionNumber}` : null;
+  const currentAnswerLabel = currentStat ? (choiceAnswerLabels[currentStat.answer] ?? currentStat.answer) : '—';
+  const isCurrentAnswerRevealed = currentAnswerKey !== null && revealedAnswerKey === currentAnswerKey;
+  const currentWrongRate = questionNumber
+    ? wrongRates[`${year}|${session}|${subject}|${questionNumber}`]
+    : undefined;
   const currentJourney = questionNumber && (!modern || questionNumber <= 22 || subject === '확통' || subject === '미적')
     ? problemJourneys.find((problem) => problem.year === year && problem.session === session && problem.section === journeySection && problem.number === questionNumber)
     : undefined;
@@ -428,7 +449,10 @@ export default function Home() {
             <label><span>번호</span><NativeSelect value={question} onChange={(event) => setQuestion(event.target.value)} aria-label="문항 번호 선택"><NativeSelectOption value="">전체 시험지</NativeSelectOption>{year >= 2026 && <NativeSelectOption value="solution">해설지</NativeSelectOption>}{Array.from({ length: 30 }, (_, index) => index + 1).map((item) => <NativeSelectOption key={item} value={item}>{item}번</NativeSelectOption>)}</NativeSelect></label>
           </section>
 
-          <div className="selection-summary" aria-live="polite"><span>{modern ? '공통 1–22 · 선택 23–30' : `${subjectLabel[subject]} 1–30`}</span></div>
+          <div className="selection-summary" aria-live="polite">
+            <span>오답률은 EBSi 채점 참여자 TOP15 기준</span>
+            <span>{modern ? '공통 1–22 · 선택 23–30' : `${subjectLabel[subject]} 1–30`}</span>
+          </div>
         </div>
 
         <section className="document-shell">
@@ -471,6 +495,24 @@ export default function Home() {
                   {questionCategories.map((category) => <a href={`/categories.html?category=${encodeURIComponent(category)}`} key={category}>{category}</a>)}
                 </div>
               )}
+              <div className="question-result-stats" aria-label="문항 정답과 오답률">
+                <button
+                  className="question-answer-reveal"
+                  type="button"
+                  aria-expanded={isCurrentAnswerRevealed}
+                  onClick={() => setRevealedAnswerKey(isCurrentAnswerRevealed ? null : currentAnswerKey)}
+                >
+                  {isCurrentAnswerRevealed ? (
+                    <><small>정답</small><strong>{currentAnswerLabel}</strong></>
+                  ) : (
+                    <span className="question-answer-prompt"><small>눌러서</small><strong>정답 확인</strong></span>
+                  )}
+                </button>
+                <span title="EBSi 채점 참여자 분석 TOP15 기준">
+                  <small>오답률</small>
+                  <strong>{currentWrongRate === undefined ? '자료 없음' : `${currentWrongRate}%`}</strong>
+                </span>
+              </div>
               <div className="question-zoom-controls" aria-label="문항 크기 조절">
                 <button type="button" onClick={() => changeQuestionZoom(-1)} disabled={questionZoom <= 0.5} aria-label="문항 축소"><Minus aria-hidden="true" /></button>
                 <output aria-live="polite">{Math.round(questionZoom * 100)}%</output>
